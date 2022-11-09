@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stream_bloc/stream_bloc.dart';
 import 'package:transmitter/src/feature/settings/enum/app_theme.dart';
 import 'package:transmitter/src/feature/settings/model/settings_data.dart';
 import 'package:transmitter/src/feature/settings/repository/settings_repository.dart';
-import 'package:stream_bloc/stream_bloc.dart';
 
 part 'settings_bloc.freezed.dart';
 

@@ -13,6 +13,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_bluetooth_serial: ^0.4.0
+  audio_waveforms: ^0.1.5+1
+  
   # SDK extensions
   async: ^2.8.2
   collection: ^1.15.0
@@ -105,3 +108,20 @@ flutter:
   generate: true
   assets:
     - asset/image/
+  fonts:
+    - family: Inter
+      fonts:
+          - asset: assets/font/inter/Inter-ExtraLight.ttf
+            weight: 200
+          - asset: assets/font/inter/Inter-Light.ttf
+            weight: 300
+          - asset: assets/font/inter/Inter-Regular.ttf
+            weight: 400
+          - asset: assets/font/inter/Inter-Medium.ttf
+            weight: 500
+          - asset: assets/font/inter/Inter-SemiBold.ttf
+            weight: 600
+          - asset: assets/font/inter/Inter-Bold.ttf
+            weight: 700
+          - asset: assets/font/inter/Inter-ExtraBold.ttf
+            weight: 800
