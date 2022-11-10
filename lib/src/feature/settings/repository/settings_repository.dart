@@ -2,12 +2,7 @@ import 'package:pure/pure.dart';
 import 'package:transmitter/src/feature/settings/database/settings_dao.dart';
 import 'package:transmitter/src/feature/settings/enum/app_theme.dart';
 import 'package:transmitter/src/feature/settings/model/settings_data.dart';
-
-abstract class ISettingsRepository {
-  SettingsData currentData();
-
-  Future<void> setTheme(AppTheme value);
-}
+import 'package:transmitter/src/feature/settings/repository/settings_repository_interface.dart';
 
 class SettingsRepository implements ISettingsRepository {
   final ISettingsDao _settingsDao;

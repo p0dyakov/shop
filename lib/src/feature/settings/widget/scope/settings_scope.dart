@@ -25,20 +25,14 @@ class SettingsScope extends StatelessWidget {
   static const BlocScope<SettingsEvent, SettingsState, SettingsBloc> _scope =
       BlocScope();
 
-  // --- Data --- //
-
   static ScopeData<ThemeMode> get themeModeOf =>
       _themeToThemeMode.dot(_theme).pipe(_scope.select);
 
   static ScopeData<AppTheme> get appThemeOf => _scope.select(_theme);
 
-  // --- Methods --- //
-
   static UnaryScopeMethod<AppTheme> get setTheme => _scope.unary(
         (context, theme) => SettingsEvent.setTheme(theme: theme),
       );
-
-  // --- Build --- //
 
   @override
   Widget build(BuildContext context) => BlocProvider<SettingsBloc>(
