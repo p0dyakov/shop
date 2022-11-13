@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_gen/gen_l10n/app_localizations.g.dart';
+import 'package:offline_messenger/src/core/database/drift/app_database.dart';
 import 'package:offline_messenger/src/core/model/dependencies_storage.dart';
 import 'package:offline_messenger/src/core/model/environment_storage.dart';
 import 'package:offline_messenger/src/core/model/repository_storage.dart';
@@ -15,7 +16,7 @@ extension BuildContextX on BuildContext {
   IDependenciesStorage get dependencies => DependenciesScope.of(this);
   Dio get dio => dependencies.dio;
   SharedPreferences get sharedPreferences => dependencies.sharedPreferences;
-
+  AppDatabase get database => dependencies.database;
   IRepositoryStorage get repository => RepositoryScope.of(this);
 
   // ignore: avoid-non-null-assertion

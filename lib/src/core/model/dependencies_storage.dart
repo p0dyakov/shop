@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:offline_messenger/src/core/database/drift/app_database.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class IDependenciesStorage {
   Dio get dio;
+  AppDatabase get database;
   SharedPreferences get sharedPreferences;
 
   void close();
@@ -20,8 +22,13 @@ class DependenciesStorage implements IDependenciesStorage {
 
   Dio? _dio;
 
+  AppDatabase? _database;
+
   @override
   Dio get dio => _dio ??= Dio();
+
+  @override
+  AppDatabase get database => _database ??= AppDatabase(name: _databaseName);
 
   @override
   SharedPreferences get sharedPreferences => _sharedPreferences;
@@ -29,5 +36,6 @@ class DependenciesStorage implements IDependenciesStorage {
   @override
   Future<void> close() async {
     _dio?.close();
+    await _database?.close();
   }
 }

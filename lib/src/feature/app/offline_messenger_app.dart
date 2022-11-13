@@ -34,6 +34,7 @@ class OfflineMessengerApp extends StatelessWidget {
             ),
             child: RepositoryScope(
               create: (context) => RepositoryStorage(
+                appDatabase: DependenciesScope.of(context).database,
                 sharedPreferences: _sharedPreferences,
               ),
               child: const SettingsScope(

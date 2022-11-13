@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:offline_messenger/src/feature/discovery/bloc/discovery_bloc.dart';
+import 'package:offline_messenger/src/core/extension/extensions.dart';
 import 'package:offline_messenger/src/feature/server/bloc/server_bloc.dart';
 
 class ServerScope extends StatelessWidget {
@@ -13,7 +13,9 @@ class ServerScope extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BlocProvider(
-        create: (context) => ServerBloc(),
+        create: (context) => ServerBloc(
+          serverRepository: context.repository.server,
+        ),
         child: child,
       );
 }
