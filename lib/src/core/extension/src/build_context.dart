@@ -2,13 +2,13 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_gen/gen_l10n/app_localizations.g.dart';
+import 'package:offline_messenger/src/core/model/dependencies_storage.dart';
+import 'package:offline_messenger/src/core/model/environment_storage.dart';
+import 'package:offline_messenger/src/core/model/repository_storage.dart';
+import 'package:offline_messenger/src/core/widget/dependencies_scope.dart';
+import 'package:offline_messenger/src/core/widget/environment_scope.dart';
+import 'package:offline_messenger/src/core/widget/repository_scope.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:transmitter/src/core/model/dependencies_storage.dart';
-import 'package:transmitter/src/core/model/environment_storage.dart';
-import 'package:transmitter/src/core/model/repository_storage.dart';
-import 'package:transmitter/src/core/widget/dependencies_scope.dart';
-import 'package:transmitter/src/core/widget/environment_scope.dart';
-import 'package:transmitter/src/core/widget/repository_scope.dart';
 
 extension BuildContextX on BuildContext {
   IEnvironmentStorage get environment => EnvironmentScope.of(this);

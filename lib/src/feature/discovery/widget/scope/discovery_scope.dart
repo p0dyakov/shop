@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:transmitter/src/feature/discovery/bloc/discovery_bloc.dart';
+import 'package:offline_messenger/src/feature/discovery/bloc/discovery_bloc.dart';
 
 class DiscoveryScope extends StatelessWidget {
   const DiscoveryScope({
@@ -13,6 +13,6 @@ class DiscoveryScope extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BlocProvider(
         create: (context) => DiscoveryBloc(),
-        child: Builder(builder: (context) => child),
+        child: child,
       );
 }

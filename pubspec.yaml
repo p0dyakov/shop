@@ -1,5 +1,5 @@
-name: transmitter
-description: transmitter app
+name: offline_messenger
+description: Offline messenger app
 
 publish_to: 'none'
 
@@ -13,8 +13,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_bluetooth_serial: ^0.4.0
   audio_waveforms: ^0.1.5+1
+  permission_handler: ^10.2.0
+
+  flutter_bluetooth_serial:
+    git:
+      url: https://github.com/rickcasson/flutter_bluetooth_serial
+      ref: android-12-fixes 
   
   # SDK extensions
   async: ^2.8.2
@@ -111,17 +116,17 @@ flutter:
   fonts:
     - family: Inter
       fonts:
-          - asset: assets/font/inter/Inter-ExtraLight.ttf
+          - asset: asset/font/inter/Inter-ExtraLight.ttf
             weight: 200
-          - asset: assets/font/inter/Inter-Light.ttf
+          - asset: asset/font/inter/Inter-Light.ttf
             weight: 300
-          - asset: assets/font/inter/Inter-Regular.ttf
+          - asset: asset/font/inter/Inter-Regular.ttf
             weight: 400
-          - asset: assets/font/inter/Inter-Medium.ttf
+          - asset: asset/font/inter/Inter-Medium.ttf
             weight: 500
-          - asset: assets/font/inter/Inter-SemiBold.ttf
+          - asset: asset/font/inter/Inter-SemiBold.ttf
             weight: 600
-          - asset: assets/font/inter/Inter-Bold.ttf
+          - asset: asset/font/inter/Inter-Bold.ttf
             weight: 700
-          - asset: assets/font/inter/Inter-ExtraBold.ttf
+          - asset: asset/font/inter/Inter-ExtraBold.ttf
             weight: 800

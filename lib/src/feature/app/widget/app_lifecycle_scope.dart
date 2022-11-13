@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:transmitter/src/core/widget/scope.dart';
-import 'package:transmitter/src/feature/app/logic/error_tracking_manager.dart';
+import 'package:offline_messenger/src/core/widget/scope.dart';
+import 'package:offline_messenger/src/feature/app/logic/error_tracking_manager.dart';
 
 class AppLifecycleScope extends Scope {
   static const DelegateAccess<_AppLifecycleScopeDelegate> _delegateOf =

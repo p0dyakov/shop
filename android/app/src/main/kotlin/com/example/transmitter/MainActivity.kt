@@ -1,4 +1,4 @@
-package com.example.transmitter
+package com.example.offline_messenger
 
 import io.flutter.embedding.android.FlutterActivity
 

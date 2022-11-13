@@ -2,15 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:offline_messenger/src/core/extension/extensions.dart';
+import 'package:offline_messenger/src/core/model/environment_storage.dart';
+import 'package:offline_messenger/src/feature/app/bloc/app_bloc_observer.dart';
+import 'package:offline_messenger/src/feature/app/bloc/initialization_bloc.dart';
+import 'package:offline_messenger/src/feature/app/logic/error_tracking_manager.dart';
+import 'package:offline_messenger/src/feature/app/logic/logger.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:stream_bloc/stream_bloc.dart';
 import 'package:stream_transform/stream_transform.dart';
-import 'package:transmitter/src/core/extension/extensions.dart';
-import 'package:transmitter/src/core/model/environment_storage.dart';
-import 'package:transmitter/src/feature/app/bloc/app_bloc_observer.dart';
-import 'package:transmitter/src/feature/app/bloc/initialization_bloc.dart';
-import 'package:transmitter/src/feature/app/logic/error_tracking_manager.dart';
-import 'package:transmitter/src/feature/app/logic/logger.dart';
 
 typedef AppBuilder = Widget Function(InitializationData initializationData);
 

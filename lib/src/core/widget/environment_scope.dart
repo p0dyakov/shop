@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:transmitter/src/core/model/environment_storage.dart';
-import 'package:transmitter/src/core/widget/scope.dart';
+import 'package:offline_messenger/src/core/model/environment_storage.dart';
+import 'package:offline_messenger/src/core/widget/scope.dart';
 
 class EnvironmentScope extends Scope {
   static const DelegateAccess<_EnvironmentScopeDelegate> _delegateOf =

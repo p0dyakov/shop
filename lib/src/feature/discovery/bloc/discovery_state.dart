@@ -2,18 +2,16 @@ part of 'discovery_bloc.dart';
 
 @freezed
 class DiscoveryState with _$DiscoveryState {
-  const factory DiscoveryState.initial({
-    required DiscoveryData data,
-  }) = DiscoveryInitialState;
-  const factory DiscoveryState.loading({
-    required DiscoveryData data,
-  }) = DiscoveryLoadingState;
+  const factory DiscoveryState.needPermissions({
+    required List<PermissionType> permissions,
+    required bool isBluetoothEnabled,
+  }) = DiscoveryNeedPermissionsState;
+  const factory DiscoveryState.loading() = DiscoveryLoadingState;
   const factory DiscoveryState.loadSuccess({
-    required DiscoveryData data,
     required List<BluetoothDevice> devices,
+    required bool isDiscoverying,
   }) = DiscoveryLoadSuccessState;
   const factory DiscoveryState.loadFailure({
-    required DiscoveryData data,
     required String error,
   }) = DiscoveryLoadFailureState;
 }

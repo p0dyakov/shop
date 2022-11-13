@@ -1,8 +1,8 @@
-import 'package:transmitter/src/feature/app/logic/main_runner.dart';
-import 'package:transmitter/src/feature/app/transmitter_app.dart';
+import 'package:offline_messenger/src/feature/app/logic/main_runner.dart';
+import 'package:offline_messenger/src/feature/app/offline_messenger_app.dart';
 
 void sharedRun(InitializationHooks initializationHooks) => MainRunner.run(
-      appBuilder: (initializationData) => TransmitterApp(
+      appBuilder: (initializationData) => OfflineMessengerApp(
         initializationData: initializationData,
       ),
       hooks: initializationHooks,

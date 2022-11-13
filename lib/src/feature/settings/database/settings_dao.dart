@@ -1,5 +1,5 @@
+import 'package:offline_messenger/src/core/database/shared_preferences/typed_preferences_dao.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:transmitter/src/core/database/shared_preferences/typed_preferences_dao.dart';
 
 abstract class ISettingsDao {
   PreferencesEntry<String> get themeMode;

@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:offline_messenger/src/core/extension/extensions.dart';
+import 'package:offline_messenger/src/core/model/environment_storage.dart';
+import 'package:offline_messenger/src/feature/app/logic/error_tracking_manager.dart';
 import 'package:pure/pure.dart';
 import 'package:select_annotation/select_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stream_bloc/stream_bloc.dart';
-import 'package:transmitter/src/core/extension/extensions.dart';
-import 'package:transmitter/src/core/model/environment_storage.dart';
-import 'package:transmitter/src/feature/app/logic/error_tracking_manager.dart';
 
 part 'initialization_bloc.freezed.dart';
 part 'initialization_bloc.select.dart';

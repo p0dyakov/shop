@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:offline_messenger/src/core/model/dependencies_storage.dart';
+import 'package:offline_messenger/src/core/model/repository_storage.dart';
+import 'package:offline_messenger/src/core/widget/dependencies_scope.dart';
+import 'package:offline_messenger/src/core/widget/environment_scope.dart';
+import 'package:offline_messenger/src/core/widget/repository_scope.dart';
+import 'package:offline_messenger/src/feature/app/bloc/initialization_bloc.dart';
+import 'package:offline_messenger/src/feature/app/widget/app_configuration.dart';
+import 'package:offline_messenger/src/feature/app/widget/app_lifecycle_scope.dart';
+import 'package:offline_messenger/src/feature/settings/widget/scope/settings_scope.dart';
 import 'package:pure/pure.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:transmitter/src/core/model/dependencies_storage.dart';
-import 'package:transmitter/src/core/model/repository_storage.dart';
-import 'package:transmitter/src/core/widget/dependencies_scope.dart';
-import 'package:transmitter/src/core/widget/environment_scope.dart';
-import 'package:transmitter/src/core/widget/repository_scope.dart';
-import 'package:transmitter/src/feature/app/bloc/initialization_bloc.dart';
-import 'package:transmitter/src/feature/app/widget/app_configuration.dart';
-import 'package:transmitter/src/feature/app/widget/app_lifecycle_scope.dart';
-import 'package:transmitter/src/feature/settings/widget/scope/settings_scope.dart';
 
-class TransmitterApp extends StatelessWidget {
+class OfflineMessengerApp extends StatelessWidget {
   final InitializationData initializationData;
 
-  const TransmitterApp({
+  const OfflineMessengerApp({
     Key? key,
     required this.initializationData,
   }) : super(key: key);
@@ -29,7 +29,7 @@ class TransmitterApp extends StatelessWidget {
           errorTrackingDisabler: initializationData.errorTrackingDisabler,
           child: DependenciesScope(
             create: (context) => DependenciesStorage(
-              databaseName: 'transmitter_database',
+              databaseName: 'offline_messenger_database',
               sharedPreferences: _sharedPreferences,
             ),
             child: RepositoryScope(

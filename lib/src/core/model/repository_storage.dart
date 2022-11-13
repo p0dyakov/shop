@@ -1,7 +1,7 @@
+import 'package:offline_messenger/src/feature/settings/database/settings_dao.dart';
+import 'package:offline_messenger/src/feature/settings/repository/settings_repository.dart';
+import 'package:offline_messenger/src/feature/settings/repository/settings_repository_interface.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:transmitter/src/feature/settings/database/settings_dao.dart';
-import 'package:transmitter/src/feature/settings/repository/settings_repository.dart';
-import 'package:transmitter/src/feature/settings/repository/settings_repository_interface.dart';
 
 abstract class IRepositoryStorage {
   ISettingsRepository get settings;

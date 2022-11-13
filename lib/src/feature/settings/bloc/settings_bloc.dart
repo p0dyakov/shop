@@ -1,13 +1,13 @@
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:offline_messenger/src/feature/settings/enum/app_theme.dart';
+import 'package:offline_messenger/src/feature/settings/model/settings_data.dart';
+import 'package:offline_messenger/src/feature/settings/repository/settings_repository_interface.dart';
 import 'package:stream_bloc/stream_bloc.dart';
-import 'package:transmitter/src/feature/settings/enum/app_theme.dart';
-import 'package:transmitter/src/feature/settings/model/settings_data.dart';
-import 'package:transmitter/src/feature/settings/repository/settings_repository_interface.dart';
 
 part 'settings_bloc.freezed.dart';
-part 'settings_state.dart';
 part 'settings_event.dart';
+part 'settings_state.dart';
 
 class SettingsBloc extends StreamBloc<SettingsEvent, SettingsState> {
   final ISettingsRepository _settingsRepository;

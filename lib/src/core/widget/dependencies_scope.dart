@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:transmitter/src/core/model/dependencies_storage.dart';
-import 'package:transmitter/src/core/widget/scope.dart';
+import 'package:offline_messenger/src/core/model/dependencies_storage.dart';
+import 'package:offline_messenger/src/core/widget/scope.dart';
 
 class DependenciesScope extends Scope {
   static const DelegateAccess<_DependenciesScopeDelegate> _delegateOf =

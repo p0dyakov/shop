@@ -1,8 +1,8 @@
+import 'package:offline_messenger/src/feature/settings/database/settings_dao.dart';
+import 'package:offline_messenger/src/feature/settings/enum/app_theme.dart';
+import 'package:offline_messenger/src/feature/settings/model/settings_data.dart';
+import 'package:offline_messenger/src/feature/settings/repository/settings_repository_interface.dart';
 import 'package:pure/pure.dart';
-import 'package:transmitter/src/feature/settings/database/settings_dao.dart';
-import 'package:transmitter/src/feature/settings/enum/app_theme.dart';
-import 'package:transmitter/src/feature/settings/model/settings_data.dart';
-import 'package:transmitter/src/feature/settings/repository/settings_repository_interface.dart';
 
 class SettingsRepository implements ISettingsRepository {
   final ISettingsDao _settingsDao;
