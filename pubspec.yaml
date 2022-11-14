@@ -13,9 +13,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  audio_waveforms: ^0.1.5+1
+  flutter_blue: ^0.8.0
   permission_handler: ^10.2.0
-
   flutter_bluetooth_serial:
     git:
       url: https://github.com/rickcasson/flutter_bluetooth_serial

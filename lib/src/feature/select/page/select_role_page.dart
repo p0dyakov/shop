@@ -15,19 +15,35 @@ class SelectRolePage extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 20),
-              SelectRoleCardWidget(
-                title: 'User',
-                onTap: () => AutoRouter.of(context).popAndPush(
-                  const DiscoveryRoute(),
-                ),
+              const Text(
+                'Select your role',
+                style: TextStyle(fontSize: 16),
+                overflow: TextOverflow.clip,
               ),
-              SelectRoleCardWidget(
-                title: 'Server',
-                onTap: () => AutoRouter.of(context).push(
-                  const ServerRoute(),
-                ),
+              const SizedBox(height: 10),
+              Row(
+                children: [
+                  SelectRoleCardWidget(
+                    title: 'User',
+                    subtitle:
+                        'Users will send and receive messages from the server',
+                    onTap: () => AutoRouter.of(context).popAndPush(
+                      const DiscoveryRoute(),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  SelectRoleCardWidget(
+                    title: 'Server',
+                    subtitle:
+                        'The server will receive and forward messages from users',
+                    onTap: () => AutoRouter.of(context).push(
+                      const ServerRoute(),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

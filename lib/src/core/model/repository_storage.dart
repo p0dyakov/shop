@@ -29,6 +29,6 @@ class RepositoryStorage implements IRepositoryStorage {
 
   @override
   IServerRepository get server => ServerRepository(
-        serverDao: ServerDao(appDatabase: _appDatabase),
+        serverDao: ServerDao(_appDatabase),
       );
 }

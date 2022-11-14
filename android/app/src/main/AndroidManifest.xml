@@ -5,8 +5,8 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.BLUETOOTH" tools:node="replace"/> 
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> 
+
     <uses-sdk tools:overrideLibrary="io.github.edufolly.flutterbluetoothserial"/>
     <application
         android:label="offline_messenger"

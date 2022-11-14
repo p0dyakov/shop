@@ -1,13 +1,17 @@
-class Message {
-  Message({
-    required this.senderName,
-    required this.senderAddress,
-    required this.sended,
-    required this.message,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  final String? senderName;
-  final String? senderAddress;
-  final DateTime sended;
-  final String message;
+part 'message.freezed.dart';
+part 'message.g.dart';
+
+@freezed
+class Message with _$Message {
+  factory Message({
+    required DateTime sended,
+    required String message,
+    @Default('') String senderName,
+    @Default('') String senderAddress,
+  }) = _Message;
+
+  factory Message.fromJson(Map<String, Object?> json) =>
+      _$MessageFromJson(json);
 }

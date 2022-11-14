@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:offline_messenger/src/core/model/message.dart';
 import 'package:offline_messenger/src/feature/messenger/model/messenger_data.dart';
 import 'package:stream_bloc/stream_bloc.dart';
 
@@ -22,75 +23,65 @@ class MessengerBloc extends StreamBloc<MessengerEvent, MessengerState> {
           ),
         ) {
     _server = server;
-    _connectAndListen();
+    _checkConnection();
   }
 
   MessengerData get _data => state.data;
 
   @override
   Stream<MessengerState> mapEventToStates(MessengerEvent event) => event.when(
-        sendAudio: _onSendAudio,
+        sendMessage: _onSendMessage,
         disconnect: _onDisconnect,
       );
 
-  Future<void> _connectAndListen() async {
+  Future<void> _checkConnection() async {
     try {
-      final bondState = await FlutterBluetoothSerial.instance
-          .getBondStateForAddress(_server.address);
-      var isBonded = bondState.isBonded;
-      if (!isBonded) {
-        isBonded = await FlutterBluetoothSerial.instance
-                .bondDeviceAtAddress(_server.address) ??
-            false;
+      if (_connection == null) {
+        _connection = await BluetoothConnection.toAddress(_server.address);
+        await _listenConnection();
       }
-
-      _connection = await BluetoothConnection.toAddress(_server.address);
-      final isConnected = _connection?.isConnected ?? false;
-
-      if (isConnected) {
-        emit(MessengerSlientState(data: _data));
-      } else {
-        throw Exception('Can not connect');
-      }
-
-      _connection?.input?.listen((data) {
-        emit(
-          MessengerTalkingState(
-            data: _data,
-            audio: File.fromRawPath(data),
-          ),
-        );
-      }).onDone(() {
-        throw Exception('Disconnected from another device');
-      });
     } on Object catch (e) {
-      emit(
-        MessengerLoadFailureState(
-          data: _data,
-          error: e.toString(),
-        ),
-      );
+      debugPrint('Can not connect');
     }
   }
 
+  Future<void> _listenConnection() async {
+    _connection?.input?.listen((data) async {
+      // Parse data and emit it
+    }).onDone(() async {
+      add(const DisconnectEvent());
+    });
+  }
+
   Stream<MessengerState> _onDisconnect() => _performMutation(() async {
-        final bondState = await FlutterBluetoothSerial.instance
-            .getBondStateForAddress(_server.address);
-        final isBonded = bondState.isBonded;
-        if (isBonded) {
-          await FlutterBluetoothSerial.instance
-              .removeDeviceBondWithAddress(_server.address);
-        }
         await _connection?.close();
         _connection = null;
 
         return state;
       });
 
-  Stream<MessengerState> _onSendAudio(File file) => _performMutation(() async {
-        _connection?.output.add(Uint8List.fromList(file.readAsBytesSync()));
+  Stream<MessengerState> _onSendMessage(String message) =>
+      _performMutation(() async {
+        final name = await FlutterBluetoothSerial.instance.name;
+        final address = await FlutterBluetoothSerial.instance.address;
 
-        return state;
+        final messages = state.whenOrNull(
+              loadSuccess: (_, messages) => List<Message>.from(messages),
+            ) ??
+            []
+          ..add(
+            Message(
+              sended: DateTime.now(),
+              message: message,
+              senderAddress: address ?? '',
+              senderName: name ?? '',
+            ),
+          );
+
+        return MessengerLoadSuccessState(
+          data: state.data,
+          messages: messages,
+        );
       });
 
   Stream<MessengerState> _performMutation(

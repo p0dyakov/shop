@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
@@ -26,15 +27,17 @@ class _MessengerPageState extends State<MessengerPage> {
         child: Builder(
           builder: (blocContext) => BlocBuilder<MessengerBloc, MessengerState>(
             builder: (context, state) => WillPopScope(
-              onWillPop: () => disconnect(
-                pageContext: context,
-                isInfoDialog: state is MessengerLoadFailureState,
-              ),
+              onWillPop: () => disconnect(context),
               child: Scaffold(
                 appBar: AppBar(title: const Text('Messenger')),
                 body: state.when(
-                  talking: (data, file) => const Text('talking'),
-                  slient: (data) => const Text('slient'),
+                  loading: (data) => const Center(
+                    child: CupertinoActivityIndicator(
+                      radius: 20,
+                      color: Colors.black,
+                    ),
+                  ),
+                  loadSuccess: (data, messages) => const Text('messages'),
                   loadFailure: (data, error) => CenterText(text: error),
                   needPair: (data) => const CenterText(
                     text: 'Accept bluetooth connection on both devices',
@@ -46,25 +49,7 @@ class _MessengerPageState extends State<MessengerPage> {
         ),
       );
 
-  // Future<void> showErrorDialog({
-  //   required BuildContext pageContext,
-  //   required String error,
-  // }) async {
-  //   await showDialog<InfoDialogWidget>(
-  //     context: pageContext,
-  //     builder: (context) => InfoDialogWidget(
-  //       title: 'Disconnected',
-  //       content: error,
-  //     ),
-  //   ).then((value) {
-  //     AutoRouter.of(pageContext).pop();
-  //   });
-  // }
-
-  Future<bool> disconnect({
-    required BuildContext pageContext,
-    required bool isInfoDialog,
-  }) async {
+  Future<bool> disconnect(BuildContext pageContext) async {
     var isAccept = false;
 
     await showDialog<StatelessElement>(

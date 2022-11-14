@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:offline_messenger/src/feature/discovery/page/discovery_page.dart';
 import 'package:offline_messenger/src/feature/messenger/page/messenger_page.dart';
 import 'package:offline_messenger/src/feature/select/page/select_role_page.dart';

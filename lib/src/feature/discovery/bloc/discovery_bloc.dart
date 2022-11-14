@@ -42,9 +42,6 @@ class DiscoveryBloc extends StreamBloc<DiscoveryEvent, DiscoveryState> {
     if (await Permission.bluetooth.isDenied) {
       permissions.add(PermissionType.bluetooth);
     }
-    if (await Permission.microphone.isDenied) {
-      permissions.add(PermissionType.recordAudio);
-    }
 
     return permissions;
   }
@@ -164,12 +161,6 @@ class DiscoveryBloc extends StreamBloc<DiscoveryEvent, DiscoveryState> {
                 final result = await Permission.bluetooth.request();
                 if (result.isGranted) {
                   newPermissions.remove(PermissionType.bluetooth);
-                }
-                break;
-              case PermissionType.recordAudio:
-                final result = await Permission.microphone.request();
-                if (!result.isDenied) {
-                  newPermissions.remove(PermissionType.recordAudio);
                 }
                 break;
             }

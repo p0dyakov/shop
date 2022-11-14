@@ -3,6 +3,7 @@ part of 'server_bloc.dart';
 @freezed
 class ServerState with _$ServerState {
   const factory ServerState.loading() = ServerLoadingState;
+  const factory ServerState.needDiscoverable() = ServerNeedDiscoverableState;
   const factory ServerState.loadSuccess({
     required String? serverName,
     required String? serverAddress,

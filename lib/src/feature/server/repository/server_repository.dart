@@ -10,16 +10,15 @@ class ServerRepository implements IServerRepository {
     required IServerDao serverDao,
   }) : _serverDao = serverDao;
 
-  List<Message>? get _messages => _serverDao.messages.value;
+  Future<List<Message>> get _messages async => _serverDao.messagesEntries;
 
   @override
-  ServerData currentData() => ServerData(
-        messages: _messages ?? [],
+  Future<ServerData> currentData() async => ServerData(
+        messages: await _messages,
       );
 
   @override
-  Future<void> addMessage(Message message) {
-    // TODO: implement addMessage
-    throw UnimplementedError();
+  Future<void> addMessage(Message message) async {
+    await _serverDao.addMessage(message);
   }
 }

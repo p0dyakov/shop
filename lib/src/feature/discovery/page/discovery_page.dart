@@ -140,7 +140,7 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
                     child: Text(
-                      'Select a device to pair',
+                      'The server name and port are written on the phone with the server. Connect to this server',
                       style: TextStyle(fontSize: 16),
                       overflow: TextOverflow.clip,
                     ),

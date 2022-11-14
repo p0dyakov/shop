@@ -4,6 +4,7 @@ import 'package:offline_messenger/src/core/database/drift/connection/open_connec
     if (dart.library.html) 'package:offline_messenger/src/core/database/drift/connection/open_connection_web.dart'
     as connection;
 import 'package:offline_messenger/src/core/database/drift/tables.dart';
+import 'package:offline_messenger/src/core/model/message.dart';
 
 part 'app_database.g.dart';
 
