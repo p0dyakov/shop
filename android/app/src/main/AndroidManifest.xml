@@ -1,11 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.photo_editor" xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.ACCESS_FILE_LOCATION"/> 
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> 
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.BLUETOOTH" tools:node="replace"/> 
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> 
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> 
 
     <uses-sdk tools:overrideLibrary="io.github.edufolly.flutterbluetoothserial"/>
     <application
