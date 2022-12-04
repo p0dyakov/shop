@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:offline_messenger/src/core/database/drift/app_database.dart';
+import 'package:photo_editor/src/core/database/drift/app_database.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class IDependenciesStorage {

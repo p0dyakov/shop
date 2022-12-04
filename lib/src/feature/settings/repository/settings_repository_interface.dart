@@ -1,5 +1,5 @@
-import 'package:offline_messenger/src/feature/settings/enum/app_theme.dart';
-import 'package:offline_messenger/src/feature/settings/model/settings_data.dart';
+import 'package:photo_editor/src/feature/settings/enum/app_theme.dart';
+import 'package:photo_editor/src/feature/settings/model/settings_data.dart';
 
 abstract class ISettingsRepository {
   SettingsData currentData();

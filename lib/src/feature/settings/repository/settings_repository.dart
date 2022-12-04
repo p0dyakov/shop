@@ -1,7 +1,7 @@
-import 'package:offline_messenger/src/feature/settings/database/settings_dao.dart';
-import 'package:offline_messenger/src/feature/settings/enum/app_theme.dart';
-import 'package:offline_messenger/src/feature/settings/model/settings_data.dart';
-import 'package:offline_messenger/src/feature/settings/repository/settings_repository_interface.dart';
+import 'package:photo_editor/src/feature/settings/database/settings_dao_interface.dart';
+import 'package:photo_editor/src/feature/settings/enum/app_theme.dart';
+import 'package:photo_editor/src/feature/settings/model/settings_data.dart';
+import 'package:photo_editor/src/feature/settings/repository/settings_repository_interface.dart';
 import 'package:pure/pure.dart';
 
 class SettingsRepository implements ISettingsRepository {

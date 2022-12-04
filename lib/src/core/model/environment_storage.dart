@@ -1,4 +1,4 @@
-import 'package:offline_messenger/src/core/enum/environment.dart';
+import 'package:photo_editor/src/core/enum/environment.dart';
 
 abstract class IEnvironmentStorage {
   Environment get environment;

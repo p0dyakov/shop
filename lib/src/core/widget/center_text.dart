@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:offline_messenger/src/core/resource/theme/sizes.dart';
+import 'package:photo_editor/src/core/resource/theme/sizes.dart';
 
 class CenterText extends StatelessWidget {
   const CenterText({Key? key, required this.text}) : super(key: key);

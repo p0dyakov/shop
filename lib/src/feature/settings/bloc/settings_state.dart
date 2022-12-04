@@ -13,6 +13,6 @@ class SettingsState with _$SettingsState {
   }) = SettingsLoadSuccessState;
   const factory SettingsState.loadFailure({
     required SettingsData data,
-    required String description,
+    required String error,
   }) = SettingsLoadFailureState;
 }

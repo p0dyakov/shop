@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:offline_messenger/src/feature/settings/enum/app_theme.dart';
+import 'package:photo_editor/src/feature/settings/enum/app_theme.dart';
 
 part 'settings_data.freezed.dart';
 

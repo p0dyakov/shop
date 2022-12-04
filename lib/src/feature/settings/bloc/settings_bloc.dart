@@ -1,8 +1,7 @@
-import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:offline_messenger/src/feature/settings/enum/app_theme.dart';
-import 'package:offline_messenger/src/feature/settings/model/settings_data.dart';
-import 'package:offline_messenger/src/feature/settings/repository/settings_repository_interface.dart';
+import 'package:photo_editor/src/feature/settings/enum/app_theme.dart';
+import 'package:photo_editor/src/feature/settings/model/settings_data.dart';
+import 'package:photo_editor/src/feature/settings/repository/settings_repository_interface.dart';
 import 'package:stream_bloc/stream_bloc.dart';
 
 part 'settings_bloc.freezed.dart';
@@ -23,22 +22,10 @@ class SettingsBloc extends StreamBloc<SettingsEvent, SettingsState> {
 
   @override
   Stream<SettingsState> mapEventToStates(SettingsEvent event) => event.when(
-        openBluetoothSettings: _onOpenBluetoothSettings,
         setTheme: _setTheme,
-        changeDeviceName: _onChangeDeviceName,
       );
 
   SettingsData get _data => state.data;
-
-  Stream<SettingsState> _onOpenBluetoothSettings() =>
-      _performMutation(() async {
-        await FlutterBluetoothSerial.instance.openSettings();
-      });
-
-  Stream<SettingsState> _onChangeDeviceName(String name) =>
-      _performMutation(() async {
-        await FlutterBluetoothSerial.instance.changeName(name);
-      });
 
   Stream<SettingsState> _setTheme(AppTheme theme) => _performMutation(
         () => _settingsRepository.setTheme(theme),
@@ -56,7 +43,7 @@ class SettingsBloc extends StreamBloc<SettingsEvent, SettingsState> {
     } on Object catch (e) {
       yield SettingsLoadFailureState(
         data: _data,
-        description: e.toString(),
+        error: e.toString(),
       );
       rethrow;
     } finally {

@@ -1,4 +1,4 @@
-package com.example.offline_messenger
+package com.example.photo_editor
 
 import io.flutter.embedding.android.FlutterActivity
 

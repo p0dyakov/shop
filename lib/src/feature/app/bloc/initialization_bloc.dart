@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:offline_messenger/src/core/extension/extensions.dart';
-import 'package:offline_messenger/src/core/model/environment_storage.dart';
-import 'package:offline_messenger/src/feature/app/logic/error_tracking_manager.dart';
+import 'package:photo_editor/src/core/extension/extensions.dart';
+import 'package:photo_editor/src/core/model/environment_storage.dart';
+import 'package:photo_editor/src/feature/app/logic/error_tracking_manager.dart';
 import 'package:pure/pure.dart';
 import 'package:select_annotation/select_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';

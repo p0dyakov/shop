@@ -1,5 +1,5 @@
 import 'package:drift/drift.dart';
-import 'package:offline_messenger/src/core/model/message.dart';
+import 'package:photo_editor/src/core/model/message.dart';
 
 @UseRowClass(Message)
 class Messages extends Table {

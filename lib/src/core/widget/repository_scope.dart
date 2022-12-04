@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:offline_messenger/src/core/model/repository_storage.dart';
-import 'package:offline_messenger/src/core/widget/scope.dart';
+import 'package:photo_editor/src/core/model/repository_storage.dart';
+import 'package:photo_editor/src/core/widget/scope.dart';
 
 class RepositoryScope extends Scope {
   static const DelegateAccess<_RepositoryScopeDelegate> _delegateOf =

@@ -1,5 +1,5 @@
-name: offline_messenger
-description: Offline messenger app
+name: photo_editor
+description: Simple photo editor
 
 publish_to: 'none'
 
@@ -13,12 +13,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_blue: ^0.8.0
   permission_handler: ^10.2.0
-  flutter_bluetooth_serial:
-    git:
-      url: https://github.com/rickcasson/flutter_bluetooth_serial
-      ref: android-12-fixes 
+  bitmap: ^0.1.2
+  photo_manager: ^2.5.1+1
+
   
   # SDK extensions
   async: ^2.8.2

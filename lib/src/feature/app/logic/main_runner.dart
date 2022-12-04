@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:offline_messenger/src/core/extension/extensions.dart';
-import 'package:offline_messenger/src/core/model/environment_storage.dart';
-import 'package:offline_messenger/src/feature/app/bloc/app_bloc_observer.dart';
-import 'package:offline_messenger/src/feature/app/bloc/initialization_bloc.dart';
-import 'package:offline_messenger/src/feature/app/logic/error_tracking_manager.dart';
-import 'package:offline_messenger/src/feature/app/logic/logger.dart';
+import 'package:photo_editor/src/core/extension/extensions.dart';
+import 'package:photo_editor/src/core/model/environment_storage.dart';
+import 'package:photo_editor/src/feature/app/bloc/app_bloc_observer.dart';
+import 'package:photo_editor/src/feature/app/bloc/initialization_bloc.dart';
+import 'package:photo_editor/src/feature/app/logic/error_tracking_manager.dart';
+import 'package:photo_editor/src/feature/app/logic/logger.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:stream_bloc/stream_bloc.dart';
 import 'package:stream_transform/stream_transform.dart';
