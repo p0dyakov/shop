@@ -13,32 +13,42 @@ class GalleryBloc extends StreamBloc<GalleryEvent, GalleryState> {
 
   GalleryBloc(IGalleryRepository galleryRepository)
       : _galleryRepository = galleryRepository,
-        super(_Loading(GalleryData([])));
-
-  GalleryData get _data => state.data;
+        super(const _Loading()) {
+    add(const _RequestPermission());
+  }
 
   @override
   Stream<GalleryState> mapEventToStates(GalleryEvent event) => event.when(
         deleteImages: (List<String> ids) => _performMutation(() async {
-          await _galleryRepository.deleteImages(ids);
-          final images = List<AssetPathEntity>.from(_data.images);
-          for (final id in ids) {
-            images.removeWhere((element) => element.id == id);
-          }
+          await state.whenOrNull(
+            loadImagesSuccess: (folder, images) async {
+              await _galleryRepository.deleteImages(ids);
+              for (final id in ids) {
+                images.removeWhere((element) => element.id == id);
+              }
 
-          return _LoadSuccess(_data.copyWith(images: images));
+              return _LoadImagesSuccess(folder, images);
+            },
+          );
+
+          return state;
         }),
-        loadImages: () => _performMutation(() async {
-          final images = await _galleryRepository.loadImages();
+        loadFolders: () => _performMutation(() async {
+          final folders = await _galleryRepository.loadFolders();
 
-          return _LoadSuccess(_data.copyWith(images: images));
+          return _LoadFoldersSuccess(folders);
+        }),
+        loadImages: (AssetPathEntity folder) => _performMutation(() async {
+          final images = await _galleryRepository.loadImages(folder, 0);
+
+          return _LoadImagesSuccess(folder, images);
         }),
         requestPermission: () => _performMutation(() async {
           final isGranted = await _galleryRepository.requestPermission();
-          if (!isGranted) return _GrantPermissions(_data);
-          add(const _LoadImages());
+          if (!isGranted) return const _GrantPermissions();
+          add(const _LoadFolders());
 
-          return _Loading(_data);
+          return const _Loading();
         }),
       );
 
@@ -49,7 +59,7 @@ class GalleryBloc extends StreamBloc<GalleryEvent, GalleryState> {
       final newState = await body();
       yield newState;
     } on Object catch (e) {
-      yield _LoadFailure(_data, e.toString());
+      yield _LoadFailure(e.toString());
     }
   }
 }

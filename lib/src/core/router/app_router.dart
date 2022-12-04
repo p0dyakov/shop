@@ -8,7 +8,7 @@ part 'app_router.gr.dart';
   transitionsBuilder: TransitionsBuilders.slideLeft,
   replaceInRouteName: 'Page,Route',
   routes: [
-    AutoRoute<void>(page: GalleryPage, path: '/gallery'),
+    AutoRoute<void>(page: GalleryPage, path: '/gallery', initial: true),
   ],
 )
 class AppRouter extends _$AppRouter {}
