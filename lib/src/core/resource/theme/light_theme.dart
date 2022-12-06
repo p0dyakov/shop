@@ -5,23 +5,26 @@ final appLightTheme = ThemeData(
   backgroundColor: const Color(0xFFF8F7FA),
   fontFamily: 'Inter',
   scaffoldBackgroundColor: const Color(0xFFF8F7FA),
-  primaryColor: const Color.fromARGB(255, 38, 45, 240),
+  primaryColor: const Color.fromARGB(255, 18, 54, 109),
   appBarTheme: const AppBarTheme(
-    backgroundColor: Colors.white,
+    backgroundColor: Color.fromARGB(255, 18, 54, 109),
     titleSpacing: kDefaultPadding,
     elevation: 2,
     titleTextStyle: TextStyle(
-      color: Colors.black,
+      color: Color.fromARGB(255, 255, 255, 255),
       fontSize: 20,
     ),
     iconTheme: IconThemeData(color: Colors.black),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all(Colors.white),
+      elevation: MaterialStateProperty.all(0),
+      backgroundColor:
+          MaterialStateProperty.all(const Color.fromARGB(255, 18, 54, 109)),
       textStyle: MaterialStateProperty.all(
         const TextStyle(
-          color: Colors.black,
+          fontSize: 18,
+          color: Color.fromARGB(255, 255, 255, 255),
         ),
       ),
     ),

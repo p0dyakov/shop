@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:photo_editor/src/feature/gallery/model/gallery_data.dart';
 import 'package:photo_editor/src/feature/gallery/repository/gallery_repository_interface.dart';
 import 'package:photo_manager/photo_manager.dart';
 import 'package:stream_bloc/stream_bloc.dart';
@@ -11,12 +10,22 @@ part 'gallery_bloc.freezed.dart';
 class GalleryBloc extends StreamBloc<GalleryEvent, GalleryState> {
   final IGalleryRepository _galleryRepository;
   int _pageCounter = 0;
-  AssetPathEntity? rootFolder;
+  AssetPathEntity? _rootFolder;
 
   GalleryBloc(IGalleryRepository galleryRepository)
       : _galleryRepository = galleryRepository,
         super(const _Loading()) {
+    _listenChanges();
     add(const _RequestPermission());
+  }
+
+  void _listenChanges() {
+    _galleryRepository
+      ..startChangeNotify()
+      ..addChangeCallback((call) {
+        _pageCounter = 0;
+        add(const _LoadImages());
+      });
   }
 
   @override
@@ -36,13 +45,15 @@ class GalleryBloc extends StreamBloc<GalleryEvent, GalleryState> {
           return state;
         }),
         loadImages: () => _performMutation(() async {
-          rootFolder ??= await _galleryRepository.getRootFolder();
+          _rootFolder ??= await _galleryRepository.getRootFolder();
           final images = <AssetEntity>[];
-          state.whenOrNull(loadSuccess: (prevImages) {
-            images.addAll(prevImages);
-          });
+          if (_pageCounter > 0) {
+            state.whenOrNull(loadSuccess: (prevImages) {
+              images.addAll(prevImages);
+            },);
+          }
           for (final image in await _galleryRepository.loadImages(
-            rootFolder!,
+            _rootFolder!,
             _pageCounter,
             100,
           )) {
@@ -50,7 +61,6 @@ class GalleryBloc extends StreamBloc<GalleryEvent, GalleryState> {
               images.add(image);
             }
           }
-
           _pageCounter++;
 
           return _LoadSuccess(images);

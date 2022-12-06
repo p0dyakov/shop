@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:photo_editor/src/core/resource/theme/sizes.dart';
 import 'package:photo_editor/src/core/widget/center_text.dart';
 import 'package:photo_editor/src/feature/gallery/bloc/gallery_bloc.dart';
-import 'package:photo_editor/src/feature/gallery/model/gallery_data.dart';
+import 'package:photo_editor/src/feature/gallery/widget/image_card.dart';
+import 'package:photo_editor/src/feature/gallery/widget/image_card_placeholder.dart';
 import 'package:photo_editor/src/feature/gallery/widget/scope/gallery_scope.dart';
-import 'package:photo_manager/photo_manager.dart';
 
 class GalleryPage extends StatefulWidget {
   const GalleryPage({Key? key}) : super(key: key);
@@ -38,11 +38,32 @@ class _GalleryPageState extends State<GalleryPage> {
               appBar: AppBar(title: const Text('Gallery')),
               body: BlocBuilder<GalleryBloc, GalleryState>(
                 builder: (context, state) => state.when(
-                  grantPermissions: () =>
-                      const CenterText(text: 'grant permissions'),
-                  loadFailure: (String error) => CenterText(text: error),
-                  loading: () => const CenterText(text: 'loading'),
-                  loadSuccess: (images) => GridView.builder(
+                  grantPermissions: () => Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'For the application to work, you need to grant access to the gallery',
+                          style: TextStyle(fontSize: 20),
+                          overflow: TextOverflow.clip,
+                          textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(height: 10),
+                        ElevatedButton(
+                          child: const Text('Grant access'),
+                          onPressed: () => galleryBloc.add(
+                            const GalleryEvent.requestPermission(),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  loadFailure: (String error) =>
+                      CenterText(text: 'Some error occurred: $error'),
+                  loading: () => GridView.builder(
+                    physics: const BouncingScrollPhysics(),
                     controller: _controller,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
@@ -50,10 +71,22 @@ class _GalleryPageState extends State<GalleryPage> {
                       crossAxisSpacing: 2,
                       mainAxisSpacing: 2,
                     ),
-                    itemBuilder: (context, index) => AssetEntityImage(
-                      images[index],
-                      fit: BoxFit.cover,
-                      isOriginal: false,
+                    itemBuilder: (context, index) =>
+                        const ImageCardPlaceholderWidget(),
+                    itemCount: 33,
+                  ),
+                  loadSuccess: (images) => GridView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    controller: _controller,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 2,
+                      mainAxisSpacing: 2,
+                    ),
+                    itemBuilder: (context, index) => ImageCardWidget(
+                      key: UniqueKey(),
+                      image: images[index],
                     ),
                     itemCount: images.length,
                   ),

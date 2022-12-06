@@ -19,7 +19,7 @@ class EditorBloc extends StreamBloc<EditorEvent, EditorState> {
     try {
       final newState = await body();
       yield newState;
-    } on Object catch (e) {
+    } on Object {
       // yield PermissionsLoadFailureState(error: e.toString());
     }
   }
