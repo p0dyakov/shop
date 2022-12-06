@@ -36,9 +36,7 @@ class SettingsScope extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BlocProvider<SettingsBloc>(
-        create: (context) => SettingsBloc(
-          settingsRepository: context.repository.settings,
-        ),
+        create: (context) => SettingsBloc(context.repository.settings),
         child: child,
       );
 }

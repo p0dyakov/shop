@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:photo_editor/src/core/extension/extensions.dart';
 import 'package:photo_editor/src/feature/gallery/bloc/gallery_bloc.dart';
 
 class GalleryScope extends StatelessWidget {
@@ -12,7 +13,7 @@ class GalleryScope extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BlocProvider(
-        create: (context) => GalleryBloc(),
+        create: (context) => GalleryBloc(context.repository.gallery),
         child: child,
       );
 }

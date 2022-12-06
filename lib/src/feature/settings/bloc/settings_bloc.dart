@@ -11,9 +11,9 @@ part 'settings_state.dart';
 class SettingsBloc extends StreamBloc<SettingsEvent, SettingsState> {
   final ISettingsRepository _settingsRepository;
 
-  SettingsBloc({
-    required ISettingsRepository settingsRepository,
-  })  : _settingsRepository = settingsRepository,
+  SettingsBloc(
+    ISettingsRepository settingsRepository,
+  )   : _settingsRepository = settingsRepository,
         super(
           SettingsInitialState(
             data: settingsRepository.currentData(),
