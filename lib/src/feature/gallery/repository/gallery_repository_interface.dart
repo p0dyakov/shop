@@ -9,6 +9,10 @@ abstract class IGalleryRepository {
   void startChangeNotify();
   void stopChangeNotify();
   Future<void> deleteImages(List<String> ids);
-  Future<List<AssetPathEntity>> loadFolders();
-  Future<List<AssetEntity>> loadImages(AssetPathEntity folder, int page);
+  Future<AssetPathEntity> getRootFolder();
+  Future<List<AssetEntity>> loadImages(
+    AssetPathEntity folder,
+    int page,
+    int size,
+  );
 }

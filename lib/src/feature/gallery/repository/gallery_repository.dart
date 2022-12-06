@@ -34,13 +34,17 @@ class GalleryRepository implements IGalleryRepository {
   }
 
   @override
-  Future<List<AssetPathEntity>> loadFolders() async =>
-      PhotoManager.getAssetPathList();
+  Future<AssetPathEntity> getRootFolder() async {
+    final folders = await PhotoManager.getAssetPathList(onlyAll: true);
+
+    return folders.first;
+  }
 
   @override
   Future<List<AssetEntity>> loadImages(
     AssetPathEntity folder,
     int page,
+    int size,
   ) async =>
-      folder.getAssetListPaged(page: 0, size: 80);
+      folder.getAssetListPaged(page: page, size: size);
 }

@@ -10,6 +10,8 @@ part 'gallery_bloc.freezed.dart';
 
 class GalleryBloc extends StreamBloc<GalleryEvent, GalleryState> {
   final IGalleryRepository _galleryRepository;
+  int _pageCounter = 0;
+  AssetPathEntity? rootFolder;
 
   GalleryBloc(IGalleryRepository galleryRepository)
       : _galleryRepository = galleryRepository,
@@ -21,32 +23,42 @@ class GalleryBloc extends StreamBloc<GalleryEvent, GalleryState> {
   Stream<GalleryState> mapEventToStates(GalleryEvent event) => event.when(
         deleteImages: (List<String> ids) => _performMutation(() async {
           await state.whenOrNull(
-            loadImagesSuccess: (folder, images) async {
+            loadSuccess: (images) async {
               await _galleryRepository.deleteImages(ids);
               for (final id in ids) {
                 images.removeWhere((element) => element.id == id);
               }
 
-              return _LoadImagesSuccess(folder, images);
+              return _LoadSuccess(images);
             },
           );
 
           return state;
         }),
-        loadFolders: () => _performMutation(() async {
-          final folders = await _galleryRepository.loadFolders();
+        loadImages: () => _performMutation(() async {
+          rootFolder ??= await _galleryRepository.getRootFolder();
+          final images = <AssetEntity>[];
+          state.whenOrNull(loadSuccess: (prevImages) {
+            images.addAll(prevImages);
+          });
+          for (final image in await _galleryRepository.loadImages(
+            rootFolder!,
+            _pageCounter,
+            100,
+          )) {
+            if (image.type == AssetType.image) {
+              images.add(image);
+            }
+          }
 
-          return _LoadFoldersSuccess(folders);
-        }),
-        loadImages: (AssetPathEntity folder) => _performMutation(() async {
-          final images = await _galleryRepository.loadImages(folder, 0);
+          _pageCounter++;
 
-          return _LoadImagesSuccess(folder, images);
+          return _LoadSuccess(images);
         }),
         requestPermission: () => _performMutation(() async {
           final isGranted = await _galleryRepository.requestPermission();
           if (!isGranted) return const _GrantPermissions();
-          add(const _LoadFolders());
+          add(const _LoadImages());
 
           return const _Loading();
         }),
