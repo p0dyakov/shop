@@ -1,10 +1,13 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:bitmap/bitmap.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:gallery_saver/gallery_saver.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:photo_editor/src/feature/editor/model/image_settings.dart';
 import 'package:photo_manager/photo_manager.dart';
 import 'package:stream_bloc/stream_bloc.dart';
@@ -26,6 +29,7 @@ class EditorBloc extends StreamBloc<EditorEvent, EditorState> {
   }
 
   @override
+  // ignore: long-method
   Stream<EditorState> mapEventToStates(EditorEvent event) => event.when(
         loadImageSettings: () => _performMutation(
           () async {
@@ -69,7 +73,30 @@ class EditorBloc extends StreamBloc<EditorEvent, EditorState> {
 
           return _LoadSuccess(bitMap.buildHeaded());
         }),
-        saveToGallery: () => _performMutation(() async => state),
+        saveToGallery: () => _performMutation(() async {
+          final directory = await getApplicationDocumentsDirectory();
+          final path = '${directory.path}/${_image.title}.txt';
+          final file = File(path);
+          var bitMap = _bitMap.cloneHeadless();
+          bitMap = bitMap.applyBatch(_settings.last.operations);
+          final image = await bitMap.buildImage();
+          final imageBytes = await image.toByteData();
+          if (imageBytes != null) {
+            await file.writeAsBytes(
+              imageBytes.buffer.asUint8List(
+                imageBytes.offsetInBytes,
+                imageBytes.lengthInBytes,
+              ),
+            );
+            final isSaved =
+                await GallerySaver.saveImage(file.absolute.path) ?? false;
+            debugPrint(isSaved
+                ? 'Image saved to gallery'
+                : 'Image not saved to gallery');
+          }
+
+          return state;
+        }),
       );
 
   Stream<EditorState> _performMutation(
