@@ -75,25 +75,16 @@ class EditorBloc extends StreamBloc<EditorEvent, EditorState> {
         }),
         saveToGallery: () => _performMutation(() async {
           final directory = await getApplicationDocumentsDirectory();
-          final path = '${directory.path}/${_image.title}.txt';
+          final path = '${directory.path}/${_image.title}';
           final file = File(path);
           var bitMap = _bitMap.cloneHeadless();
           bitMap = bitMap.applyBatch(_settings.last.operations);
-          final image = await bitMap.buildImage();
-          final imageBytes = await image.toByteData();
-          if (imageBytes != null) {
-            await file.writeAsBytes(
-              imageBytes.buffer.asUint8List(
-                imageBytes.offsetInBytes,
-                imageBytes.lengthInBytes,
-              ),
-            );
-            final isSaved =
-                await GallerySaver.saveImage(file.absolute.path) ?? false;
-            debugPrint(isSaved
-                ? 'Image saved to gallery'
-                : 'Image not saved to gallery');
-          }
+          await file.writeAsBytes(bitMap.buildHeaded());
+          final isSaved =
+              await GallerySaver.saveImage(file.absolute.path) ?? false;
+          debugPrint(
+            isSaved ? 'Image saved to gallery' : 'Image not saved to gallery',
+          );
 
           return state;
         }),
