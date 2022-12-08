@@ -86,7 +86,7 @@ class _EditorPageState extends State<EditorPage> {
                         child: Center(
                           child: Image.memory(
                             image,
-                            filterQuality: FilterQuality.none,
+                            filterQuality: FilterQuality.medium,
                           ),
                         ),
                       ),
@@ -102,87 +102,86 @@ class _EditorPageState extends State<EditorPage> {
                     ),
                   ),
                   bottomNavigationBar: state.when(
-                      loadFailure: (_) => const SizedBox(),
-                      loading: () => const SizedBox(),
-                      loadSuccess: (image, brightnessValue, contrastValue) =>
-                          Container(
-                            height: 200,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: kDefaultPadding,),
-                            color: Colors.black.withOpacity(0.7),
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    EditorIconButtonWidget(
-                                      operation: BitmapFlip.vertical(),
-                                      icon: Icons.flip,
-                                      angle: 1.57,
-                                    ),
-                                    EditorIconButtonWidget(
-                                      operation: BitmapFlip.horizontal(),
-                                      icon: Icons.flip,
-                                    ),
-                                    EditorIconButtonWidget(
-                                      operation: BitmapRotate.rotateClockwise(),
-                                      icon: Icons.rotate_left,
-                                    ),
-                                  ],
-                                ),
-                                SliderWidget(
-                                  max: 150,
-                                  min: 50,
-                                  icon: Icons.contrast_outlined,
-                                  value: contrastValue,
-                                  onChangeEnd: (double value) =>
-                                      BlocProvider.of<EditorBloc>(context).add(
-                                    EditorEvent.changeImageSettings(
-                                      BitmapContrast(value / 100),
-                                    ),
-                                  ),
-                                  onChanged: (double value) =>
-                                      BlocProvider.of<EditorBloc>(context).add(
-                                    EditorEvent.changeContrastValue(value),
-                                  ),
-                                ),
-                                SliderWidget(
-                                  min: -150,
-                                  max: 150,
-                                  icon: Icons.brightness_7_outlined,
-                                  value: brightnessValue,
-                                  onChangeEnd: (double value) =>
-                                      BlocProvider.of<EditorBloc>(context).add(
-                                    EditorEvent.changeImageSettings(
-                                      BitmapBrightness(value / 100),
-                                    ),
-                                  ),
-                                  onChanged: (double value) =>
-                                      BlocProvider.of<EditorBloc>(context).add(
-                                    EditorEvent.changeBrightnessValue(value),
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    EditorTextButtonWidget(
-                                      onPressed: () =>
-                                          AutoRouter.of(context).pop(),
-                                      text: 'Cancel',
-                                    ),
-                                    EditorTextButtonWidget(
-                                      onPressed: () =>
-                                          BlocProvider.of<EditorBloc>(context)
-                                              .add(
-                                        const EditorEvent.saveToGallery(),
-                                      ),
-                                      text: 'Save',
-                                    ),
-                                  ],
-                                )
-                              ],
+                    loadFailure: (_) => const SizedBox(),
+                    loading: () => const SizedBox(),
+                    loadSuccess: (image, brightnessValue, contrastValue) =>
+                        Container(
+                      height: 200,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: kDefaultPadding,
+                      ),
+                      color: Colors.black.withOpacity(0.7),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              EditorIconButtonWidget(
+                                operation: BitmapFlip.vertical(),
+                                icon: Icons.flip,
+                                angle: 1.57,
+                              ),
+                              EditorIconButtonWidget(
+                                operation: BitmapFlip.horizontal(),
+                                icon: Icons.flip,
+                              ),
+                              EditorIconButtonWidget(
+                                operation: BitmapRotate.rotateClockwise(),
+                                icon: Icons.rotate_left,
+                              ),
+                            ],
+                          ),
+                          SliderWidget(
+                            max: 150,
+                            min: 50,
+                            icon: Icons.contrast_outlined,
+                            value: contrastValue,
+                            onChangeEnd: (double value) =>
+                                BlocProvider.of<EditorBloc>(context).add(
+                              EditorEvent.changeImageSettings(
+                                BitmapContrast(value / 100),
+                              ),
                             ),
-                          ),),
+                            onChanged: (double value) =>
+                                BlocProvider.of<EditorBloc>(context).add(
+                              EditorEvent.changeContrastValue(value),
+                            ),
+                          ),
+                          SliderWidget(
+                            min: -150,
+                            max: 150,
+                            icon: Icons.brightness_7_outlined,
+                            value: brightnessValue,
+                            onChangeEnd: (double value) =>
+                                BlocProvider.of<EditorBloc>(context).add(
+                              EditorEvent.changeImageSettings(
+                                BitmapBrightness(value / 100),
+                              ),
+                            ),
+                            onChanged: (double value) =>
+                                BlocProvider.of<EditorBloc>(context).add(
+                              EditorEvent.changeBrightnessValue(value),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              EditorTextButtonWidget(
+                                onPressed: () => AutoRouter.of(context).pop(),
+                                text: 'Cancel',
+                              ),
+                              EditorTextButtonWidget(
+                                onPressed: () =>
+                                    BlocProvider.of<EditorBloc>(context).add(
+                                  const EditorEvent.saveToGallery(),
+                                ),
+                                text: 'Save',
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
