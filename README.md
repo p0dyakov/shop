@@ -1,4 +1,5 @@
-# Simple photo editor!
+# Photo editor
+📸 This is simple photo editor made on Flutter
 <img src="https://user-images.githubusercontent.com/80569772/206533164-c64a7f1b-d101-4d79-8bc3-f2d0f577d100.gif" alt="drawing" width="300"/>
 
 ## Screenshots
@@ -9,4 +10,12 @@
 <img src="https://user-images.githubusercontent.com/80569772/206534360-d6f985dd-11b0-4dd9-856f-a6b587dd5926.png" width="24%"/>
 </p>
 
-
+## Stack
+- flutter
+- dart
+- stream_bloc
+- bitmap
+- photo_manager
+- gallery_saver
+- freezed
+- auto_route
