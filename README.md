@@ -1,5 +1,5 @@
 # Photo editor
-📸 This is simple photo editor made on Flutter
+📸 This is simple photo editor made on Flutter  
 <img src="https://user-images.githubusercontent.com/80569772/206533164-c64a7f1b-d101-4d79-8bc3-f2d0f577d100.gif" alt="drawing" width="300"/>
 
 ## Screenshots
