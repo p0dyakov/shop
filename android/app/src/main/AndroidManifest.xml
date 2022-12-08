@@ -6,7 +6,7 @@
 
     <uses-sdk tools:overrideLibrary="io.github.edufolly.flutterbluetoothserial"/>
     <application
-        android:label="photo_editor"
+        android:label="Photo Editor"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
