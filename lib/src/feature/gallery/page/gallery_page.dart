@@ -1,11 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:photo_editor/src/core/resource/theme/sizes.dart';
 import 'package:photo_editor/src/core/widget/center_text.dart';
+import 'package:photo_editor/src/core/widget/dialog.dart';
 import 'package:photo_editor/src/feature/gallery/bloc/gallery_bloc.dart';
 import 'package:photo_editor/src/feature/gallery/widget/image_card.dart';
 import 'package:photo_editor/src/feature/gallery/widget/image_card_placeholder.dart';
 import 'package:photo_editor/src/feature/gallery/widget/scope/gallery_scope.dart';
+import 'package:photo_editor/src/core/router/app_router.dart';
 
 class GalleryPage extends StatefulWidget {
   const GalleryPage({Key? key}) : super(key: key);
@@ -85,6 +88,20 @@ class _GalleryPageState extends State<GalleryPage> {
                       mainAxisSpacing: 2,
                     ),
                     itemBuilder: (context, index) => ImageCardWidget(
+                      onTap: () => showDialog<StatelessElement>(
+                        context: context,
+                        builder: (context) => DialogWidget(
+                          content:
+                              'Are you sure you want to edit ${images[index].title}?',
+                          title: 'Editing',
+                          onAccept: () => AutoRouter.of(context).popAndPush(
+                            EditorRoute(
+                              image: images[index],
+                            ),
+                          ),
+                          acceptText: 'edit',
+                        ),
+                      ),
                       key: UniqueKey(),
                       image: images[index],
                     ),

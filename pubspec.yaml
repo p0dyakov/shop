@@ -13,10 +13,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  permission_handler: ^10.2.0
   bitmap: ^0.1.2
   photo_manager: ^2.5.1+1
-
+  gallery_saver: ^2.3.2
   
   # SDK extensions
   async: ^2.8.2

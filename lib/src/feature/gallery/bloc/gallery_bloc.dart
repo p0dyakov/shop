@@ -45,12 +45,14 @@ class GalleryBloc extends StreamBloc<GalleryEvent, GalleryState> {
           return state;
         }),
         loadImages: () => _performMutation(() async {
-          _rootFolder ??= await _galleryRepository.getRootFolder();
+          _rootFolder = await _galleryRepository.getRootFolder();
           final images = <AssetEntity>[];
           if (_pageCounter > 0) {
-            state.whenOrNull(loadSuccess: (prevImages) {
-              images.addAll(prevImages);
-            },);
+            state.whenOrNull(
+              loadSuccess: (prevImages) {
+                images.addAll(prevImages);
+              },
+            );
           }
           for (final image in await _galleryRepository.loadImages(
             _rootFolder!,

@@ -37,6 +37,7 @@ class DialogWidget extends StatelessWidget {
             child: const Text(
               'CANCEL',
               style: TextStyle(
+                fontSize: 15,
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
               ),
@@ -53,6 +54,7 @@ class DialogWidget extends StatelessWidget {
             child: Text(
               acceptText.toUpperCase(),
               style: const TextStyle(
+                fontSize: 15,
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
               ),

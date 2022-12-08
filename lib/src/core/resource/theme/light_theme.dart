@@ -14,7 +14,7 @@ final appLightTheme = ThemeData(
       color: Color.fromARGB(255, 255, 255, 255),
       fontSize: 20,
     ),
-    iconTheme: IconThemeData(color: Colors.black),
+    iconTheme: IconThemeData(color: Color.fromARGB(255, 255, 255, 255)),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
