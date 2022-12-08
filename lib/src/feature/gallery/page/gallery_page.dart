@@ -1,14 +1,16 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:photo_editor/src/core/resource/theme/sizes.dart';
+import 'package:photo_editor/src/core/router/app_router.dart';
 import 'package:photo_editor/src/core/widget/center_text.dart';
 import 'package:photo_editor/src/core/widget/dialog.dart';
 import 'package:photo_editor/src/feature/gallery/bloc/gallery_bloc.dart';
 import 'package:photo_editor/src/feature/gallery/widget/image_card.dart';
 import 'package:photo_editor/src/feature/gallery/widget/image_card_placeholder.dart';
 import 'package:photo_editor/src/feature/gallery/widget/scope/gallery_scope.dart';
-import 'package:photo_editor/src/core/router/app_router.dart';
+import 'package:photo_manager/photo_manager.dart';
 
 class GalleryPage extends StatefulWidget {
   const GalleryPage({Key? key}) : super(key: key);
@@ -19,6 +21,7 @@ class GalleryPage extends StatefulWidget {
 
 class _GalleryPageState extends State<GalleryPage> {
   final _controller = ScrollController();
+  final dateFormatter = DateFormat('dd MMM yyyy');
 
   @override
   Widget build(BuildContext context) => GalleryScope(
@@ -70,43 +73,90 @@ class _GalleryPageState extends State<GalleryPage> {
                     controller: _controller,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 2,
-                      mainAxisSpacing: 2,
+                      crossAxisCount: 4,
+                      crossAxisSpacing: 1,
+                      mainAxisSpacing: 1,
                     ),
                     itemBuilder: (context, index) =>
                         const ImageCardPlaceholderWidget(),
                     itemCount: 33,
                   ),
-                  loadSuccess: (images) => GridView.builder(
-                    physics: const BouncingScrollPhysics(),
-                    controller: _controller,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 2,
-                      mainAxisSpacing: 2,
-                    ),
-                    itemBuilder: (context, index) => ImageCardWidget(
-                      onTap: () => showDialog<StatelessElement>(
-                        context: context,
-                        builder: (context) => DialogWidget(
-                          content:
-                              'Are you sure you want to edit ${images[index].title}?',
-                          title: 'Editing',
-                          onAccept: () => AutoRouter.of(context).popAndPush(
-                            EditorRoute(
-                              image: images[index],
+                  loadSuccess: (images) {
+                    final sortedImages = <List<AssetEntity>>[];
+                    var buffer = <AssetEntity>[];
+
+                    for (final image in images) {
+                      if (buffer.isEmpty) {
+                        buffer.add(image);
+                      } else {
+                        final creation = image.createDateTime;
+                        final bufferCreation = buffer.last.createDateTime;
+
+                        if (creation.year == bufferCreation.year &&
+                            creation.month == bufferCreation.month &&
+                            creation.day == bufferCreation.day) {
+                          buffer.add(image);
+                        } else {
+                          sortedImages.add(buffer);
+                          buffer = [image];
+                        }
+                      }
+                    }
+
+                    return ListView.builder(
+                      padding: const EdgeInsets.only(top: 30),
+                      physics: const BouncingScrollPhysics(),
+                      shrinkWrap: true,
+                      controller: _controller,
+                      itemCount: sortedImages.length,
+                      itemBuilder: (context, dayIndex) => Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: kDefaultPadding),
+                            child: Text(
+                              dateFormatter.format(
+                                sortedImages[dayIndex].last.createDateTime,
+                              ),
+                              style: const TextStyle(fontSize: 15),
                             ),
                           ),
-                          acceptText: 'edit',
-                        ),
+                          const SizedBox(height: 5),
+                          GridView.builder(
+                            physics: const NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemCount: sortedImages[dayIndex].length,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 4,
+                              crossAxisSpacing: 1,
+                              mainAxisSpacing: 1,
+                            ),
+                            itemBuilder: (context, index) => ImageCardWidget(
+                              image: sortedImages[dayIndex][index],
+                              onTap: () => showDialog<StatelessElement>(
+                                context: context,
+                                builder: (context) => DialogWidget(
+                                  content:
+                                      'Are you sure you want to edit ${sortedImages[dayIndex][index].title}?',
+                                  title: 'Editing',
+                                  onAccept: () =>
+                                      AutoRouter.of(context).popAndPush(
+                                    EditorRoute(
+                                      image: sortedImages[dayIndex][index],
+                                    ),
+                                  ),
+                                  acceptText: 'edit',
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                        ],
                       ),
-                      key: UniqueKey(),
-                      image: images[index],
-                    ),
-                    itemCount: images.length,
-                  ),
+                    );
+                  },
                 ),
               ),
             );

@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'dart:io';
-import 'dart:ui' as ui;
 
 import 'package:bitmap/bitmap.dart';
 import 'package:flutter/foundation.dart';
@@ -28,6 +26,26 @@ class EditorBloc extends StreamBloc<EditorEvent, EditorState> {
     add(const _LoadImageSettings());
   }
 
+  double get _brightness {
+    if (_settings.isEmpty) return 0;
+    final operations = _settings.last.operations;
+    if (operations.isEmpty) return 0;
+    final brightnessOperations = operations.whereType<BitmapBrightness>();
+    if (brightnessOperations.isEmpty) return 0;
+
+    return brightnessOperations.first.brightnessFactor * 100;
+  }
+
+  double get _contrast {
+    if (_settings.isEmpty) return 100;
+    final operations = _settings.last.operations;
+    if (operations.isEmpty) return 100;
+    final contrastOperations = operations.whereType<BitmapContrast>();
+    if (contrastOperations.isEmpty) return 100;
+
+    return contrastOperations.first.contrastFactor * 100;
+  }
+
   @override
   // ignore: long-method
   Stream<EditorState> mapEventToStates(EditorEvent event) => event.when(
@@ -43,7 +61,7 @@ class EditorBloc extends StreamBloc<EditorEvent, EditorState> {
 
             _settings.add(ImageSettings(image: _image, operations: []));
 
-            return _LoadSuccess(_bitMap.buildHeaded());
+            return _LoadSuccess(_bitMap.buildHeaded(), _brightness, _contrast);
           },
         ),
         changeImageSettings: (operation) => _performMutation(() async {
@@ -63,15 +81,16 @@ class EditorBloc extends StreamBloc<EditorEvent, EditorState> {
           bitMap = bitMap.applyBatch(operations);
           _settings.add(ImageSettings(image: _image, operations: operations));
 
-          return _LoadSuccess(bitMap.buildHeaded());
+          return _LoadSuccess(bitMap.buildHeaded(), _brightness, _contrast);
         }),
         restorePreviousSettings: () => _performMutation(() async {
           if (_settings.length > 1) _settings.removeAt(_settings.length - 1);
 
           var bitMap = _bitMap.cloneHeadless();
-          bitMap = bitMap.applyBatch(_settings.last.operations);
+          final operations = _settings.last.operations;
+          bitMap = bitMap.applyBatch(operations);
 
-          return _LoadSuccess(bitMap.buildHeaded());
+          return _LoadSuccess(bitMap.buildHeaded(), _brightness, _contrast);
         }),
         saveToGallery: () => _performMutation(() async {
           final directory = await getApplicationDocumentsDirectory();
@@ -88,6 +107,28 @@ class EditorBloc extends StreamBloc<EditorEvent, EditorState> {
 
           return state;
         }),
+        changeBrightnessValue: (double brightnessValue) => _performMutation(
+          () async => Future.value(
+            state.whenOrNull(
+              loadSuccess: (image, _, contrastValue) => _LoadSuccess(
+                image,
+                brightnessValue,
+                contrastValue,
+              ),
+            ),
+          ),
+        ),
+        changeContrastValue: (double contrastValue) => _performMutation(
+          () async => Future.value(
+            state.whenOrNull(
+              loadSuccess: (image, brightnessValue, _) => _LoadSuccess(
+                image,
+                brightnessValue,
+                contrastValue,
+              ),
+            ),
+          ),
+        ),
       );
 
   Stream<EditorState> _performMutation(
