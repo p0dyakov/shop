@@ -1,4 +1,4 @@
-# 📸 Shop
+# Shop
 
 ## Stack
 - flutter
