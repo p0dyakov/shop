@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:shop/src/feature/shop/page/shop_page.dart';
+import 'package:shop/src/feature/shop/page/product_page.dart';
+import 'package:shop/src/feature/shop/page/shop_products_page.dart';
+import 'package:shop/src/feature/shop/page/shops_page.dart';
 
 part 'app_router.gr.dart';
 
@@ -8,7 +10,9 @@ part 'app_router.gr.dart';
   transitionsBuilder: TransitionsBuilders.slideLeft,
   replaceInRouteName: 'Page,Route',
   routes: [
-    AutoRoute<void>(page: ShopPage, path: '/shop', initial: true),
+    AutoRoute<void>(page: ShopsPage, path: '/shops', initial: true),
+    AutoRoute<void>(page: ProductPage, path: '/product'),
+    AutoRoute<void>(page: ShopProductsPage, path: '/shop_products'),
   ],
 )
 class AppRouter extends _$AppRouter {}

@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:pure/pure.dart';
 import 'package:select_annotation/select_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shop/src/core/database/hive/app_database.dart';
 import 'package:shop/src/core/extension/extensions.dart';
 import 'package:shop/src/core/model/environment_storage.dart';
 import 'package:shop/src/feature/app/logic/error_tracking_manager.dart';
@@ -138,6 +140,9 @@ class InitializationBloc
           errorTrackingDisabler: errorTrackingManager,
         ),
       );
+
+      await Hive.initFlutter();
+      await registerAdapters();
 
       final sharedPreferences = await SharedPreferences.getInstance();
       yield InitializationState.initialized(

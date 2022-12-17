@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shop/src/core/database/drift/app_database.dart';
+import 'package:shop/src/core/database/hive/app_database.dart';
 
 abstract class IDependenciesStorage {
   Dio get dio;
@@ -28,7 +28,7 @@ class DependenciesStorage implements IDependenciesStorage {
   Dio get dio => _dio ??= Dio();
 
   @override
-  AppDatabase get database => _database ??= AppDatabase(name: _databaseName);
+  AppDatabase get database => _database ??= AppDatabase();
 
   @override
   SharedPreferences get sharedPreferences => _sharedPreferences;

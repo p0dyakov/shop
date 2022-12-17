@@ -55,8 +55,8 @@ dependencies:
   stack_trace: ^1.10.0
 
   # Persistance
-  drift: ^2.1.0
-  sqlite3_flutter_libs: ^0.5.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
   shared_preferences: ^2.0.13
 
   # HTTP
@@ -80,26 +80,19 @@ dev_dependencies:
   auto_route_generator: ^5.0.2
   select: ^0.3.1
   retrofit_generator: ^4.0.1
-  drift_dev: ^2.1.0
+  hive_generator:
+    git:
+      url: https://github.com/yura2000/hive.git
+      ref: master
+      path: hive_generator/
   freezed: ^2.1.0+1
   json_serializable: ^6.1.4
   flutter_gen_runner: ^4.1.5
 
   # Tooling
   grinder: ^0.9.1
-
-  # Tests
-  #flutter_driver:
-  #  sdk: flutter
-  #integration_test:
-  #  sdk: flutter
-  #flutter_test:
-  #  sdk: flutter
   coverage: ^1.0.3
   test: ^1.21.1
-  #bloc_test: ^8.1.0
-  #mockito: ^5.1.0
-  #build_test: ^2.1.5
 
 
 flutter_icons:

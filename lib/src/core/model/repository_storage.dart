@@ -1,8 +1,9 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shop/src/core/database/drift/app_database.dart';
+import 'package:shop/src/core/database/hive/app_database.dart';
 import 'package:shop/src/feature/settings/database/settings_dao.dart';
 import 'package:shop/src/feature/settings/repository/settings_repository.dart';
 import 'package:shop/src/feature/settings/repository/settings_repository_interface.dart';
+import 'package:shop/src/feature/shop/database/shop_dao.dart';
 import 'package:shop/src/feature/shop/repository/shop_repository.dart';
 import 'package:shop/src/feature/shop/repository/shop_repository_interface.dart';
 
@@ -27,5 +28,7 @@ class RepositoryStorage implements IRepositoryStorage {
       );
 
   @override
-  IShopRepository get shop => ShopRepository();
+  IShopRepository get shop => ShopRepository(
+        shopDao: ShopDao(appDatabase: _appDatabase),
+      );
 }

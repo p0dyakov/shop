@@ -1,9 +1,63 @@
-include: package:purple_metrics_lints/purple_metrics_lints.yaml
+include: package:purple_lints/purple_lints.yaml
 
 analyzer:
   plugins:
-    - drift
-  exclude:
-    - 'tool/google_localizer/**'
-    - 'lib/generated_plugin_registrant.dart'
-    - '**/*.select.dart'
+    - dart_code_metrics
+
+dart_code_metrics:
+  metrics:
+    cyclomatic-complexity: 20
+    maximum-nesting-level: 5
+    number-of-methods: 12
+    number-of-parameters: 4
+    source-lines-of-code: 50
+  metrics-exclude:
+    - test/**
+  rules:
+    - avoid-collection-methods-with-unrelated-types
+    # - avoid-dynamic:
+    #     severity: error
+    - avoid-global-state:
+        severity: error
+    - avoid-missing-enum-constant-in-map:
+        severity: error
+    - avoid-nested-conditional-expressions
+    - avoid-non-null-assertion
+    - avoid-throw-in-catch-block
+    - avoid-unnecessary-type-assertions:
+        severity: style
+    - avoid-unnecessary-type-casts:
+        severity: style
+    - avoid-unrelated-type-assertions:
+        severity: style
+    - binary-expression-operand-order
+    - newline-before-return
+    - no-boolean-literal-compare
+    - no-empty-block- no-equal-arguments
+    - no-equal-then-else
+    # - no-magic-number
+    - no-object-declaration
+    - prefer-conditional-expressions
+    - prefer-correct-identifier-length:
+        exceptions: ['id']
+        max-identifier-length: 30
+        min-identifier-length: 3
+    - prefer-first
+    - prefer-immediate-return
+    - prefer-last
+    - always-remove-listener # experimental
+    - avoid-border-all
+    - avoid-returning-widgets
+    - avoid-unnecessary-setstate
+    - avoid-wrapping-in-padding
+    - prefer-const-border-radius
+    - prefer-extracting-callbacks
+    - prefer-single-widget-per-file:
+        ignore-private-widgets: true
+    - prefer-intl-name
+    - provide-correct-intl-args
+  rules-exclude:
+    - test/**
+  anti-patterns:
+    - long-method
+    - long-parameter-list
