@@ -1,5 +1,5 @@
-import 'package:photo_editor/runner_shared.dart' as runner;
-import 'package:photo_editor/src/feature/app/logic/main_runner.dart';
+import 'package:shop/runner_shared.dart' as runner;
+import 'package:shop/src/feature/app/logic/main_runner.dart';
 
 class WebInitializationHooks extends InitializationHooks {
   const WebInitializationHooks();

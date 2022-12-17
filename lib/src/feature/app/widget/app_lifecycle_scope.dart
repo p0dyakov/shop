@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:photo_editor/src/core/widget/scope.dart';
-import 'package:photo_editor/src/feature/app/logic/error_tracking_manager.dart';
+import 'package:shop/src/core/widget/scope.dart';
+import 'package:shop/src/feature/app/logic/error_tracking_manager.dart';
 
 class AppLifecycleScope extends Scope {
   static const DelegateAccess<_AppLifecycleScopeDelegate> _delegateOf =

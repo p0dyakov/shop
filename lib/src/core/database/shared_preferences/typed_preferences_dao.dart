@@ -1,5 +1,5 @@
-import 'package:photo_editor/src/core/database/shared_preferences/shared_preferences_dao.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shop/src/core/database/shared_preferences/shared_preferences_dao.dart';
 
 part 'preferences_entries.dart';
 

@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:photo_editor/src/feature/app/router/navigator_observers_factory.dart';
+import 'package:shop/src/feature/app/router/navigator_observers_factory.dart';
 
 typedef CreateRouter = RootStackRouter Function(BuildContext context);
 typedef RouterWidgetBuilder = Widget Function(

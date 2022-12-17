@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:photo_editor/src/core/model/dependencies_storage.dart';
-import 'package:photo_editor/src/core/widget/scope.dart';
+import 'package:shop/src/core/model/dependencies_storage.dart';
+import 'package:shop/src/core/widget/scope.dart';
 
 class DependenciesScope extends Scope {
   static const DelegateAccess<_DependenciesScopeDelegate> _delegateOf =

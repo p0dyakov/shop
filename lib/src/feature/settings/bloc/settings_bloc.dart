@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:photo_editor/src/feature/settings/enum/app_theme.dart';
-import 'package:photo_editor/src/feature/settings/model/settings_data.dart';
-import 'package:photo_editor/src/feature/settings/repository/settings_repository_interface.dart';
+import 'package:shop/src/feature/settings/enum/app_theme.dart';
+import 'package:shop/src/feature/settings/model/settings_data.dart';
+import 'package:shop/src/feature/settings/repository/settings_repository_interface.dart';
 import 'package:stream_bloc/stream_bloc.dart';
 
 part 'settings_bloc.freezed.dart';

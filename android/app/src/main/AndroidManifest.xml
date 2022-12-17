@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.photo_editor" xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.shop" xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.ACCESS_FILE_LOCATION"/> 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> 
@@ -6,7 +6,7 @@
 
     <uses-sdk tools:overrideLibrary="io.github.edufolly.flutterbluetoothserial"/>
     <application
-        android:label="Photo Editor"
+        android:label="Shop"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

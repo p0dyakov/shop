@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:photo_editor/src/core/model/dependencies_storage.dart';
-import 'package:photo_editor/src/core/model/repository_storage.dart';
-import 'package:photo_editor/src/core/widget/dependencies_scope.dart';
-import 'package:photo_editor/src/core/widget/environment_scope.dart';
-import 'package:photo_editor/src/core/widget/repository_scope.dart';
-import 'package:photo_editor/src/feature/app/bloc/initialization_bloc.dart';
-import 'package:photo_editor/src/feature/app/widget/app_configuration.dart';
-import 'package:photo_editor/src/feature/app/widget/app_lifecycle_scope.dart';
-import 'package:photo_editor/src/feature/settings/widget/scope/settings_scope.dart';
 import 'package:pure/pure.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shop/src/core/model/dependencies_storage.dart';
+import 'package:shop/src/core/model/repository_storage.dart';
+import 'package:shop/src/core/widget/dependencies_scope.dart';
+import 'package:shop/src/core/widget/environment_scope.dart';
+import 'package:shop/src/core/widget/repository_scope.dart';
+import 'package:shop/src/feature/app/bloc/initialization_bloc.dart';
+import 'package:shop/src/feature/app/widget/app_configuration.dart';
+import 'package:shop/src/feature/app/widget/app_lifecycle_scope.dart';
+import 'package:shop/src/feature/settings/widget/scope/settings_scope.dart';
 
-class PhotoEditorApp extends StatelessWidget {
+class ShopApp extends StatelessWidget {
   final InitializationData initializationData;
 
-  const PhotoEditorApp({
+  const ShopApp({
     Key? key,
     required this.initializationData,
   }) : super(key: key);
@@ -29,7 +29,7 @@ class PhotoEditorApp extends StatelessWidget {
           errorTrackingDisabler: initializationData.errorTrackingDisabler,
           child: DependenciesScope(
             create: (context) => DependenciesStorage(
-              databaseName: 'photo_editor_database',
+              databaseName: 'shop_database',
               sharedPreferences: _sharedPreferences,
             ),
             child: RepositoryScope(
