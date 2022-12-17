@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shop/src/core/resource/theme/sizes.dart';
 
 final appLightTheme = ThemeData(
-  backgroundColor: const Color(0xFFF8F7FA),
+  backgroundColor: const Color.fromARGB(255, 249, 249, 249),
   fontFamily: 'Inter',
-  scaffoldBackgroundColor: const Color(0xFFF8F7FA),
+  scaffoldBackgroundColor: const Color.fromARGB(255, 249, 249, 249),
   primaryColor: Colors.black,
   appBarTheme: const AppBarTheme(
     backgroundColor: Colors.black,

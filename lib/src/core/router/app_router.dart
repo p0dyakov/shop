@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shop/src/feature/shop/page/product_page.dart';
 import 'package:shop/src/feature/shop/page/shop_products_page.dart';
 import 'package:shop/src/feature/shop/page/shops_page.dart';
+import 'package:shop/src/feature/shop/model/shop.dart';
 
 part 'app_router.gr.dart';
 

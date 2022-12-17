@@ -15,7 +15,7 @@ class ShopRepository implements IShopRepository {
     final response = json.decode(mockResponse) as Map<String, dynamic>;
     final results = response['results'] as List;
     await Future<void>.delayed(
-      const Duration(milliseconds: 300),
+      const Duration(milliseconds: 600),
     ); // request simulation
 
     final shops = <Shop>[];

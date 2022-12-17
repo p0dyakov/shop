@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
@@ -7,6 +8,7 @@ import 'package:shop/src/core/database/hive/app_database.dart';
 import 'package:shop/src/core/model/dependencies_storage.dart';
 import 'package:shop/src/core/model/environment_storage.dart';
 import 'package:shop/src/core/model/repository_storage.dart';
+import 'package:shop/src/core/router/app_router.dart';
 import 'package:shop/src/core/widget/dependencies_scope.dart';
 import 'package:shop/src/core/widget/environment_scope.dart';
 import 'package:shop/src/core/widget/repository_scope.dart';
@@ -22,6 +24,7 @@ extension BuildContextX on BuildContext {
   // ignore: avoid-non-null-assertion
   AppLocalizations get localized => AppLocalizations.of(this)!;
 
+  StackRouter get router => AutoRouter.of(this);
   MediaQueryData get mediaQuery => MediaQuery.of(this);
   Size get screenSize => mediaQuery.size;
 
