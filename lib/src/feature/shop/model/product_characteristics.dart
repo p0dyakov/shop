@@ -9,8 +9,8 @@ part 'product_characteristics.hive.dart';
 class ProductCharacteristic with _$ProductCharacteristic {
   @HiveType(typeId: 2)
   factory ProductCharacteristic({
-    @HiveField(0) required double weight,
-    @HiveField(1) required double price,
+    @HiveField(0) required int weight,
+    @HiveField(1) required int price,
     @HiveField(2) required String manufactureCountry,
     @HiveField(3) required int expirationDateInDays,
   }) = _ProductCharacteristic;

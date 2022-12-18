@@ -18,8 +18,8 @@ class ProductCharacteristicAdapter
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return _$_ProductCharacteristic(
-      weight: fields[0] as double,
-      price: fields[1] as double,
+      weight: fields[0] as int,
+      price: fields[1] as int,
       manufactureCountry: fields[2] as String,
       expirationDateInDays: fields[3] as int,
     );

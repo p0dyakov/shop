@@ -35,7 +35,24 @@ class ProductCardWidget extends StatelessWidget {
               Text(
                 '${product.characteristic.weight} grams',
                 style: const TextStyle(
-                  fontSize: 13,
+                  fontSize: 12,
+                  color: Colors.grey,
+                ),
+              ),
+              const SizedBox(height: 5),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFCECECE).withOpacity(0.50),
+                  borderRadius: const BorderRadius.all(Radius.circular(20)),
+                ),
+                child: Text(
+                  '${product.characteristic.price}₽',
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 61, 61, 61),
+                    fontSize: 13,
+                  ),
                 ),
               ),
             ],

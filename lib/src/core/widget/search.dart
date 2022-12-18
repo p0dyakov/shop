@@ -4,14 +4,14 @@ import 'package:shop/src/core/resource/theme/sizes.dart';
 class SearchWidget extends StatelessWidget {
   const SearchWidget({
     Key? key,
-    required this.onSubmit,
+    required this.onChanged,
     this.hint = 'Search',
     this.disabled = false,
   }) : super(key: key);
 
   final bool disabled;
   final String hint;
-  final Function onSubmit;
+  final Function(String query) onChanged;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -32,9 +32,13 @@ class SearchWidget extends StatelessWidget {
             Expanded(
               child: TextField(
                 readOnly: disabled,
+                onChanged: onChanged,
+                autofocus: false,
                 cursorColor: Colors.grey,
                 style: const TextStyle(
-                    color: Color.fromARGB(255, 61, 61, 61), fontSize: 18),
+                  color: Color.fromARGB(255, 61, 61, 61),
+                  fontSize: 18,
+                ),
                 decoration: InputDecoration(
                   hintText: hint,
                   hintStyle: const TextStyle(color: Colors.grey, fontSize: 18),

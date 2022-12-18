@@ -14,20 +14,19 @@ import 'package:shop/src/core/widget/environment_scope.dart';
 import 'package:shop/src/core/widget/repository_scope.dart';
 
 extension BuildContextX on BuildContext {
+  // Scopes
   IEnvironmentStorage get environment => EnvironmentScope.of(this);
   IDependenciesStorage get dependencies => DependenciesScope.of(this);
-  Dio get dio => dependencies.dio;
-  SharedPreferences get sharedPreferences => dependencies.sharedPreferences;
-  AppDatabase get database => dependencies.database;
   IRepositoryStorage get repository => RepositoryScope.of(this);
 
   // ignore: avoid-non-null-assertion
   AppLocalizations get localized => AppLocalizations.of(this)!;
-
+  Dio get dio => dependencies.dio;
+  SharedPreferences get sharedPreferences => dependencies.sharedPreferences;
+  AppDatabase get database => dependencies.database;
   StackRouter get router => AutoRouter.of(this);
   MediaQueryData get mediaQuery => MediaQuery.of(this);
   Size get screenSize => mediaQuery.size;
-
   ThemeData get theme => Theme.of(this);
   TextTheme get textTheme => theme.textTheme;
 }

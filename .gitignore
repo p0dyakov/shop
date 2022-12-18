@@ -46,6 +46,7 @@ app.*.map.json
 **/*.g.dart
 **/*.gr.dart
 **/*.gen.dart
+**/*.hive.dart
 **/*.freezed.dart
 **/*.select.dart
 

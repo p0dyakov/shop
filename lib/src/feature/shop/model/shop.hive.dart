@@ -21,7 +21,7 @@ class ShopAdapter extends TypeAdapter<_$_Shop> {
       name: fields[1] as String,
       description: fields[2] as String,
       deliveryTime: fields[3] as Duration,
-      deliveryPrice: fields[4] as double,
+      deliveryPrice: fields[4] as int,
       photoUrl: fields[5] as String,
       products: (fields[6] as List).cast<Product>(),
     );

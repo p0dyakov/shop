@@ -54,7 +54,7 @@ class ShopCardWidget extends StatelessWidget {
                     ),
                     Text(
                       shop.description,
-                      overflow: TextOverflow.fade,
+                      overflow: TextOverflow.ellipsis,
                       maxLines: descriptionMaxLines,
                       style: const TextStyle(
                         fontSize: 13,
