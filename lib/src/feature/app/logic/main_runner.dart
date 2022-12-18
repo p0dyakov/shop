@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
-import 'package:shop/src/core/database/hive/app_database.dart';
 import 'package:shop/src/core/extension/extensions.dart';
 import 'package:shop/src/core/model/environment_storage.dart';
 import 'package:shop/src/feature/app/bloc/app_bloc_observer.dart';

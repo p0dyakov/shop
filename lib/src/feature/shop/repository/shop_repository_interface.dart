@@ -1,4 +1,4 @@
-import 'package:shop/src/feature/shop/model/shop.dart';
+import 'package:shop/src/feature/shop/model/shop/shop.dart';
 
 abstract class IShopRepository {
   Future<List<Shop>?> get storedShops;

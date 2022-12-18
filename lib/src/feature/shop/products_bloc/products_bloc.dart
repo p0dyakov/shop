@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shop/src/feature/shop/model/product.dart';
-import 'package:shop/src/feature/shop/model/shop.dart';
-import 'package:shop/src/feature/shop/model/shop_data.dart';
-import 'package:shop/src/feature/shop/repository/shop_repository_interface.dart';
+import 'package:shop/src/feature/shop/model/product/product.dart';
+import 'package:shop/src/feature/shop/model/products_data/products_data.dart';
+import 'package:shop/src/feature/shop/model/shop/shop.dart';
 import 'package:stream_bloc/stream_bloc.dart';
+import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 part 'products_event.dart';
 part 'products_state.dart';
@@ -15,21 +15,50 @@ class ProductsBloc extends StreamBloc<ProductsEvent, ProductsState> {
   ProductsBloc(
     Shop shop,
   )   : _shop = shop,
-        super(_Initial(shop: shop));
+        super(_Initial(data: ProductsData.initial(shop)));
+
+  ProductsData get _data => state.data;
 
   @override
   Stream<ProductsState> mapEventToStates(ProductsEvent event) => event.when(
         searchProduct: _seachProduct,
+        changeValues: _changeValues,
       );
 
-  Stream<ProductsState> _seachProduct(String query) => _performMutation(
+  Stream<ProductsState> _changeValues(
+    SfRangeValues weightValues,
+    SfRangeValues priceValues,
+  ) =>
+      _performMutation(
+        () async => state.copyWith(
+          data: _data.copyWith(
+            priceValues: priceValues,
+            weightValues: weightValues,
+          ),
+        ),
+      );
+
+  Stream<ProductsState> _seachProduct(
+    String query,
+    SfRangeValues weightValues,
+    SfRangeValues priceValues,
+  ) =>
+      _performMutation(
         () async {
-          if (query.isEmpty) return _Initial(shop: _shop);
+          if (query.isEmpty &&
+              weightValues == const SfRangeValues(0, 1000) &&
+              priceValues == const SfRangeValues(0, 1000)) {
+            return _Initial(data: ProductsData.initial(_shop));
+          }
 
           final results = <Product>[];
 
           for (final product in _shop.products) {
-            if (product.name.toLowerCase().contains(query.toLowerCase())) {
+            if ((weightValues.start as double).toInt() <=
+                    product.characteristic.weight &&
+                (weightValues.end as double).toInt() >=
+                    product.characteristic.weight &&
+                product.name.toLowerCase().contains(query.toLowerCase())) {
               results.add(product);
             }
           }
@@ -37,13 +66,18 @@ class ProductsBloc extends StreamBloc<ProductsEvent, ProductsState> {
           if (results.isEmpty) {
             return _SearchFailure(
               error: 'Nothing found',
-              shop: _shop,
+              data: ProductsData.initial(_shop),
             );
           }
 
           return _SearchSuccess(
             results: results,
-            shop: _shop,
+            data: ProductsData(
+              priceValues: priceValues,
+              weightValues: weightValues,
+              query: query,
+              shop: _shop,
+            ),
           );
         },
       );
@@ -55,7 +89,7 @@ class ProductsBloc extends StreamBloc<ProductsEvent, ProductsState> {
       final newState = await body();
       yield newState;
     } on Object catch (e) {
-      yield _Failure(shop: _shop, error: e.toString());
+      yield _Failure(data: ProductsData.initial(_shop), error: e.toString());
     }
   }
 }

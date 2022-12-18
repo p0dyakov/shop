@@ -13,9 +13,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  bitmap: ^0.1.2
-  photo_manager: ^2.5.1+1
-  gallery_saver: ^2.3.2
+  syncfusion_flutter_sliders: ^20.3.61
+  flutter_vibrate: ^1.3.0
   
   # SDK extensions
   async: ^2.8.2

@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shop/src/feature/shop/model/product.dart';
-import 'package:shop/src/feature/shop/model/shop.dart';
-import 'package:shop/src/feature/shop/model/shop_data.dart';
+import 'package:shop/src/feature/shop/model/product/product.dart';
+import 'package:shop/src/feature/shop/model/shop_data/shop_data.dart';
 import 'package:shop/src/feature/shop/repository/shop_repository_interface.dart';
 import 'package:stream_bloc/stream_bloc.dart';
+import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 part 'shops_event.dart';
 part 'shops_state.dart';
@@ -15,7 +15,7 @@ class ShopsBloc extends StreamBloc<ShopsEvent, ShopsState> {
   ShopsBloc(
     IShopRepository shopRepository,
   )   : _shopRepository = shopRepository,
-        super(_Loading(data: ShopData.empty())) {
+        super(_Loading(data: ShopData.initial())) {
     add(const ShopsEvent.getStoredShops());
     add(const ShopsEvent.getShops());
   }
@@ -42,7 +42,12 @@ class ShopsBloc extends StreamBloc<ShopsEvent, ShopsState> {
         },
       );
 
-  Stream<ShopsState> _seachProduct(String query) => _performMutation(
+  Stream<ShopsState> _seachProduct(
+    String query,
+    SfRangeValues weightValues,
+    SfRangeValues priceValues,
+  ) =>
+      _performMutation(
         () async {
           if (query.isEmpty) return _LoadSuccess(data: _data);
 

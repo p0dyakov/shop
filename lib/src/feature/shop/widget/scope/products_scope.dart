@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop/src/core/extension/extensions.dart';
 import 'package:shop/src/core/widget/bloc_scope.dart';
+import 'package:shop/src/feature/shop/model/shop/shop.dart';
 import 'package:shop/src/feature/shop/products_bloc/products_bloc.dart';
-import 'package:shop/src/feature/shop/shops_bloc/shops_bloc.dart';
-import 'package:shop/src/feature/shop/model/shop.dart';
 
-Shop _shop(ProductsState state) => state.shop;
+Shop _shop(ProductsState state) => state.data.shop;
 
 class ProductsScope extends StatelessWidget {
   final Widget child;

@@ -1,8 +1,8 @@
 import 'package:hive_flutter/adapters.dart';
 import 'package:shop/src/core/database/hive/app_database_keys.dart';
-import 'package:shop/src/feature/shop/model/product.dart';
-import 'package:shop/src/feature/shop/model/product_characteristics.dart';
-import 'package:shop/src/feature/shop/model/shop.dart';
+import 'package:shop/src/feature/shop/model/product/product.dart';
+import 'package:shop/src/feature/shop/model/product_characteristics/product_characteristics.dart';
+import 'package:shop/src/feature/shop/model/shop/shop.dart';
 
 Future<void> registerAdapters() async {
   Hive

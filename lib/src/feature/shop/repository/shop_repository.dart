@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:shop/src/feature/shop/database/shop_dao_interface.dart';
-import 'package:shop/src/feature/shop/model/shop.dart';
+import 'package:shop/src/feature/shop/model/shop/shop.dart';
 import 'package:shop/src/feature/shop/repository/mock_response.dart';
 import 'package:shop/src/feature/shop/repository/shop_repository_interface.dart';
 

@@ -19,7 +19,6 @@ class ProductAdapter extends TypeAdapter<_$_Product> {
     return _$_Product(
       id: fields[0] as String,
       name: fields[1] as String,
-      description: fields[2] as String,
       photoUrl: fields[3] as String,
       characteristic: fields[4] as ProductCharacteristic,
     );
@@ -28,13 +27,11 @@ class ProductAdapter extends TypeAdapter<_$_Product> {
   @override
   void write(BinaryWriter writer, _$_Product obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(4)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
       ..write(obj.name)
-      ..writeByte(2)
-      ..write(obj.description)
       ..writeByte(3)
       ..write(obj.photoUrl)
       ..writeByte(4)

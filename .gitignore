@@ -43,12 +43,12 @@ app.*.symbols
 app.*.map.json
 
 # Code generation
-**/*.g.dart
-**/*.gr.dart
-**/*.gen.dart
-**/*.hive.dart
-**/*.freezed.dart
-**/*.select.dart
+# **/*.g.dart
+# **/*.gr.dart
+# **/*.gen.dart
+# **/*.hive.dart
+# **/*.freezed.dart
+# **/*.select.dart
 
 # Flutter Version Manager related
 .fvm/flutter_sdk

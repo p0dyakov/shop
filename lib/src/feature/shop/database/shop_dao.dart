@@ -1,7 +1,7 @@
 import 'package:shop/src/core/database/hive/app_database.dart';
 import 'package:shop/src/core/database/hive/app_database_keys.dart';
 import 'package:shop/src/feature/shop/database/shop_dao_interface.dart';
-import 'package:shop/src/feature/shop/model/shop.dart';
+import 'package:shop/src/feature/shop/model/shop/shop.dart';
 
 class ShopDao implements IShopDao {
   late final AppDatabase _appDatabase;

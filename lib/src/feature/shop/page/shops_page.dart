@@ -4,9 +4,7 @@ import 'package:shop/src/core/extension/extensions.dart';
 import 'package:shop/src/core/resource/theme/sizes.dart';
 import 'package:shop/src/core/router/app_router.dart';
 import 'package:shop/src/core/widget/center_text.dart';
-import 'package:shop/src/core/widget/search.dart';
 import 'package:shop/src/feature/shop/shops_bloc/shops_bloc.dart';
-import 'package:shop/src/feature/shop/widget/product_card.dart';
 import 'package:shop/src/feature/shop/widget/products_list.dart';
 import 'package:shop/src/feature/shop/widget/scope/shops_scope.dart';
 import 'package:shop/src/feature/shop/widget/shop_card.dart';
@@ -22,12 +20,30 @@ class ShopsPage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               children: [
                 const SizedBox(height: 30),
-                SearchWidget(
-                  onChanged: (query) => BlocProvider.of<ShopsBloc>(context).add(
-                    ShopsEvent.searchProduct(query: query),
-                  ),
-                  hint: 'Search for a product in all shops',
-                ),
+                // SearchWidget(
+                //   weightValues: weightValues,
+                //       priceValues: priceValues,
+                //       onQueryChanged: (String query) =>
+                //           BlocProvider.of<ProductsBloc>(context).add(
+                //         ProductsEvent.searchProduct(
+                //           query: query,
+                //           weightValues: weightValues,
+                //           priceValues: priceValues,
+                //         ),
+                //       ),
+                //       onFiltersChanged: (
+                //         SfRangeValues weightValues,
+                //         SfRangeValues priceValues,
+                //       ) =>
+                //           BlocProvider.of<ProductsBloc>(context).add(
+                //         ProductsEvent.searchProduct(
+                //           query: query,
+                //           weightValues: weightValues,
+                //           priceValues: priceValues,
+                //         ),
+                //       ),
+                //   hint: 'Search for a product in all shops',
+                // ),
                 const SizedBox(height: 20),
                 BlocBuilder<ShopsBloc, ShopsState>(
                   builder: (context, state) => state.when(

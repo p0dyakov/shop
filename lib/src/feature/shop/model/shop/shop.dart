@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
-import 'package:shop/src/feature/shop/model/product.dart';
+import 'package:shop/src/feature/shop/model/product/product.dart';
 
 part 'shop.freezed.dart';
 part 'shop.g.dart';

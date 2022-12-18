@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/feature/shop/model/product.dart';
-import 'package:shop/src/feature/shop/model/shop.dart';
+import 'package:shop/src/feature/shop/model/product/product.dart';
 
 class ProductCardWidget extends StatelessWidget {
   const ProductCardWidget({
