@@ -10,7 +10,7 @@ _$_Shop _$$_ShopFromJson(Map<String, dynamic> json) => _$_Shop(
       id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String,
-      deliveryTime: Duration(microseconds: json['deliveryTime'] as int),
+      deliveryTimeInMinutes: json['deliveryTimeInMinutes'] as int,
       deliveryPrice: json['deliveryPrice'] as int,
       photoUrl: json['photoUrl'] as String,
       products: (json['products'] as List<dynamic>)
@@ -22,7 +22,7 @@ Map<String, dynamic> _$$_ShopToJson(_$_Shop instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
-      'deliveryTime': instance.deliveryTime.inMicroseconds,
+      'deliveryTimeInMinutes': instance.deliveryTimeInMinutes,
       'deliveryPrice': instance.deliveryPrice,
       'photoUrl': instance.photoUrl,
       'products': instance.products,

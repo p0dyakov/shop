@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shop/src/feature/shop/model/product/product.dart';
 import 'package:shop/src/feature/shop/widget/product_card.dart';
 
-class ProductsListWidget extends StatelessWidget {
-  const ProductsListWidget({
+class ProductsBuilder extends StatelessWidget {
+  const ProductsBuilder({
     Key? key,
     required this.products,
   }) : super(key: key);

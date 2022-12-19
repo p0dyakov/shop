@@ -16,28 +16,14 @@ class AppDatabase {
 
   final Map<String, int> _boxCounter = <String, int>{};
 
-  Future<Box<List<Shop>>?> openShopsBox() async =>
-      _openBox<List<Shop>>(name: AppDatabaseKeys.shops, typeId: 0);
-
-  Future get({
-    required Box box,
-    required String boxKey,
-  }) async =>
-      box.get(boxKey);
-
-  Future<void> put({
-    required Box box,
-    required String boxKey,
-    required Object model,
-  }) async {
-    await box.put(boxKey, model);
-  }
+  Future<Box<List>> openShopsBox() async =>
+      _openBox(name: AppDatabaseKeys.shops, typeId: 0);
 
   Future<void> close() async {
     await Hive.close();
   }
 
-  Future<Box<T>?> _openBox<T>({
+  Future<Box<T>> _openBox<T>({
     required String name,
     required int typeId,
   }) async {

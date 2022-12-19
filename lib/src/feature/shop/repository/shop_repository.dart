@@ -24,6 +24,8 @@ class ShopRepository implements IShopRepository {
       shops.add(shop);
     }
 
+    await _shopDao.updateShops(shops);
+
     return shops;
   }
 

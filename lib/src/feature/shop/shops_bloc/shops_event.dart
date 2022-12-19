@@ -9,4 +9,8 @@ class ShopsEvent with _$ShopsEvent {
     required SfRangeValues weightValues,
     required SfRangeValues priceValues,
   }) = _SearchProduct;
+  const factory ShopsEvent.changeValues({
+    required SfRangeValues weightValues,
+    required SfRangeValues priceValues,
+  }) = _ChangeValues;
 }

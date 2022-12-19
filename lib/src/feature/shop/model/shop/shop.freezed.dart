@@ -27,7 +27,7 @@ mixin _$Shop {
   @HiveField(2)
   String get description => throw _privateConstructorUsedError;
   @HiveField(3)
-  Duration get deliveryTime => throw _privateConstructorUsedError;
+  int get deliveryTimeInMinutes => throw _privateConstructorUsedError;
   @HiveField(4)
   int get deliveryPrice => throw _privateConstructorUsedError;
   @HiveField(5)
@@ -49,7 +49,7 @@ abstract class $ShopCopyWith<$Res> {
       {@HiveField(0) String id,
       @HiveField(1) String name,
       @HiveField(2) String description,
-      @HiveField(3) Duration deliveryTime,
+      @HiveField(3) int deliveryTimeInMinutes,
       @HiveField(4) int deliveryPrice,
       @HiveField(5) String photoUrl,
       @HiveField(6) List<Product> products});
@@ -71,7 +71,7 @@ class _$ShopCopyWithImpl<$Res, $Val extends Shop>
     Object? id = null,
     Object? name = null,
     Object? description = null,
-    Object? deliveryTime = null,
+    Object? deliveryTimeInMinutes = null,
     Object? deliveryPrice = null,
     Object? photoUrl = null,
     Object? products = null,
@@ -89,10 +89,10 @@ class _$ShopCopyWithImpl<$Res, $Val extends Shop>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      deliveryTime: null == deliveryTime
-          ? _value.deliveryTime
-          : deliveryTime // ignore: cast_nullable_to_non_nullable
-              as Duration,
+      deliveryTimeInMinutes: null == deliveryTimeInMinutes
+          ? _value.deliveryTimeInMinutes
+          : deliveryTimeInMinutes // ignore: cast_nullable_to_non_nullable
+              as int,
       deliveryPrice: null == deliveryPrice
           ? _value.deliveryPrice
           : deliveryPrice // ignore: cast_nullable_to_non_nullable
@@ -119,7 +119,7 @@ abstract class _$$_ShopCopyWith<$Res> implements $ShopCopyWith<$Res> {
       {@HiveField(0) String id,
       @HiveField(1) String name,
       @HiveField(2) String description,
-      @HiveField(3) Duration deliveryTime,
+      @HiveField(3) int deliveryTimeInMinutes,
       @HiveField(4) int deliveryPrice,
       @HiveField(5) String photoUrl,
       @HiveField(6) List<Product> products});
@@ -137,7 +137,7 @@ class __$$_ShopCopyWithImpl<$Res> extends _$ShopCopyWithImpl<$Res, _$_Shop>
     Object? id = null,
     Object? name = null,
     Object? description = null,
-    Object? deliveryTime = null,
+    Object? deliveryTimeInMinutes = null,
     Object? deliveryPrice = null,
     Object? photoUrl = null,
     Object? products = null,
@@ -155,10 +155,10 @@ class __$$_ShopCopyWithImpl<$Res> extends _$ShopCopyWithImpl<$Res, _$_Shop>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      deliveryTime: null == deliveryTime
-          ? _value.deliveryTime
-          : deliveryTime // ignore: cast_nullable_to_non_nullable
-              as Duration,
+      deliveryTimeInMinutes: null == deliveryTimeInMinutes
+          ? _value.deliveryTimeInMinutes
+          : deliveryTimeInMinutes // ignore: cast_nullable_to_non_nullable
+              as int,
       deliveryPrice: null == deliveryPrice
           ? _value.deliveryPrice
           : deliveryPrice // ignore: cast_nullable_to_non_nullable
@@ -183,7 +183,7 @@ class _$_Shop implements _Shop {
       {@HiveField(0) required this.id,
       @HiveField(1) required this.name,
       @HiveField(2) required this.description,
-      @HiveField(3) required this.deliveryTime,
+      @HiveField(3) required this.deliveryTimeInMinutes,
       @HiveField(4) required this.deliveryPrice,
       @HiveField(5) required this.photoUrl,
       @HiveField(6) required final List<Product> products})
@@ -202,7 +202,7 @@ class _$_Shop implements _Shop {
   final String description;
   @override
   @HiveField(3)
-  final Duration deliveryTime;
+  final int deliveryTimeInMinutes;
   @override
   @HiveField(4)
   final int deliveryPrice;
@@ -219,7 +219,7 @@ class _$_Shop implements _Shop {
 
   @override
   String toString() {
-    return 'Shop(id: $id, name: $name, description: $description, deliveryTime: $deliveryTime, deliveryPrice: $deliveryPrice, photoUrl: $photoUrl, products: $products)';
+    return 'Shop(id: $id, name: $name, description: $description, deliveryTimeInMinutes: $deliveryTimeInMinutes, deliveryPrice: $deliveryPrice, photoUrl: $photoUrl, products: $products)';
   }
 
   @override
@@ -231,8 +231,8 @@ class _$_Shop implements _Shop {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.deliveryTime, deliveryTime) ||
-                other.deliveryTime == deliveryTime) &&
+            (identical(other.deliveryTimeInMinutes, deliveryTimeInMinutes) ||
+                other.deliveryTimeInMinutes == deliveryTimeInMinutes) &&
             (identical(other.deliveryPrice, deliveryPrice) ||
                 other.deliveryPrice == deliveryPrice) &&
             (identical(other.photoUrl, photoUrl) ||
@@ -247,7 +247,7 @@ class _$_Shop implements _Shop {
       id,
       name,
       description,
-      deliveryTime,
+      deliveryTimeInMinutes,
       deliveryPrice,
       photoUrl,
       const DeepCollectionEquality().hash(_products));
@@ -271,7 +271,7 @@ abstract class _Shop implements Shop {
       {@HiveField(0) required final String id,
       @HiveField(1) required final String name,
       @HiveField(2) required final String description,
-      @HiveField(3) required final Duration deliveryTime,
+      @HiveField(3) required final int deliveryTimeInMinutes,
       @HiveField(4) required final int deliveryPrice,
       @HiveField(5) required final String photoUrl,
       @HiveField(6) required final List<Product> products}) = _$_Shop;
@@ -289,7 +289,7 @@ abstract class _Shop implements Shop {
   String get description;
   @override
   @HiveField(3)
-  Duration get deliveryTime;
+  int get deliveryTimeInMinutes;
   @override
   @HiveField(4)
   int get deliveryPrice;

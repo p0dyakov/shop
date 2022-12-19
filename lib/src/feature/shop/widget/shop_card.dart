@@ -65,7 +65,7 @@ class ShopCardWidget extends StatelessWidget {
                       visible: showDeliveryInfo,
                       child: DeliveryInfoWidget(
                         deliveryPrice: shop.deliveryPrice,
-                        deliveryTime: shop.deliveryTime,
+                        deliveryTime: shop.deliveryTimeInMinutes,
                       ),
                     )
                   ],

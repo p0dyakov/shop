@@ -8,13 +8,13 @@ class DeliveryInfoWidget extends StatelessWidget {
     this.color = Colors.black,
   }) : super(key: key);
 
-  final Duration deliveryTime;
+  final int deliveryTime;
   final int deliveryPrice;
   final Color color;
 
   @override
   Widget build(BuildContext context) => Text(
-        '${deliveryTime.inMinutes} minutes · from $deliveryPrice₽',
+        '$deliveryTime minutes · from $deliveryPrice₽',
         overflow: TextOverflow.fade,
         style: TextStyle(
           fontSize: 16,

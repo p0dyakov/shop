@@ -30,7 +30,6 @@ class FiltersWidget extends StatelessWidget {
                 child: SfRangeSlider(
                   activeColor: const Color.fromARGB(255, 94, 94, 94),
                   inactiveColor: const Color.fromARGB(255, 202, 202, 202),
-                  showLabels: true,
                   enableTooltip: true,
                   stepSize: 1,
                   min: 0,
@@ -51,7 +50,6 @@ class FiltersWidget extends StatelessWidget {
                 child: SfRangeSlider(
                   activeColor: const Color.fromARGB(255, 94, 94, 94),
                   inactiveColor: const Color.fromARGB(255, 202, 202, 202),
-                  showLabels: true,
                   enableTooltip: true,
                   stepSize: 1,
                   min: 0,

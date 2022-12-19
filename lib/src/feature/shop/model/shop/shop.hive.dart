@@ -20,7 +20,7 @@ class ShopAdapter extends TypeAdapter<_$_Shop> {
       id: fields[0] as String,
       name: fields[1] as String,
       description: fields[2] as String,
-      deliveryTime: fields[3] as Duration,
+      deliveryTimeInMinutes: fields[3] as int,
       deliveryPrice: fields[4] as int,
       photoUrl: fields[5] as String,
       products: (fields[6] as List).cast<Product>(),
@@ -38,7 +38,7 @@ class ShopAdapter extends TypeAdapter<_$_Shop> {
       ..writeByte(2)
       ..write(obj.description)
       ..writeByte(3)
-      ..write(obj.deliveryTime)
+      ..write(obj.deliveryTimeInMinutes)
       ..writeByte(4)
       ..write(obj.deliveryPrice)
       ..writeByte(5)

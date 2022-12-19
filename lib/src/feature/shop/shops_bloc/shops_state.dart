@@ -8,16 +8,12 @@ class ShopsState with _$ShopsState {
   const factory ShopsState.loadSuccess({
     required ShopData data,
   }) = _LoadSuccess;
-  const factory ShopsState.loadFailure({
+  const factory ShopsState.failure({
     required ShopData data,
     required String error,
-  }) = _LoadFailure;
+  }) = _Failure;
   const factory ShopsState.searchSuccess({
     required ShopData data,
     required List<Product> results,
   }) = _SearchSuccess;
-  const factory ShopsState.searchFailure({
-    required ShopData data,
-    required String error,
-  }) = _SearchFailure;
 }

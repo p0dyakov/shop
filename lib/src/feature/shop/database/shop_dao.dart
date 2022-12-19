@@ -13,14 +13,13 @@ class ShopDao implements IShopDao {
   @override
   Future<List<Shop>?> get shops async {
     final box = await _appDatabase.openShopsBox();
-    if (box != null) {
-      final shops = await _appDatabase.get(
-        box: box,
-        boxKey: AppDatabaseKeys.shops,
-      ) as List<Shop>?;
-      if (shops != null) return shops;
-    }
 
-    return null;
+    return box.get(AppDatabaseKeys.shops)?.cast<Shop>();
+  }
+
+  @override
+  Future<void> updateShops(List<Shop> shops) async {
+    final box = await _appDatabase.openShopsBox();
+    await box.put(AppDatabaseKeys.shops, shops);
   }
 }

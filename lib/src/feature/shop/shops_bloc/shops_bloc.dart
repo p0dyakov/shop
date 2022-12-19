@@ -1,13 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shop/src/core/extension/extensions.dart';
+import 'package:shop/src/feature/app/logic/logger.dart';
 import 'package:shop/src/feature/shop/model/product/product.dart';
 import 'package:shop/src/feature/shop/model/shop_data/shop_data.dart';
 import 'package:shop/src/feature/shop/repository/shop_repository_interface.dart';
 import 'package:stream_bloc/stream_bloc.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
+part 'shops_bloc.freezed.dart';
 part 'shops_event.dart';
 part 'shops_state.dart';
-part 'shops_bloc.freezed.dart';
 
 class ShopsBloc extends StreamBloc<ShopsEvent, ShopsState> {
   final IShopRepository _shopRepository;
@@ -27,6 +29,20 @@ class ShopsBloc extends StreamBloc<ShopsEvent, ShopsState> {
         getStoredShops: _getStoredShops,
         getShops: _getShops,
         searchProduct: _seachProduct,
+        changeValues: _changeValues,
+      );
+
+  Stream<ShopsState> _changeValues(
+    SfRangeValues weightValues,
+    SfRangeValues priceValues,
+  ) =>
+      _performMutation(
+        () async => state.copyWith(
+          data: _data.copyWith(
+            priceValues: priceValues,
+            weightValues: weightValues,
+          ),
+        ),
       );
 
   Stream<ShopsState> _getStoredShops() => _performMutation(
@@ -49,20 +65,26 @@ class ShopsBloc extends StreamBloc<ShopsEvent, ShopsState> {
   ) =>
       _performMutation(
         () async {
-          if (query.isEmpty) return _LoadSuccess(data: _data);
+          if (query.isEmpty &&
+              weightValues.isInitial &&
+              priceValues.isInitial) {
+            return _LoadSuccess(data: _data);
+          }
 
           final results = <Product>[];
 
           for (final shop in _data.shops) {
             for (final product in shop.products) {
-              if (product.name.toLowerCase().contains(query.toLowerCase())) {
+              if (weightValues.isContains(product.characteristic.weight) &&
+                  priceValues.isContains(product.characteristic.price) &&
+                  product.name.toLowerCase().contains(query.toLowerCase())) {
                 results.add(product);
               }
             }
           }
 
           if (results.isEmpty) {
-            return _SearchFailure(
+            return _Failure(
               data: _data,
               error: 'Nothing found',
             );
@@ -92,7 +114,8 @@ class ShopsBloc extends StreamBloc<ShopsEvent, ShopsState> {
       final newState = await body();
       yield newState;
     } on Object catch (e) {
-      yield _LoadFailure(data: _data, error: e.toString());
+      Logger.logError(e);
+      yield _Failure(data: _data, error: e.toString());
     }
   }
 }

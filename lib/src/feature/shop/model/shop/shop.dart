@@ -13,7 +13,7 @@ class Shop with _$Shop {
     @HiveField(0) required String id,
     @HiveField(1) required String name,
     @HiveField(2) required String description,
-    @HiveField(3) required Duration deliveryTime,
+    @HiveField(3) required int deliveryTimeInMinutes,
     @HiveField(4) required int deliveryPrice,
     @HiveField(5) required String photoUrl,
     @HiveField(6) required List<Product> products,

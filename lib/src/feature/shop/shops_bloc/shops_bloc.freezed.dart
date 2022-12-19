@@ -23,6 +23,9 @@ mixin _$ShopsEvent {
     required TResult Function(
             String query, SfRangeValues weightValues, SfRangeValues priceValues)
         searchProduct,
+    required TResult Function(
+            SfRangeValues weightValues, SfRangeValues priceValues)
+        changeValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +35,8 @@ mixin _$ShopsEvent {
     TResult? Function(String query, SfRangeValues weightValues,
             SfRangeValues priceValues)?
         searchProduct,
+    TResult? Function(SfRangeValues weightValues, SfRangeValues priceValues)?
+        changeValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +46,8 @@ mixin _$ShopsEvent {
     TResult Function(String query, SfRangeValues weightValues,
             SfRangeValues priceValues)?
         searchProduct,
+    TResult Function(SfRangeValues weightValues, SfRangeValues priceValues)?
+        changeValues,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +56,7 @@ mixin _$ShopsEvent {
     required TResult Function(_GetShops value) getShops,
     required TResult Function(_GetRestoredShops value) getStoredShops,
     required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_ChangeValues value) changeValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +64,7 @@ mixin _$ShopsEvent {
     TResult? Function(_GetShops value)? getShops,
     TResult? Function(_GetRestoredShops value)? getStoredShops,
     TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_ChangeValues value)? changeValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +72,7 @@ mixin _$ShopsEvent {
     TResult Function(_GetShops value)? getShops,
     TResult Function(_GetRestoredShops value)? getStoredShops,
     TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_ChangeValues value)? changeValues,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -129,6 +139,9 @@ class _$_GetShops implements _GetShops {
     required TResult Function(
             String query, SfRangeValues weightValues, SfRangeValues priceValues)
         searchProduct,
+    required TResult Function(
+            SfRangeValues weightValues, SfRangeValues priceValues)
+        changeValues,
   }) {
     return getShops();
   }
@@ -141,6 +154,8 @@ class _$_GetShops implements _GetShops {
     TResult? Function(String query, SfRangeValues weightValues,
             SfRangeValues priceValues)?
         searchProduct,
+    TResult? Function(SfRangeValues weightValues, SfRangeValues priceValues)?
+        changeValues,
   }) {
     return getShops?.call();
   }
@@ -153,6 +168,8 @@ class _$_GetShops implements _GetShops {
     TResult Function(String query, SfRangeValues weightValues,
             SfRangeValues priceValues)?
         searchProduct,
+    TResult Function(SfRangeValues weightValues, SfRangeValues priceValues)?
+        changeValues,
     required TResult orElse(),
   }) {
     if (getShops != null) {
@@ -167,6 +184,7 @@ class _$_GetShops implements _GetShops {
     required TResult Function(_GetShops value) getShops,
     required TResult Function(_GetRestoredShops value) getStoredShops,
     required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_ChangeValues value) changeValues,
   }) {
     return getShops(this);
   }
@@ -177,6 +195,7 @@ class _$_GetShops implements _GetShops {
     TResult? Function(_GetShops value)? getShops,
     TResult? Function(_GetRestoredShops value)? getStoredShops,
     TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_ChangeValues value)? changeValues,
   }) {
     return getShops?.call(this);
   }
@@ -187,6 +206,7 @@ class _$_GetShops implements _GetShops {
     TResult Function(_GetShops value)? getShops,
     TResult Function(_GetRestoredShops value)? getStoredShops,
     TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_ChangeValues value)? changeValues,
     required TResult orElse(),
   }) {
     if (getShops != null) {
@@ -243,6 +263,9 @@ class _$_GetRestoredShops implements _GetRestoredShops {
     required TResult Function(
             String query, SfRangeValues weightValues, SfRangeValues priceValues)
         searchProduct,
+    required TResult Function(
+            SfRangeValues weightValues, SfRangeValues priceValues)
+        changeValues,
   }) {
     return getStoredShops();
   }
@@ -255,6 +278,8 @@ class _$_GetRestoredShops implements _GetRestoredShops {
     TResult? Function(String query, SfRangeValues weightValues,
             SfRangeValues priceValues)?
         searchProduct,
+    TResult? Function(SfRangeValues weightValues, SfRangeValues priceValues)?
+        changeValues,
   }) {
     return getStoredShops?.call();
   }
@@ -267,6 +292,8 @@ class _$_GetRestoredShops implements _GetRestoredShops {
     TResult Function(String query, SfRangeValues weightValues,
             SfRangeValues priceValues)?
         searchProduct,
+    TResult Function(SfRangeValues weightValues, SfRangeValues priceValues)?
+        changeValues,
     required TResult orElse(),
   }) {
     if (getStoredShops != null) {
@@ -281,6 +308,7 @@ class _$_GetRestoredShops implements _GetRestoredShops {
     required TResult Function(_GetShops value) getShops,
     required TResult Function(_GetRestoredShops value) getStoredShops,
     required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_ChangeValues value) changeValues,
   }) {
     return getStoredShops(this);
   }
@@ -291,6 +319,7 @@ class _$_GetRestoredShops implements _GetRestoredShops {
     TResult? Function(_GetShops value)? getShops,
     TResult? Function(_GetRestoredShops value)? getStoredShops,
     TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_ChangeValues value)? changeValues,
   }) {
     return getStoredShops?.call(this);
   }
@@ -301,6 +330,7 @@ class _$_GetRestoredShops implements _GetRestoredShops {
     TResult Function(_GetShops value)? getShops,
     TResult Function(_GetRestoredShops value)? getStoredShops,
     TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_ChangeValues value)? changeValues,
     required TResult orElse(),
   }) {
     if (getStoredShops != null) {
@@ -406,6 +436,9 @@ class _$_SearchProduct implements _SearchProduct {
     required TResult Function(
             String query, SfRangeValues weightValues, SfRangeValues priceValues)
         searchProduct,
+    required TResult Function(
+            SfRangeValues weightValues, SfRangeValues priceValues)
+        changeValues,
   }) {
     return searchProduct(query, weightValues, priceValues);
   }
@@ -418,6 +451,8 @@ class _$_SearchProduct implements _SearchProduct {
     TResult? Function(String query, SfRangeValues weightValues,
             SfRangeValues priceValues)?
         searchProduct,
+    TResult? Function(SfRangeValues weightValues, SfRangeValues priceValues)?
+        changeValues,
   }) {
     return searchProduct?.call(query, weightValues, priceValues);
   }
@@ -430,6 +465,8 @@ class _$_SearchProduct implements _SearchProduct {
     TResult Function(String query, SfRangeValues weightValues,
             SfRangeValues priceValues)?
         searchProduct,
+    TResult Function(SfRangeValues weightValues, SfRangeValues priceValues)?
+        changeValues,
     required TResult orElse(),
   }) {
     if (searchProduct != null) {
@@ -444,6 +481,7 @@ class _$_SearchProduct implements _SearchProduct {
     required TResult Function(_GetShops value) getShops,
     required TResult Function(_GetRestoredShops value) getStoredShops,
     required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_ChangeValues value) changeValues,
   }) {
     return searchProduct(this);
   }
@@ -454,6 +492,7 @@ class _$_SearchProduct implements _SearchProduct {
     TResult? Function(_GetShops value)? getShops,
     TResult? Function(_GetRestoredShops value)? getStoredShops,
     TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_ChangeValues value)? changeValues,
   }) {
     return searchProduct?.call(this);
   }
@@ -464,6 +503,7 @@ class _$_SearchProduct implements _SearchProduct {
     TResult Function(_GetShops value)? getShops,
     TResult Function(_GetRestoredShops value)? getStoredShops,
     TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_ChangeValues value)? changeValues,
     required TResult orElse(),
   }) {
     if (searchProduct != null) {
@@ -488,34 +528,200 @@ abstract class _SearchProduct implements ShopsEvent {
 }
 
 /// @nodoc
+abstract class _$$_ChangeValuesCopyWith<$Res> {
+  factory _$$_ChangeValuesCopyWith(
+          _$_ChangeValues value, $Res Function(_$_ChangeValues) then) =
+      __$$_ChangeValuesCopyWithImpl<$Res>;
+  @useResult
+  $Res call({SfRangeValues weightValues, SfRangeValues priceValues});
+}
+
+/// @nodoc
+class __$$_ChangeValuesCopyWithImpl<$Res>
+    extends _$ShopsEventCopyWithImpl<$Res, _$_ChangeValues>
+    implements _$$_ChangeValuesCopyWith<$Res> {
+  __$$_ChangeValuesCopyWithImpl(
+      _$_ChangeValues _value, $Res Function(_$_ChangeValues) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? weightValues = null,
+    Object? priceValues = null,
+  }) {
+    return _then(_$_ChangeValues(
+      weightValues: null == weightValues
+          ? _value.weightValues
+          : weightValues // ignore: cast_nullable_to_non_nullable
+              as SfRangeValues,
+      priceValues: null == priceValues
+          ? _value.priceValues
+          : priceValues // ignore: cast_nullable_to_non_nullable
+              as SfRangeValues,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ChangeValues implements _ChangeValues {
+  const _$_ChangeValues(
+      {required this.weightValues, required this.priceValues});
+
+  @override
+  final SfRangeValues weightValues;
+  @override
+  final SfRangeValues priceValues;
+
+  @override
+  String toString() {
+    return 'ShopsEvent.changeValues(weightValues: $weightValues, priceValues: $priceValues)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ChangeValues &&
+            (identical(other.weightValues, weightValues) ||
+                other.weightValues == weightValues) &&
+            (identical(other.priceValues, priceValues) ||
+                other.priceValues == priceValues));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, weightValues, priceValues);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ChangeValuesCopyWith<_$_ChangeValues> get copyWith =>
+      __$$_ChangeValuesCopyWithImpl<_$_ChangeValues>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getShops,
+    required TResult Function() getStoredShops,
+    required TResult Function(
+            String query, SfRangeValues weightValues, SfRangeValues priceValues)
+        searchProduct,
+    required TResult Function(
+            SfRangeValues weightValues, SfRangeValues priceValues)
+        changeValues,
+  }) {
+    return changeValues(weightValues, priceValues);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getShops,
+    TResult? Function()? getStoredShops,
+    TResult? Function(String query, SfRangeValues weightValues,
+            SfRangeValues priceValues)?
+        searchProduct,
+    TResult? Function(SfRangeValues weightValues, SfRangeValues priceValues)?
+        changeValues,
+  }) {
+    return changeValues?.call(weightValues, priceValues);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getShops,
+    TResult Function()? getStoredShops,
+    TResult Function(String query, SfRangeValues weightValues,
+            SfRangeValues priceValues)?
+        searchProduct,
+    TResult Function(SfRangeValues weightValues, SfRangeValues priceValues)?
+        changeValues,
+    required TResult orElse(),
+  }) {
+    if (changeValues != null) {
+      return changeValues(weightValues, priceValues);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetShops value) getShops,
+    required TResult Function(_GetRestoredShops value) getStoredShops,
+    required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_ChangeValues value) changeValues,
+  }) {
+    return changeValues(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetShops value)? getShops,
+    TResult? Function(_GetRestoredShops value)? getStoredShops,
+    TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_ChangeValues value)? changeValues,
+  }) {
+    return changeValues?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetShops value)? getShops,
+    TResult Function(_GetRestoredShops value)? getStoredShops,
+    TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_ChangeValues value)? changeValues,
+    required TResult orElse(),
+  }) {
+    if (changeValues != null) {
+      return changeValues(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeValues implements ShopsEvent {
+  const factory _ChangeValues(
+      {required final SfRangeValues weightValues,
+      required final SfRangeValues priceValues}) = _$_ChangeValues;
+
+  SfRangeValues get weightValues;
+  SfRangeValues get priceValues;
+  @JsonKey(ignore: true)
+  _$$_ChangeValuesCopyWith<_$_ChangeValues> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ShopsState {
   ShopData get data => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ShopData data) loading,
     required TResult Function(ShopData data) loadSuccess,
-    required TResult Function(ShopData data, String error) loadFailure,
+    required TResult Function(ShopData data, String error) failure,
     required TResult Function(ShopData data, List<Product> results)
         searchSuccess,
-    required TResult Function(ShopData data, String error) searchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ShopData data)? loading,
     TResult? Function(ShopData data)? loadSuccess,
-    TResult? Function(ShopData data, String error)? loadFailure,
+    TResult? Function(ShopData data, String error)? failure,
     TResult? Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult? Function(ShopData data, String error)? searchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ShopData data)? loading,
     TResult Function(ShopData data)? loadSuccess,
-    TResult Function(ShopData data, String error)? loadFailure,
+    TResult Function(ShopData data, String error)? failure,
     TResult Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult Function(ShopData data, String error)? searchFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -523,27 +729,24 @@ mixin _$ShopsState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_Failure value) failure,
     required TResult Function(_SearchSuccess value) searchSuccess,
-    required TResult Function(_SearchFailure value) searchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadSuccess value)? loadSuccess,
-    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Failure value)? failure,
     TResult? Function(_SearchSuccess value)? searchSuccess,
-    TResult? Function(_SearchFailure value)? searchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_Failure value)? failure,
     TResult Function(_SearchSuccess value)? searchSuccess,
-    TResult Function(_SearchFailure value)? searchFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -665,10 +868,9 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function(ShopData data) loading,
     required TResult Function(ShopData data) loadSuccess,
-    required TResult Function(ShopData data, String error) loadFailure,
+    required TResult Function(ShopData data, String error) failure,
     required TResult Function(ShopData data, List<Product> results)
         searchSuccess,
-    required TResult Function(ShopData data, String error) searchFailure,
   }) {
     return loading(data);
   }
@@ -678,9 +880,8 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ShopData data)? loading,
     TResult? Function(ShopData data)? loadSuccess,
-    TResult? Function(ShopData data, String error)? loadFailure,
+    TResult? Function(ShopData data, String error)? failure,
     TResult? Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult? Function(ShopData data, String error)? searchFailure,
   }) {
     return loading?.call(data);
   }
@@ -690,9 +891,8 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ShopData data)? loading,
     TResult Function(ShopData data)? loadSuccess,
-    TResult Function(ShopData data, String error)? loadFailure,
+    TResult Function(ShopData data, String error)? failure,
     TResult Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult Function(ShopData data, String error)? searchFailure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -706,9 +906,8 @@ class _$_Loading implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_Failure value) failure,
     required TResult Function(_SearchSuccess value) searchSuccess,
-    required TResult Function(_SearchFailure value) searchFailure,
   }) {
     return loading(this);
   }
@@ -718,9 +917,8 @@ class _$_Loading implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadSuccess value)? loadSuccess,
-    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Failure value)? failure,
     TResult? Function(_SearchSuccess value)? searchSuccess,
-    TResult? Function(_SearchFailure value)? searchFailure,
   }) {
     return loading?.call(this);
   }
@@ -730,9 +928,8 @@ class _$_Loading implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_Failure value)? failure,
     TResult Function(_SearchSuccess value)? searchSuccess,
-    TResult Function(_SearchFailure value)? searchFailure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -824,10 +1021,9 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function(ShopData data) loading,
     required TResult Function(ShopData data) loadSuccess,
-    required TResult Function(ShopData data, String error) loadFailure,
+    required TResult Function(ShopData data, String error) failure,
     required TResult Function(ShopData data, List<Product> results)
         searchSuccess,
-    required TResult Function(ShopData data, String error) searchFailure,
   }) {
     return loadSuccess(data);
   }
@@ -837,9 +1033,8 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ShopData data)? loading,
     TResult? Function(ShopData data)? loadSuccess,
-    TResult? Function(ShopData data, String error)? loadFailure,
+    TResult? Function(ShopData data, String error)? failure,
     TResult? Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult? Function(ShopData data, String error)? searchFailure,
   }) {
     return loadSuccess?.call(data);
   }
@@ -849,9 +1044,8 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ShopData data)? loading,
     TResult Function(ShopData data)? loadSuccess,
-    TResult Function(ShopData data, String error)? loadFailure,
+    TResult Function(ShopData data, String error)? failure,
     TResult Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult Function(ShopData data, String error)? searchFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -865,9 +1059,8 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_Failure value) failure,
     required TResult Function(_SearchSuccess value) searchSuccess,
-    required TResult Function(_SearchFailure value) searchFailure,
   }) {
     return loadSuccess(this);
   }
@@ -877,9 +1070,8 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadSuccess value)? loadSuccess,
-    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Failure value)? failure,
     TResult? Function(_SearchSuccess value)? searchSuccess,
-    TResult? Function(_SearchFailure value)? searchFailure,
   }) {
     return loadSuccess?.call(this);
   }
@@ -889,9 +1081,8 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_Failure value)? failure,
     TResult Function(_SearchSuccess value)? searchSuccess,
-    TResult Function(_SearchFailure value)? searchFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -913,11 +1104,10 @@ abstract class _LoadSuccess implements ShopsState {
 }
 
 /// @nodoc
-abstract class _$$_LoadFailureCopyWith<$Res>
-    implements $ShopsStateCopyWith<$Res> {
-  factory _$$_LoadFailureCopyWith(
-          _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
-      __$$_LoadFailureCopyWithImpl<$Res>;
+abstract class _$$_FailureCopyWith<$Res> implements $ShopsStateCopyWith<$Res> {
+  factory _$$_FailureCopyWith(
+          _$_Failure value, $Res Function(_$_Failure) then) =
+      __$$_FailureCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ShopData data, String error});
@@ -927,11 +1117,10 @@ abstract class _$$_LoadFailureCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_LoadFailureCopyWithImpl<$Res>
-    extends _$ShopsStateCopyWithImpl<$Res, _$_LoadFailure>
-    implements _$$_LoadFailureCopyWith<$Res> {
-  __$$_LoadFailureCopyWithImpl(
-      _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
+class __$$_FailureCopyWithImpl<$Res>
+    extends _$ShopsStateCopyWithImpl<$Res, _$_Failure>
+    implements _$$_FailureCopyWith<$Res> {
+  __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -940,7 +1129,7 @@ class __$$_LoadFailureCopyWithImpl<$Res>
     Object? data = null,
     Object? error = null,
   }) {
-    return _then(_$_LoadFailure(
+    return _then(_$_Failure(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -955,8 +1144,8 @@ class __$$_LoadFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure({required this.data, required this.error});
+class _$_Failure implements _Failure {
+  const _$_Failure({required this.data, required this.error});
 
   @override
   final ShopData data;
@@ -965,14 +1154,14 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   String toString() {
-    return 'ShopsState.loadFailure(data: $data, error: $error)';
+    return 'ShopsState.failure(data: $data, error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoadFailure &&
+            other is _$_Failure &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.error, error) || other.error == error));
   }
@@ -983,20 +1172,19 @@ class _$_LoadFailure implements _LoadFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
-      __$$_LoadFailureCopyWithImpl<_$_LoadFailure>(this, _$identity);
+  _$$_FailureCopyWith<_$_Failure> get copyWith =>
+      __$$_FailureCopyWithImpl<_$_Failure>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ShopData data) loading,
     required TResult Function(ShopData data) loadSuccess,
-    required TResult Function(ShopData data, String error) loadFailure,
+    required TResult Function(ShopData data, String error) failure,
     required TResult Function(ShopData data, List<Product> results)
         searchSuccess,
-    required TResult Function(ShopData data, String error) searchFailure,
   }) {
-    return loadFailure(data, error);
+    return failure(data, error);
   }
 
   @override
@@ -1004,11 +1192,10 @@ class _$_LoadFailure implements _LoadFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ShopData data)? loading,
     TResult? Function(ShopData data)? loadSuccess,
-    TResult? Function(ShopData data, String error)? loadFailure,
+    TResult? Function(ShopData data, String error)? failure,
     TResult? Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult? Function(ShopData data, String error)? searchFailure,
   }) {
-    return loadFailure?.call(data, error);
+    return failure?.call(data, error);
   }
 
   @override
@@ -1016,13 +1203,12 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ShopData data)? loading,
     TResult Function(ShopData data)? loadSuccess,
-    TResult Function(ShopData data, String error)? loadFailure,
+    TResult Function(ShopData data, String error)? failure,
     TResult Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult Function(ShopData data, String error)? searchFailure,
     required TResult orElse(),
   }) {
-    if (loadFailure != null) {
-      return loadFailure(data, error);
+    if (failure != null) {
+      return failure(data, error);
     }
     return orElse();
   }
@@ -1032,11 +1218,10 @@ class _$_LoadFailure implements _LoadFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_Failure value) failure,
     required TResult Function(_SearchSuccess value) searchSuccess,
-    required TResult Function(_SearchFailure value) searchFailure,
   }) {
-    return loadFailure(this);
+    return failure(this);
   }
 
   @override
@@ -1044,11 +1229,10 @@ class _$_LoadFailure implements _LoadFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadSuccess value)? loadSuccess,
-    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Failure value)? failure,
     TResult? Function(_SearchSuccess value)? searchSuccess,
-    TResult? Function(_SearchFailure value)? searchFailure,
   }) {
-    return loadFailure?.call(this);
+    return failure?.call(this);
   }
 
   @override
@@ -1056,29 +1240,27 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_Failure value)? failure,
     TResult Function(_SearchSuccess value)? searchSuccess,
-    TResult Function(_SearchFailure value)? searchFailure,
     required TResult orElse(),
   }) {
-    if (loadFailure != null) {
-      return loadFailure(this);
+    if (failure != null) {
+      return failure(this);
     }
     return orElse();
   }
 }
 
-abstract class _LoadFailure implements ShopsState {
-  const factory _LoadFailure(
-      {required final ShopData data,
-      required final String error}) = _$_LoadFailure;
+abstract class _Failure implements ShopsState {
+  const factory _Failure(
+      {required final ShopData data, required final String error}) = _$_Failure;
 
   @override
   ShopData get data;
   String get error;
   @override
   @JsonKey(ignore: true)
-  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
+  _$$_FailureCopyWith<_$_Failure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1168,10 +1350,9 @@ class _$_SearchSuccess implements _SearchSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function(ShopData data) loading,
     required TResult Function(ShopData data) loadSuccess,
-    required TResult Function(ShopData data, String error) loadFailure,
+    required TResult Function(ShopData data, String error) failure,
     required TResult Function(ShopData data, List<Product> results)
         searchSuccess,
-    required TResult Function(ShopData data, String error) searchFailure,
   }) {
     return searchSuccess(data, results);
   }
@@ -1181,9 +1362,8 @@ class _$_SearchSuccess implements _SearchSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ShopData data)? loading,
     TResult? Function(ShopData data)? loadSuccess,
-    TResult? Function(ShopData data, String error)? loadFailure,
+    TResult? Function(ShopData data, String error)? failure,
     TResult? Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult? Function(ShopData data, String error)? searchFailure,
   }) {
     return searchSuccess?.call(data, results);
   }
@@ -1193,9 +1373,8 @@ class _$_SearchSuccess implements _SearchSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ShopData data)? loading,
     TResult Function(ShopData data)? loadSuccess,
-    TResult Function(ShopData data, String error)? loadFailure,
+    TResult Function(ShopData data, String error)? failure,
     TResult Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult Function(ShopData data, String error)? searchFailure,
     required TResult orElse(),
   }) {
     if (searchSuccess != null) {
@@ -1209,9 +1388,8 @@ class _$_SearchSuccess implements _SearchSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_Failure value) failure,
     required TResult Function(_SearchSuccess value) searchSuccess,
-    required TResult Function(_SearchFailure value) searchFailure,
   }) {
     return searchSuccess(this);
   }
@@ -1221,9 +1399,8 @@ class _$_SearchSuccess implements _SearchSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadSuccess value)? loadSuccess,
-    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Failure value)? failure,
     TResult? Function(_SearchSuccess value)? searchSuccess,
-    TResult? Function(_SearchFailure value)? searchFailure,
   }) {
     return searchSuccess?.call(this);
   }
@@ -1233,9 +1410,8 @@ class _$_SearchSuccess implements _SearchSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_Failure value)? failure,
     TResult Function(_SearchSuccess value)? searchSuccess,
-    TResult Function(_SearchFailure value)? searchFailure,
     required TResult orElse(),
   }) {
     if (searchSuccess != null) {
@@ -1256,175 +1432,5 @@ abstract class _SearchSuccess implements ShopsState {
   @override
   @JsonKey(ignore: true)
   _$$_SearchSuccessCopyWith<_$_SearchSuccess> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_SearchFailureCopyWith<$Res>
-    implements $ShopsStateCopyWith<$Res> {
-  factory _$$_SearchFailureCopyWith(
-          _$_SearchFailure value, $Res Function(_$_SearchFailure) then) =
-      __$$_SearchFailureCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({ShopData data, String error});
-
-  @override
-  $ShopDataCopyWith<$Res> get data;
-}
-
-/// @nodoc
-class __$$_SearchFailureCopyWithImpl<$Res>
-    extends _$ShopsStateCopyWithImpl<$Res, _$_SearchFailure>
-    implements _$$_SearchFailureCopyWith<$Res> {
-  __$$_SearchFailureCopyWithImpl(
-      _$_SearchFailure _value, $Res Function(_$_SearchFailure) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-    Object? error = null,
-  }) {
-    return _then(_$_SearchFailure(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as ShopData,
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SearchFailure implements _SearchFailure {
-  const _$_SearchFailure({required this.data, required this.error});
-
-  @override
-  final ShopData data;
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'ShopsState.searchFailure(data: $data, error: $error)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_SearchFailure &&
-            (identical(other.data, data) || other.data == data) &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, data, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_SearchFailureCopyWith<_$_SearchFailure> get copyWith =>
-      __$$_SearchFailureCopyWithImpl<_$_SearchFailure>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ShopData data) loading,
-    required TResult Function(ShopData data) loadSuccess,
-    required TResult Function(ShopData data, String error) loadFailure,
-    required TResult Function(ShopData data, List<Product> results)
-        searchSuccess,
-    required TResult Function(ShopData data, String error) searchFailure,
-  }) {
-    return searchFailure(data, error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ShopData data)? loading,
-    TResult? Function(ShopData data)? loadSuccess,
-    TResult? Function(ShopData data, String error)? loadFailure,
-    TResult? Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult? Function(ShopData data, String error)? searchFailure,
-  }) {
-    return searchFailure?.call(data, error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ShopData data)? loading,
-    TResult Function(ShopData data)? loadSuccess,
-    TResult Function(ShopData data, String error)? loadFailure,
-    TResult Function(ShopData data, List<Product> results)? searchSuccess,
-    TResult Function(ShopData data, String error)? searchFailure,
-    required TResult orElse(),
-  }) {
-    if (searchFailure != null) {
-      return searchFailure(data, error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_SearchSuccess value) searchSuccess,
-    required TResult Function(_SearchFailure value) searchFailure,
-  }) {
-    return searchFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_LoadSuccess value)? loadSuccess,
-    TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_SearchSuccess value)? searchSuccess,
-    TResult? Function(_SearchFailure value)? searchFailure,
-  }) {
-    return searchFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_SearchSuccess value)? searchSuccess,
-    TResult Function(_SearchFailure value)? searchFailure,
-    required TResult orElse(),
-  }) {
-    if (searchFailure != null) {
-      return searchFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SearchFailure implements ShopsState {
-  const factory _SearchFailure(
-      {required final ShopData data,
-      required final String error}) = _$_SearchFailure;
-
-  @override
-  ShopData get data;
-  String get error;
-  @override
-  @JsonKey(ignore: true)
-  _$$_SearchFailureCopyWith<_$_SearchFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }

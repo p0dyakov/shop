@@ -457,7 +457,6 @@ mixin _$ProductsState {
     required TResult Function(ProductsData data, String error) failure,
     required TResult Function(List<Product> results, ProductsData data)
         searchSuccess,
-    required TResult Function(ProductsData data, String error) searchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -465,7 +464,6 @@ mixin _$ProductsState {
     TResult? Function(ProductsData data)? initial,
     TResult? Function(ProductsData data, String error)? failure,
     TResult? Function(List<Product> results, ProductsData data)? searchSuccess,
-    TResult? Function(ProductsData data, String error)? searchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -473,7 +471,6 @@ mixin _$ProductsState {
     TResult Function(ProductsData data)? initial,
     TResult Function(ProductsData data, String error)? failure,
     TResult Function(List<Product> results, ProductsData data)? searchSuccess,
-    TResult Function(ProductsData data, String error)? searchFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -482,7 +479,6 @@ mixin _$ProductsState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Failure value) failure,
     required TResult Function(_SearchSuccess value) searchSuccess,
-    required TResult Function(_SearchFailure value) searchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -490,7 +486,6 @@ mixin _$ProductsState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SearchSuccess value)? searchSuccess,
-    TResult? Function(_SearchFailure value)? searchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -498,7 +493,6 @@ mixin _$ProductsState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Failure value)? failure,
     TResult Function(_SearchSuccess value)? searchSuccess,
-    TResult Function(_SearchFailure value)? searchFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -623,7 +617,6 @@ class _$_Initial implements _Initial {
     required TResult Function(ProductsData data, String error) failure,
     required TResult Function(List<Product> results, ProductsData data)
         searchSuccess,
-    required TResult Function(ProductsData data, String error) searchFailure,
   }) {
     return initial(data);
   }
@@ -634,7 +627,6 @@ class _$_Initial implements _Initial {
     TResult? Function(ProductsData data)? initial,
     TResult? Function(ProductsData data, String error)? failure,
     TResult? Function(List<Product> results, ProductsData data)? searchSuccess,
-    TResult? Function(ProductsData data, String error)? searchFailure,
   }) {
     return initial?.call(data);
   }
@@ -645,7 +637,6 @@ class _$_Initial implements _Initial {
     TResult Function(ProductsData data)? initial,
     TResult Function(ProductsData data, String error)? failure,
     TResult Function(List<Product> results, ProductsData data)? searchSuccess,
-    TResult Function(ProductsData data, String error)? searchFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -660,7 +651,6 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Failure value) failure,
     required TResult Function(_SearchSuccess value) searchSuccess,
-    required TResult Function(_SearchFailure value) searchFailure,
   }) {
     return initial(this);
   }
@@ -671,7 +661,6 @@ class _$_Initial implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SearchSuccess value)? searchSuccess,
-    TResult? Function(_SearchFailure value)? searchFailure,
   }) {
     return initial?.call(this);
   }
@@ -682,7 +671,6 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Failure value)? failure,
     TResult Function(_SearchSuccess value)? searchSuccess,
-    TResult Function(_SearchFailure value)? searchFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -783,7 +771,6 @@ class _$_Failure implements _Failure {
     required TResult Function(ProductsData data, String error) failure,
     required TResult Function(List<Product> results, ProductsData data)
         searchSuccess,
-    required TResult Function(ProductsData data, String error) searchFailure,
   }) {
     return failure(data, error);
   }
@@ -794,7 +781,6 @@ class _$_Failure implements _Failure {
     TResult? Function(ProductsData data)? initial,
     TResult? Function(ProductsData data, String error)? failure,
     TResult? Function(List<Product> results, ProductsData data)? searchSuccess,
-    TResult? Function(ProductsData data, String error)? searchFailure,
   }) {
     return failure?.call(data, error);
   }
@@ -805,7 +791,6 @@ class _$_Failure implements _Failure {
     TResult Function(ProductsData data)? initial,
     TResult Function(ProductsData data, String error)? failure,
     TResult Function(List<Product> results, ProductsData data)? searchSuccess,
-    TResult Function(ProductsData data, String error)? searchFailure,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -820,7 +805,6 @@ class _$_Failure implements _Failure {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Failure value) failure,
     required TResult Function(_SearchSuccess value) searchSuccess,
-    required TResult Function(_SearchFailure value) searchFailure,
   }) {
     return failure(this);
   }
@@ -831,7 +815,6 @@ class _$_Failure implements _Failure {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SearchSuccess value)? searchSuccess,
-    TResult? Function(_SearchFailure value)? searchFailure,
   }) {
     return failure?.call(this);
   }
@@ -842,7 +825,6 @@ class _$_Failure implements _Failure {
     TResult Function(_Initial value)? initial,
     TResult Function(_Failure value)? failure,
     TResult Function(_SearchSuccess value)? searchSuccess,
-    TResult Function(_SearchFailure value)? searchFailure,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -955,7 +937,6 @@ class _$_SearchSuccess implements _SearchSuccess {
     required TResult Function(ProductsData data, String error) failure,
     required TResult Function(List<Product> results, ProductsData data)
         searchSuccess,
-    required TResult Function(ProductsData data, String error) searchFailure,
   }) {
     return searchSuccess(results, data);
   }
@@ -966,7 +947,6 @@ class _$_SearchSuccess implements _SearchSuccess {
     TResult? Function(ProductsData data)? initial,
     TResult? Function(ProductsData data, String error)? failure,
     TResult? Function(List<Product> results, ProductsData data)? searchSuccess,
-    TResult? Function(ProductsData data, String error)? searchFailure,
   }) {
     return searchSuccess?.call(results, data);
   }
@@ -977,7 +957,6 @@ class _$_SearchSuccess implements _SearchSuccess {
     TResult Function(ProductsData data)? initial,
     TResult Function(ProductsData data, String error)? failure,
     TResult Function(List<Product> results, ProductsData data)? searchSuccess,
-    TResult Function(ProductsData data, String error)? searchFailure,
     required TResult orElse(),
   }) {
     if (searchSuccess != null) {
@@ -992,7 +971,6 @@ class _$_SearchSuccess implements _SearchSuccess {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Failure value) failure,
     required TResult Function(_SearchSuccess value) searchSuccess,
-    required TResult Function(_SearchFailure value) searchFailure,
   }) {
     return searchSuccess(this);
   }
@@ -1003,7 +981,6 @@ class _$_SearchSuccess implements _SearchSuccess {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SearchSuccess value)? searchSuccess,
-    TResult? Function(_SearchFailure value)? searchFailure,
   }) {
     return searchSuccess?.call(this);
   }
@@ -1014,7 +991,6 @@ class _$_SearchSuccess implements _SearchSuccess {
     TResult Function(_Initial value)? initial,
     TResult Function(_Failure value)? failure,
     TResult Function(_SearchSuccess value)? searchSuccess,
-    TResult Function(_SearchFailure value)? searchFailure,
     required TResult orElse(),
   }) {
     if (searchSuccess != null) {
@@ -1035,169 +1011,5 @@ abstract class _SearchSuccess implements ProductsState {
   @override
   @JsonKey(ignore: true)
   _$$_SearchSuccessCopyWith<_$_SearchSuccess> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_SearchFailureCopyWith<$Res>
-    implements $ProductsStateCopyWith<$Res> {
-  factory _$$_SearchFailureCopyWith(
-          _$_SearchFailure value, $Res Function(_$_SearchFailure) then) =
-      __$$_SearchFailureCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({ProductsData data, String error});
-
-  @override
-  $ProductsDataCopyWith<$Res> get data;
-}
-
-/// @nodoc
-class __$$_SearchFailureCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$_SearchFailure>
-    implements _$$_SearchFailureCopyWith<$Res> {
-  __$$_SearchFailureCopyWithImpl(
-      _$_SearchFailure _value, $Res Function(_$_SearchFailure) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-    Object? error = null,
-  }) {
-    return _then(_$_SearchFailure(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as ProductsData,
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SearchFailure implements _SearchFailure {
-  const _$_SearchFailure({required this.data, required this.error});
-
-  @override
-  final ProductsData data;
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'ProductsState.searchFailure(data: $data, error: $error)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_SearchFailure &&
-            (identical(other.data, data) || other.data == data) &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, data, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_SearchFailureCopyWith<_$_SearchFailure> get copyWith =>
-      __$$_SearchFailureCopyWithImpl<_$_SearchFailure>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ProductsData data) initial,
-    required TResult Function(ProductsData data, String error) failure,
-    required TResult Function(List<Product> results, ProductsData data)
-        searchSuccess,
-    required TResult Function(ProductsData data, String error) searchFailure,
-  }) {
-    return searchFailure(data, error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ProductsData data)? initial,
-    TResult? Function(ProductsData data, String error)? failure,
-    TResult? Function(List<Product> results, ProductsData data)? searchSuccess,
-    TResult? Function(ProductsData data, String error)? searchFailure,
-  }) {
-    return searchFailure?.call(data, error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ProductsData data)? initial,
-    TResult Function(ProductsData data, String error)? failure,
-    TResult Function(List<Product> results, ProductsData data)? searchSuccess,
-    TResult Function(ProductsData data, String error)? searchFailure,
-    required TResult orElse(),
-  }) {
-    if (searchFailure != null) {
-      return searchFailure(data, error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Failure value) failure,
-    required TResult Function(_SearchSuccess value) searchSuccess,
-    required TResult Function(_SearchFailure value) searchFailure,
-  }) {
-    return searchFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Failure value)? failure,
-    TResult? Function(_SearchSuccess value)? searchSuccess,
-    TResult? Function(_SearchFailure value)? searchFailure,
-  }) {
-    return searchFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_SearchSuccess value)? searchSuccess,
-    TResult Function(_SearchFailure value)? searchFailure,
-    required TResult orElse(),
-  }) {
-    if (searchFailure != null) {
-      return searchFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SearchFailure implements ProductsState {
-  const factory _SearchFailure(
-      {required final ProductsData data,
-      required final String error}) = _$_SearchFailure;
-
-  @override
-  ProductsData get data;
-  String get error;
-  @override
-  @JsonKey(ignore: true)
-  _$$_SearchFailureCopyWith<_$_SearchFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }

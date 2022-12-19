@@ -17,6 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ShopData {
   List<Shop> get shops => throw _privateConstructorUsedError;
+  String get query => throw _privateConstructorUsedError;
+  SfRangeValues get weightValues => throw _privateConstructorUsedError;
+  SfRangeValues get priceValues => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ShopDataCopyWith<ShopData> get copyWith =>
@@ -28,7 +31,11 @@ abstract class $ShopDataCopyWith<$Res> {
   factory $ShopDataCopyWith(ShopData value, $Res Function(ShopData) then) =
       _$ShopDataCopyWithImpl<$Res, ShopData>;
   @useResult
-  $Res call({List<Shop> shops});
+  $Res call(
+      {List<Shop> shops,
+      String query,
+      SfRangeValues weightValues,
+      SfRangeValues priceValues});
 }
 
 /// @nodoc
@@ -45,12 +52,27 @@ class _$ShopDataCopyWithImpl<$Res, $Val extends ShopData>
   @override
   $Res call({
     Object? shops = null,
+    Object? query = null,
+    Object? weightValues = null,
+    Object? priceValues = null,
   }) {
     return _then(_value.copyWith(
       shops: null == shops
           ? _value.shops
           : shops // ignore: cast_nullable_to_non_nullable
               as List<Shop>,
+      query: null == query
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
+      weightValues: null == weightValues
+          ? _value.weightValues
+          : weightValues // ignore: cast_nullable_to_non_nullable
+              as SfRangeValues,
+      priceValues: null == priceValues
+          ? _value.priceValues
+          : priceValues // ignore: cast_nullable_to_non_nullable
+              as SfRangeValues,
     ) as $Val);
   }
 }
@@ -62,7 +84,11 @@ abstract class _$$_ShopDataCopyWith<$Res> implements $ShopDataCopyWith<$Res> {
       __$$_ShopDataCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Shop> shops});
+  $Res call(
+      {List<Shop> shops,
+      String query,
+      SfRangeValues weightValues,
+      SfRangeValues priceValues});
 }
 
 /// @nodoc
@@ -77,12 +103,27 @@ class __$$_ShopDataCopyWithImpl<$Res>
   @override
   $Res call({
     Object? shops = null,
+    Object? query = null,
+    Object? weightValues = null,
+    Object? priceValues = null,
   }) {
     return _then(_$_ShopData(
       shops: null == shops
           ? _value._shops
           : shops // ignore: cast_nullable_to_non_nullable
               as List<Shop>,
+      query: null == query
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
+      weightValues: null == weightValues
+          ? _value.weightValues
+          : weightValues // ignore: cast_nullable_to_non_nullable
+              as SfRangeValues,
+      priceValues: null == priceValues
+          ? _value.priceValues
+          : priceValues // ignore: cast_nullable_to_non_nullable
+              as SfRangeValues,
     ));
   }
 }
@@ -90,7 +131,12 @@ class __$$_ShopDataCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ShopData implements _ShopData {
-  _$_ShopData({required final List<Shop> shops}) : _shops = shops;
+  _$_ShopData(
+      {required final List<Shop> shops,
+      required this.query,
+      required this.weightValues,
+      required this.priceValues})
+      : _shops = shops;
 
   final List<Shop> _shops;
   @override
@@ -100,8 +146,15 @@ class _$_ShopData implements _ShopData {
   }
 
   @override
+  final String query;
+  @override
+  final SfRangeValues weightValues;
+  @override
+  final SfRangeValues priceValues;
+
+  @override
   String toString() {
-    return 'ShopData(shops: $shops)';
+    return 'ShopData(shops: $shops, query: $query, weightValues: $weightValues, priceValues: $priceValues)';
   }
 
   @override
@@ -109,12 +162,21 @@ class _$_ShopData implements _ShopData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ShopData &&
-            const DeepCollectionEquality().equals(other._shops, _shops));
+            const DeepCollectionEquality().equals(other._shops, _shops) &&
+            (identical(other.query, query) || other.query == query) &&
+            (identical(other.weightValues, weightValues) ||
+                other.weightValues == weightValues) &&
+            (identical(other.priceValues, priceValues) ||
+                other.priceValues == priceValues));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_shops));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_shops),
+      query,
+      weightValues,
+      priceValues);
 
   @JsonKey(ignore: true)
   @override
@@ -124,10 +186,20 @@ class _$_ShopData implements _ShopData {
 }
 
 abstract class _ShopData implements ShopData {
-  factory _ShopData({required final List<Shop> shops}) = _$_ShopData;
+  factory _ShopData(
+      {required final List<Shop> shops,
+      required final String query,
+      required final SfRangeValues weightValues,
+      required final SfRangeValues priceValues}) = _$_ShopData;
 
   @override
   List<Shop> get shops;
+  @override
+  String get query;
+  @override
+  SfRangeValues get weightValues;
+  @override
+  SfRangeValues get priceValues;
   @override
   @JsonKey(ignore: true)
   _$$_ShopDataCopyWith<_$_ShopData> get copyWith =>

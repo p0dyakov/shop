@@ -58,6 +58,10 @@ mixin Logger {
     l.e(_formatError('Top-level', e.toString(), s), s);
   }
 
+  static void logError(Object e) {
+    l.e(e);
+  }
+
   static void logFlutterError(
     FlutterErrorDetails details,
   ) {

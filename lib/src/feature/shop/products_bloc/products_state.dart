@@ -13,8 +13,4 @@ class ProductsState with _$ProductsState {
     required List<Product> results,
     required ProductsData data,
   }) = _SearchSuccess;
-  const factory ProductsState.searchFailure({
-    required ProductsData data,
-    required String error,
-  }) = _SearchFailure;
 }

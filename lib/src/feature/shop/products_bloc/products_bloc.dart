@@ -1,4 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:l/l.dart';
+import 'package:shop/src/core/extension/extensions.dart';
+import 'package:shop/src/feature/app/logic/logger.dart';
 import 'package:shop/src/feature/shop/model/product/product.dart';
 import 'package:shop/src/feature/shop/model/products_data/products_data.dart';
 import 'package:shop/src/feature/shop/model/shop/shop.dart';
@@ -46,27 +49,25 @@ class ProductsBloc extends StreamBloc<ProductsEvent, ProductsState> {
       _performMutation(
         () async {
           if (query.isEmpty &&
-              weightValues == const SfRangeValues(0, 1000) &&
-              priceValues == const SfRangeValues(0, 1000)) {
+              weightValues.isInitial &&
+              priceValues.isInitial) {
             return _Initial(data: ProductsData.initial(_shop));
           }
 
           final results = <Product>[];
 
           for (final product in _shop.products) {
-            if ((weightValues.start as double).toInt() <=
-                    product.characteristic.weight &&
-                (weightValues.end as double).toInt() >=
-                    product.characteristic.weight &&
+            if (weightValues.isContains(product.characteristic.weight) &&
+                priceValues.isContains(product.characteristic.price) &&
                 product.name.toLowerCase().contains(query.toLowerCase())) {
               results.add(product);
             }
           }
 
           if (results.isEmpty) {
-            return _SearchFailure(
+            return _Failure(
               error: 'Nothing found',
-              data: ProductsData.initial(_shop),
+              data: _data,
             );
           }
 
@@ -89,6 +90,7 @@ class ProductsBloc extends StreamBloc<ProductsEvent, ProductsState> {
       final newState = await body();
       yield newState;
     } on Object catch (e) {
+      Logger.logError(e);
       yield _Failure(data: ProductsData.initial(_shop), error: e.toString());
     }
   }
