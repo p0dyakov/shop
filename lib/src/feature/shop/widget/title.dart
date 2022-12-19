@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/core/resource/theme/sizes.dart';
+import 'package:shop/src/core/resources/theme/sizes.dart';
 
 class TitleWidget extends StatelessWidget {
   const TitleWidget(this.text, {Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/core/resource/theme/sizes.dart';
+import 'package:shop/src/core/resources/theme/sizes.dart';
 
 final appLightTheme = ThemeData(
   backgroundColor: const Color.fromARGB(255, 249, 249, 249),

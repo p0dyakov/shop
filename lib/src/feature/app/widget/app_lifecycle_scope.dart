@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/core/widget/scope.dart';
+import 'package:shop/src/core/widget/scope/scope.dart';
 import 'package:shop/src/feature/app/logic/error_tracking_manager.dart';
 
 class AppLifecycleScope extends Scope {

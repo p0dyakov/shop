@@ -11,14 +11,11 @@ abstract class IDependenciesStorage {
 }
 
 class DependenciesStorage implements IDependenciesStorage {
-  final String _databaseName;
   final SharedPreferences _sharedPreferences;
 
   DependenciesStorage({
-    required String databaseName,
     required SharedPreferences sharedPreferences,
-  })  : _databaseName = databaseName,
-        _sharedPreferences = sharedPreferences;
+  }) : _sharedPreferences = sharedPreferences;
 
   Dio? _dio;
 

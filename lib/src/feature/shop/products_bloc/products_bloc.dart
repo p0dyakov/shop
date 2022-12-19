@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:l/l.dart';
 import 'package:shop/src/core/extension/extensions.dart';
 import 'package:shop/src/feature/app/logic/logger.dart';
 import 'package:shop/src/feature/shop/model/product/product.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop/src/core/extension/extensions.dart';
-import 'package:shop/src/core/widget/bloc_scope.dart';
+import 'package:shop/src/core/widget/scope/bloc_scope.dart';
 import 'package:shop/src/feature/shop/model/shop/shop.dart';
 import 'package:shop/src/feature/shop/shops_bloc/shops_bloc.dart';
 

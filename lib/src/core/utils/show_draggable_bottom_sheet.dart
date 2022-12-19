@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/core/resource/theme/sizes.dart';
+import 'package:shop/src/core/resources/theme/sizes.dart';
 
 Future<void> showDraggableBottomSheet({
   required Widget child,

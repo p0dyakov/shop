@@ -8,9 +8,9 @@ import 'package:shop/src/core/database/hive/app_database.dart';
 import 'package:shop/src/core/model/dependencies_storage.dart';
 import 'package:shop/src/core/model/environment_storage.dart';
 import 'package:shop/src/core/model/repository_storage.dart';
-import 'package:shop/src/core/widget/dependencies_scope.dart';
-import 'package:shop/src/core/widget/environment_scope.dart';
-import 'package:shop/src/core/widget/repository_scope.dart';
+import 'package:shop/src/core/widget/scope/dependencies_scope.dart';
+import 'package:shop/src/core/widget/scope/environment_scope.dart';
+import 'package:shop/src/core/widget/scope/repository_scope.dart';
 
 extension BuildContextX on BuildContext {
   // Scopes

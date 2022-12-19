@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop/src/core/resource/theme/sizes.dart';
+import 'package:shop/src/core/resources/theme/sizes.dart';
 import 'package:shop/src/core/widget/search.dart';
 import 'package:shop/src/feature/shop/model/shop/shop.dart';
 import 'package:shop/src/feature/shop/products_bloc/products_bloc.dart';

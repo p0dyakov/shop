@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop/src/core/model/environment_storage.dart';
-import 'package:shop/src/core/widget/scope.dart';
+import 'package:shop/src/core/widget/scope/scope.dart';
 
 class EnvironmentScope extends Scope {
   static const DelegateAccess<_EnvironmentScopeDelegate> _delegateOf =

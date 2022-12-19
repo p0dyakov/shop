@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop/src/core/model/repository_storage.dart';
-import 'package:shop/src/core/widget/scope.dart';
+import 'package:shop/src/core/widget/scope/scope.dart';
 
 class RepositoryScope extends Scope {
   static const DelegateAccess<_RepositoryScopeDelegate> _delegateOf =

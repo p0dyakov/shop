@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pure/pure.dart';
 import 'package:shop/src/core/extension/extensions.dart';
-import 'package:shop/src/core/widget/bloc_scope.dart';
+import 'package:shop/src/core/widget/scope/bloc_scope.dart';
 import 'package:shop/src/feature/settings/bloc/settings_bloc.dart';
 import 'package:shop/src/feature/settings/enum/app_theme.dart';
 
