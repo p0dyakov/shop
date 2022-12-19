@@ -698,30 +698,30 @@ abstract class _ChangeValues implements ShopsEvent {
 
 /// @nodoc
 mixin _$ShopsState {
-  ShopData get data => throw _privateConstructorUsedError;
+  ShopsData get data => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ShopData data) loading,
-    required TResult Function(ShopData data) loadSuccess,
-    required TResult Function(ShopData data, String error) failure,
-    required TResult Function(ShopData data, List<Product> results)
+    required TResult Function(ShopsData data) loading,
+    required TResult Function(ShopsData data) loadSuccess,
+    required TResult Function(ShopsData data, String error) failure,
+    required TResult Function(ShopsData data, List<Product> results)
         searchSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ShopData data)? loading,
-    TResult? Function(ShopData data)? loadSuccess,
-    TResult? Function(ShopData data, String error)? failure,
-    TResult? Function(ShopData data, List<Product> results)? searchSuccess,
+    TResult? Function(ShopsData data)? loading,
+    TResult? Function(ShopsData data)? loadSuccess,
+    TResult? Function(ShopsData data, String error)? failure,
+    TResult? Function(ShopsData data, List<Product> results)? searchSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ShopData data)? loading,
-    TResult Function(ShopData data)? loadSuccess,
-    TResult Function(ShopData data, String error)? failure,
-    TResult Function(ShopData data, List<Product> results)? searchSuccess,
+    TResult Function(ShopsData data)? loading,
+    TResult Function(ShopsData data)? loadSuccess,
+    TResult Function(ShopsData data, String error)? failure,
+    TResult Function(ShopsData data, List<Product> results)? searchSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -762,9 +762,9 @@ abstract class $ShopsStateCopyWith<$Res> {
           ShopsState value, $Res Function(ShopsState) then) =
       _$ShopsStateCopyWithImpl<$Res, ShopsState>;
   @useResult
-  $Res call({ShopData data});
+  $Res call({ShopsData data});
 
-  $ShopDataCopyWith<$Res> get data;
+  $ShopsDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -786,14 +786,14 @@ class _$ShopsStateCopyWithImpl<$Res, $Val extends ShopsState>
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as ShopData,
+              as ShopsData,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ShopDataCopyWith<$Res> get data {
-    return $ShopDataCopyWith<$Res>(_value.data, (value) {
+  $ShopsDataCopyWith<$Res> get data {
+    return $ShopsDataCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value) as $Val);
     });
   }
@@ -806,10 +806,10 @@ abstract class _$$_LoadingCopyWith<$Res> implements $ShopsStateCopyWith<$Res> {
       __$$_LoadingCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ShopData data});
+  $Res call({ShopsData data});
 
   @override
-  $ShopDataCopyWith<$Res> get data;
+  $ShopsDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -828,7 +828,7 @@ class __$$_LoadingCopyWithImpl<$Res>
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as ShopData,
+              as ShopsData,
     ));
   }
 }
@@ -839,7 +839,7 @@ class _$_Loading implements _Loading {
   const _$_Loading({required this.data});
 
   @override
-  final ShopData data;
+  final ShopsData data;
 
   @override
   String toString() {
@@ -866,10 +866,10 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ShopData data) loading,
-    required TResult Function(ShopData data) loadSuccess,
-    required TResult Function(ShopData data, String error) failure,
-    required TResult Function(ShopData data, List<Product> results)
+    required TResult Function(ShopsData data) loading,
+    required TResult Function(ShopsData data) loadSuccess,
+    required TResult Function(ShopsData data, String error) failure,
+    required TResult Function(ShopsData data, List<Product> results)
         searchSuccess,
   }) {
     return loading(data);
@@ -878,10 +878,10 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ShopData data)? loading,
-    TResult? Function(ShopData data)? loadSuccess,
-    TResult? Function(ShopData data, String error)? failure,
-    TResult? Function(ShopData data, List<Product> results)? searchSuccess,
+    TResult? Function(ShopsData data)? loading,
+    TResult? Function(ShopsData data)? loadSuccess,
+    TResult? Function(ShopsData data, String error)? failure,
+    TResult? Function(ShopsData data, List<Product> results)? searchSuccess,
   }) {
     return loading?.call(data);
   }
@@ -889,10 +889,10 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ShopData data)? loading,
-    TResult Function(ShopData data)? loadSuccess,
-    TResult Function(ShopData data, String error)? failure,
-    TResult Function(ShopData data, List<Product> results)? searchSuccess,
+    TResult Function(ShopsData data)? loading,
+    TResult Function(ShopsData data)? loadSuccess,
+    TResult Function(ShopsData data, String error)? failure,
+    TResult Function(ShopsData data, List<Product> results)? searchSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -940,10 +940,10 @@ class _$_Loading implements _Loading {
 }
 
 abstract class _Loading implements ShopsState {
-  const factory _Loading({required final ShopData data}) = _$_Loading;
+  const factory _Loading({required final ShopsData data}) = _$_Loading;
 
   @override
-  ShopData get data;
+  ShopsData get data;
   @override
   @JsonKey(ignore: true)
   _$$_LoadingCopyWith<_$_Loading> get copyWith =>
@@ -958,10 +958,10 @@ abstract class _$$_LoadSuccessCopyWith<$Res>
       __$$_LoadSuccessCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ShopData data});
+  $Res call({ShopsData data});
 
   @override
-  $ShopDataCopyWith<$Res> get data;
+  $ShopsDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -981,7 +981,7 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as ShopData,
+              as ShopsData,
     ));
   }
 }
@@ -992,7 +992,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess({required this.data});
 
   @override
-  final ShopData data;
+  final ShopsData data;
 
   @override
   String toString() {
@@ -1019,10 +1019,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ShopData data) loading,
-    required TResult Function(ShopData data) loadSuccess,
-    required TResult Function(ShopData data, String error) failure,
-    required TResult Function(ShopData data, List<Product> results)
+    required TResult Function(ShopsData data) loading,
+    required TResult Function(ShopsData data) loadSuccess,
+    required TResult Function(ShopsData data, String error) failure,
+    required TResult Function(ShopsData data, List<Product> results)
         searchSuccess,
   }) {
     return loadSuccess(data);
@@ -1031,10 +1031,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ShopData data)? loading,
-    TResult? Function(ShopData data)? loadSuccess,
-    TResult? Function(ShopData data, String error)? failure,
-    TResult? Function(ShopData data, List<Product> results)? searchSuccess,
+    TResult? Function(ShopsData data)? loading,
+    TResult? Function(ShopsData data)? loadSuccess,
+    TResult? Function(ShopsData data, String error)? failure,
+    TResult? Function(ShopsData data, List<Product> results)? searchSuccess,
   }) {
     return loadSuccess?.call(data);
   }
@@ -1042,10 +1042,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ShopData data)? loading,
-    TResult Function(ShopData data)? loadSuccess,
-    TResult Function(ShopData data, String error)? failure,
-    TResult Function(ShopData data, List<Product> results)? searchSuccess,
+    TResult Function(ShopsData data)? loading,
+    TResult Function(ShopsData data)? loadSuccess,
+    TResult Function(ShopsData data, String error)? failure,
+    TResult Function(ShopsData data, List<Product> results)? searchSuccess,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -1093,10 +1093,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements ShopsState {
-  const factory _LoadSuccess({required final ShopData data}) = _$_LoadSuccess;
+  const factory _LoadSuccess({required final ShopsData data}) = _$_LoadSuccess;
 
   @override
-  ShopData get data;
+  ShopsData get data;
   @override
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
@@ -1110,10 +1110,10 @@ abstract class _$$_FailureCopyWith<$Res> implements $ShopsStateCopyWith<$Res> {
       __$$_FailureCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ShopData data, String error});
+  $Res call({ShopsData data, String error});
 
   @override
-  $ShopDataCopyWith<$Res> get data;
+  $ShopsDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -1133,7 +1133,7 @@ class __$$_FailureCopyWithImpl<$Res>
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as ShopData,
+              as ShopsData,
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -1148,7 +1148,7 @@ class _$_Failure implements _Failure {
   const _$_Failure({required this.data, required this.error});
 
   @override
-  final ShopData data;
+  final ShopsData data;
   @override
   final String error;
 
@@ -1178,10 +1178,10 @@ class _$_Failure implements _Failure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ShopData data) loading,
-    required TResult Function(ShopData data) loadSuccess,
-    required TResult Function(ShopData data, String error) failure,
-    required TResult Function(ShopData data, List<Product> results)
+    required TResult Function(ShopsData data) loading,
+    required TResult Function(ShopsData data) loadSuccess,
+    required TResult Function(ShopsData data, String error) failure,
+    required TResult Function(ShopsData data, List<Product> results)
         searchSuccess,
   }) {
     return failure(data, error);
@@ -1190,10 +1190,10 @@ class _$_Failure implements _Failure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ShopData data)? loading,
-    TResult? Function(ShopData data)? loadSuccess,
-    TResult? Function(ShopData data, String error)? failure,
-    TResult? Function(ShopData data, List<Product> results)? searchSuccess,
+    TResult? Function(ShopsData data)? loading,
+    TResult? Function(ShopsData data)? loadSuccess,
+    TResult? Function(ShopsData data, String error)? failure,
+    TResult? Function(ShopsData data, List<Product> results)? searchSuccess,
   }) {
     return failure?.call(data, error);
   }
@@ -1201,10 +1201,10 @@ class _$_Failure implements _Failure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ShopData data)? loading,
-    TResult Function(ShopData data)? loadSuccess,
-    TResult Function(ShopData data, String error)? failure,
-    TResult Function(ShopData data, List<Product> results)? searchSuccess,
+    TResult Function(ShopsData data)? loading,
+    TResult Function(ShopsData data)? loadSuccess,
+    TResult Function(ShopsData data, String error)? failure,
+    TResult Function(ShopsData data, List<Product> results)? searchSuccess,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -1253,10 +1253,11 @@ class _$_Failure implements _Failure {
 
 abstract class _Failure implements ShopsState {
   const factory _Failure(
-      {required final ShopData data, required final String error}) = _$_Failure;
+      {required final ShopsData data,
+      required final String error}) = _$_Failure;
 
   @override
-  ShopData get data;
+  ShopsData get data;
   String get error;
   @override
   @JsonKey(ignore: true)
@@ -1272,10 +1273,10 @@ abstract class _$$_SearchSuccessCopyWith<$Res>
       __$$_SearchSuccessCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ShopData data, List<Product> results});
+  $Res call({ShopsData data, List<Product> results});
 
   @override
-  $ShopDataCopyWith<$Res> get data;
+  $ShopsDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -1296,7 +1297,7 @@ class __$$_SearchSuccessCopyWithImpl<$Res>
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as ShopData,
+              as ShopsData,
       results: null == results
           ? _value._results
           : results // ignore: cast_nullable_to_non_nullable
@@ -1313,7 +1314,7 @@ class _$_SearchSuccess implements _SearchSuccess {
       : _results = results;
 
   @override
-  final ShopData data;
+  final ShopsData data;
   final List<Product> _results;
   @override
   List<Product> get results {
@@ -1348,10 +1349,10 @@ class _$_SearchSuccess implements _SearchSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ShopData data) loading,
-    required TResult Function(ShopData data) loadSuccess,
-    required TResult Function(ShopData data, String error) failure,
-    required TResult Function(ShopData data, List<Product> results)
+    required TResult Function(ShopsData data) loading,
+    required TResult Function(ShopsData data) loadSuccess,
+    required TResult Function(ShopsData data, String error) failure,
+    required TResult Function(ShopsData data, List<Product> results)
         searchSuccess,
   }) {
     return searchSuccess(data, results);
@@ -1360,10 +1361,10 @@ class _$_SearchSuccess implements _SearchSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ShopData data)? loading,
-    TResult? Function(ShopData data)? loadSuccess,
-    TResult? Function(ShopData data, String error)? failure,
-    TResult? Function(ShopData data, List<Product> results)? searchSuccess,
+    TResult? Function(ShopsData data)? loading,
+    TResult? Function(ShopsData data)? loadSuccess,
+    TResult? Function(ShopsData data, String error)? failure,
+    TResult? Function(ShopsData data, List<Product> results)? searchSuccess,
   }) {
     return searchSuccess?.call(data, results);
   }
@@ -1371,10 +1372,10 @@ class _$_SearchSuccess implements _SearchSuccess {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ShopData data)? loading,
-    TResult Function(ShopData data)? loadSuccess,
-    TResult Function(ShopData data, String error)? failure,
-    TResult Function(ShopData data, List<Product> results)? searchSuccess,
+    TResult Function(ShopsData data)? loading,
+    TResult Function(ShopsData data)? loadSuccess,
+    TResult Function(ShopsData data, String error)? failure,
+    TResult Function(ShopsData data, List<Product> results)? searchSuccess,
     required TResult orElse(),
   }) {
     if (searchSuccess != null) {
@@ -1423,11 +1424,11 @@ class _$_SearchSuccess implements _SearchSuccess {
 
 abstract class _SearchSuccess implements ShopsState {
   const factory _SearchSuccess(
-      {required final ShopData data,
+      {required final ShopsData data,
       required final List<Product> results}) = _$_SearchSuccess;
 
   @override
-  ShopData get data;
+  ShopsData get data;
   List<Product> get results;
   @override
   @JsonKey(ignore: true)

@@ -5,15 +5,15 @@ import 'package:syncfusion_flutter_sliders/sliders.dart';
 part 'shop_data.freezed.dart';
 
 @freezed
-class ShopData with _$ShopData {
-  factory ShopData({
+class ShopsData with _$ShopsData {
+  factory ShopsData({
     required List<Shop> shops,
     required String query,
     required SfRangeValues weightValues,
     required SfRangeValues priceValues,
-  }) = _ShopData;
+  }) = _ShopsData;
 
-  factory ShopData.initial() => ShopData(
+  factory ShopsData.initial() => ShopsData(
         query: '',
         shops: [],
         weightValues: const SfRangeValues(0, 1000),

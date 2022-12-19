@@ -17,12 +17,12 @@ class ShopsBloc extends StreamBloc<ShopsEvent, ShopsState> {
   ShopsBloc(
     IShopRepository shopRepository,
   )   : _shopRepository = shopRepository,
-        super(_Loading(data: ShopData.initial())) {
+        super(_Loading(data: ShopsData.initial())) {
     add(const ShopsEvent.getStoredShops());
     add(const ShopsEvent.getShops());
   }
 
-  ShopData get _data => state.data;
+  ShopsData get _data => state.data;
 
   @override
   Stream<ShopsState> mapEventToStates(ShopsEvent event) => event.when(
@@ -91,8 +91,13 @@ class ShopsBloc extends StreamBloc<ShopsEvent, ShopsState> {
           }
 
           return _SearchSuccess(
-            data: _data,
             results: results,
+            data: ShopsData(
+              priceValues: priceValues,
+              weightValues: weightValues,
+              query: query,
+              shops: _data.shops,
+            ),
           );
         },
       );
