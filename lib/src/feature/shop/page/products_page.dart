@@ -25,90 +25,93 @@ class ShopProductsPage extends StatelessWidget {
         shop: shop,
         child: BlocBuilder<ProductsBloc, ProductsState>(
           builder: (context, state) => Scaffold(
-            body: ListView(
-              physics: const BouncingScrollPhysics(),
-              children: [
-                const SizedBox(height: 30),
-                ShopCardWidget(
-                  shop: shop,
-                  descriptionMaxLines: 3,
-                  backgroundColor: Colors.transparent,
-                  showDeliveryInfo: false,
-                  onTap: () {},
-                ),
-                const SizedBox(height: 20),
-                SearchWidget(
-                  hint: 'Search for a product in ${shop.name}',
-                  onChanged: (String query) =>
-                      BlocProvider.of<ProductsBloc>(context).add(
-                    ProductsEvent.searchProduct(
-                      query: query,
-                      weightValues: state.data.weightValues,
-                      priceValues: state.data.priceValues,
-                    ),
+            body: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 30),
+              child: ListView(
+                physics: const BouncingScrollPhysics(),
+                children: [
+                  ShopCardWidget(
+                    shop: shop,
+                    descriptionMaxLines: 3,
+                    backgroundColor: Colors.transparent,
+                    showDeliveryInfo: false,
+                    onTap: () {},
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: kDefaultPadding,
-                    right: kDefaultPadding,
-                    top: 3,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      DeliveryInfoWidget(
-                        color: Colors.grey,
-                        deliveryPrice: shop.deliveryPrice,
-                        deliveryTime: shop.deliveryTimeInMinutes,
-                      ),
-                      const SizedBox(height: 20),
-                      FiltersWidget(
+                  const SizedBox(height: 20),
+                  SearchWidget(
+                    hint: 'Search for a product in ${shop.name}',
+                    onChanged: (String query) =>
+                        BlocProvider.of<ProductsBloc>(context).add(
+                      ProductsEvent.searchProduct(
+                        query: query,
                         weightValues: state.data.weightValues,
                         priceValues: state.data.priceValues,
-                        onFiltersChanged: (
-                          SfRangeValues weightValues,
-                          SfRangeValues priceValues,
-                        ) =>
-                            BlocProvider.of<ProductsBloc>(context).add(
-                          ProductsEvent.changeValues(
-                            weightValues: weightValues,
-                            priceValues: priceValues,
-                          ),
-                        ),
-                        onFiltersChangeEnd: (
-                          SfRangeValues weightValues,
-                          SfRangeValues priceValues,
-                        ) =>
-                            BlocProvider.of<ProductsBloc>(context).add(
-                          ProductsEvent.searchProduct(
-                            query: state.data.query,
-                            weightValues: weightValues,
-                            priceValues: priceValues,
-                          ),
-                        ),
                       ),
-                      const SizedBox(height: 30),
-                      state.when(
-                        initial: (data) => Column(
-                          children: [
-                            const TitleWidget('All products'),
-                            ProductsBuilder(products: data.shop.products),
-                          ],
-                        ),
-                        failure: (data, error) => TitleWidget(error),
-                        searchSuccess: (results, data) => Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const TitleWidget('Search Results'),
-                            ProductsBuilder(products: results),
-                          ],
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: kDefaultPadding,
+                      right: kDefaultPadding,
+                      top: 3,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        DeliveryInfoWidget(
+                          color: Colors.grey,
+                          deliveryPrice: shop.deliveryPrice,
+                          deliveryTime: shop.deliveryTimeInMinutes,
+                        ),
+                        const SizedBox(height: 20),
+                        FiltersWidget(
+                          weightValues: state.data.weightValues,
+                          priceValues: state.data.priceValues,
+                          onFiltersChanged: (
+                            SfRangeValues weightValues,
+                            SfRangeValues priceValues,
+                          ) =>
+                              BlocProvider.of<ProductsBloc>(context).add(
+                            ProductsEvent.changeValues(
+                              weightValues: weightValues,
+                              priceValues: priceValues,
+                            ),
+                          ),
+                          onFiltersChangeEnd: (
+                            SfRangeValues weightValues,
+                            SfRangeValues priceValues,
+                          ) =>
+                              BlocProvider.of<ProductsBloc>(context).add(
+                            ProductsEvent.searchProduct(
+                              query: state.data.query,
+                              weightValues: weightValues,
+                              priceValues: priceValues,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 30),
+                        state.when(
+                          failure: (data, error) => TitleWidget(error),
+                          initial: (data) => Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const TitleWidget('All products'),
+                              ProductsBuilder(products: data.shop.products),
+                            ],
+                          ),
+                          searchSuccess: (results, data) => Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const TitleWidget('Search Results'),
+                              ProductsBuilder(products: results),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

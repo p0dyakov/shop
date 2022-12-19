@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/core/resources/theme/sizes.dart';
 
 class TitleWidget extends StatelessWidget {
-  const TitleWidget(this.text, {Key? key}) : super(key: key);
+  const TitleWidget(
+    this.text, {
+    Key? key,
+    this.horizontalPadding = 0,
+  }) : super(key: key);
 
   final String text;
+  final double horizontalPadding;
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: kDefaultPadding,
-          vertical: 5,
+        padding: EdgeInsets.only(
+          bottom: 5,
+          left: horizontalPadding,
+          right: horizontalPadding,
         ),
         child: Text(
           text,
@@ -18,6 +23,7 @@ class TitleWidget extends StatelessWidget {
             fontSize: 25,
             fontWeight: FontWeight.w500,
           ),
+          textAlign: TextAlign.left,
         ),
       );
 }
