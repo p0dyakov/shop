@@ -75,8 +75,8 @@ class ShopsBloc extends StreamBloc<ShopsEvent, ShopsState> {
 
           for (final shop in _data.shops) {
             for (final product in shop.products) {
-              if (weightValues.isContains(product.characteristic.weight) &&
-                  priceValues.isContains(product.characteristic.price) &&
+              if (weightValues.contains(product.characteristic.weight) &&
+                  priceValues.contains(product.characteristic.price) &&
                   product.name.toLowerCase().contains(query.toLowerCase())) {
                 results.add(product);
               }

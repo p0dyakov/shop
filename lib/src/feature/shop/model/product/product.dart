@@ -1,6 +1,13 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 import 'package:shop/src/feature/shop/model/product_characteristics/product_characteristics.dart';
+
+@GenerateNiceMocks([MockSpec<Product>()])
+import 'product.mocks.dart';
 
 part 'product.freezed.dart';
 part 'product.g.dart';

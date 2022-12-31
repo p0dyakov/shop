@@ -21,7 +21,7 @@ class ShopProductsPage extends StatelessWidget {
   final Shop shop;
 
   @override
-  Widget build(BuildContext context) => ProductsScope(
+  Widget build(BuildContext context) =>ProductsScope(
         shop: shop,
         child: BlocBuilder<ProductsBloc, ProductsState>(
           builder: (context, state) => Scaffold(
