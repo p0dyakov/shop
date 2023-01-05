@@ -15,4 +15,3 @@
 - stream_bloc
 - freezed
 - auto_route
-- json_serializable
