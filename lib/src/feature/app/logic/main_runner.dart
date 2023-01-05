@@ -59,6 +59,7 @@ mixin MainRunner {
   }
 
   static T? _runZoned<T>(T Function() body) => Logger.runLogging(
+        // ignore: deprecated_member_use
         () => StreamBlocObserver.inject(
           const AppBlocObserver(),
           () => runZonedGuarded(

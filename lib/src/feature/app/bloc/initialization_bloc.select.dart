@@ -23,6 +23,7 @@ abstract class InitializationData$ {
 abstract class _IndexedInitializationStateMixin$ {
   _IndexedInitializationStateMixin$._();
 
+  // ignore: unused_element
   static InitializationProgress progress(
           _IndexedInitializationStateMixin model) =>
       model.progress;

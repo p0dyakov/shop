@@ -17,6 +17,7 @@ class ProductCharacteristicAdapter
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
+
     return _$_ProductCharacteristic(
       weight: fields[0] as int,
       price: fields[1] as int,

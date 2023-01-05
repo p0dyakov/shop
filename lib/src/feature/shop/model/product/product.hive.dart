@@ -16,6 +16,7 @@ class ProductAdapter extends TypeAdapter<_$_Product> {
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
+
     return _$_Product(
       id: fields[0] as String,
       name: fields[1] as String,

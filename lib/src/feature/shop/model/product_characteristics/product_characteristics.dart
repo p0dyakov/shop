@@ -2,11 +2,7 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
-import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
 
-@GenerateNiceMocks([MockSpec<ProductCharacteristic>()])
-import 'product_characteristics.mocks.dart';
 
 part 'product_characteristics.freezed.dart';
 part 'product_characteristics.g.dart';

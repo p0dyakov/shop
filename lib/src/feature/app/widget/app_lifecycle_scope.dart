@@ -3,6 +3,7 @@ import 'package:shop/src/core/widget/scope/scope.dart';
 import 'package:shop/src/feature/app/logic/error_tracking_manager.dart';
 
 class AppLifecycleScope extends Scope {
+  // ignore: unused_field
   static const DelegateAccess<_AppLifecycleScopeDelegate> _delegateOf =
       Scope.delegateOf<AppLifecycleScope, _AppLifecycleScopeDelegate>;
 

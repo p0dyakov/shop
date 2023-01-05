@@ -3,6 +3,9 @@ include: package:purple_lints/purple_lints.yaml
 analyzer:
   plugins:
     - dart_code_metrics
+  errors:
+    todo: ignore
+    library_private_types_in_public_api: ignore
 
 dart_code_metrics:
   metrics:
@@ -41,7 +44,7 @@ dart_code_metrics:
     - prefer-correct-identifier-length:
         exceptions: ['id']
         max-identifier-length: 30
-        min-identifier-length: 3
+        min-identifier-length: 1
     - prefer-first
     - prefer-immediate-return
     - prefer-last
@@ -52,6 +55,7 @@ dart_code_metrics:
     - avoid-wrapping-in-padding
     - prefer-const-border-radius
     - prefer-extracting-callbacks
+    - library_private_types_in_public_api: false
     - prefer-single-widget-per-file:
         ignore-private-widgets: true
     - prefer-intl-name
