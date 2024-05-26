@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'shop.dart';
 
@@ -12,7 +12,7 @@ part of 'shop.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Shop _$ShopFromJson(Map<String, dynamic> json) {
   return _Shop.fromJson(json);
@@ -110,9 +110,10 @@ class _$ShopCopyWithImpl<$Res, $Val extends Shop>
 }
 
 /// @nodoc
-abstract class _$$_ShopCopyWith<$Res> implements $ShopCopyWith<$Res> {
-  factory _$$_ShopCopyWith(_$_Shop value, $Res Function(_$_Shop) then) =
-      __$$_ShopCopyWithImpl<$Res>;
+abstract class _$$ShopImplCopyWith<$Res> implements $ShopCopyWith<$Res> {
+  factory _$$ShopImplCopyWith(
+          _$ShopImpl value, $Res Function(_$ShopImpl) then) =
+      __$$ShopImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -126,9 +127,10 @@ abstract class _$$_ShopCopyWith<$Res> implements $ShopCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ShopCopyWithImpl<$Res> extends _$ShopCopyWithImpl<$Res, _$_Shop>
-    implements _$$_ShopCopyWith<$Res> {
-  __$$_ShopCopyWithImpl(_$_Shop _value, $Res Function(_$_Shop) _then)
+class __$$ShopImplCopyWithImpl<$Res>
+    extends _$ShopCopyWithImpl<$Res, _$ShopImpl>
+    implements _$$ShopImplCopyWith<$Res> {
+  __$$ShopImplCopyWithImpl(_$ShopImpl _value, $Res Function(_$ShopImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -142,7 +144,7 @@ class __$$_ShopCopyWithImpl<$Res> extends _$ShopCopyWithImpl<$Res, _$_Shop>
     Object? photoUrl = null,
     Object? products = null,
   }) {
-    return _then(_$_Shop(
+    return _then(_$ShopImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -178,8 +180,8 @@ class __$$_ShopCopyWithImpl<$Res> extends _$ShopCopyWithImpl<$Res, _$_Shop>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 0)
-class _$_Shop implements _Shop {
-  _$_Shop(
+class _$ShopImpl implements _Shop {
+  _$ShopImpl(
       {@HiveField(0) required this.id,
       @HiveField(1) required this.name,
       @HiveField(2) required this.description,
@@ -189,7 +191,8 @@ class _$_Shop implements _Shop {
       @HiveField(6) required final List<Product> products})
       : _products = products;
 
-  factory _$_Shop.fromJson(Map<String, dynamic> json) => _$$_ShopFromJson(json);
+  factory _$ShopImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ShopImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -213,6 +216,7 @@ class _$_Shop implements _Shop {
   @override
   @HiveField(6)
   List<Product> get products {
+    if (_products is EqualUnmodifiableListView) return _products;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_products);
   }
@@ -223,10 +227,10 @@ class _$_Shop implements _Shop {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Shop &&
+            other is _$ShopImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
@@ -255,12 +259,12 @@ class _$_Shop implements _Shop {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShopCopyWith<_$_Shop> get copyWith =>
-      __$$_ShopCopyWithImpl<_$_Shop>(this, _$identity);
+  _$$ShopImplCopyWith<_$ShopImpl> get copyWith =>
+      __$$ShopImplCopyWithImpl<_$ShopImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ShopToJson(
+    return _$$ShopImplToJson(
       this,
     );
   }
@@ -274,9 +278,9 @@ abstract class _Shop implements Shop {
       @HiveField(3) required final int deliveryTimeInMinutes,
       @HiveField(4) required final int deliveryPrice,
       @HiveField(5) required final String photoUrl,
-      @HiveField(6) required final List<Product> products}) = _$_Shop;
+      @HiveField(6) required final List<Product> products}) = _$ShopImpl;
 
-  factory _Shop.fromJson(Map<String, dynamic> json) = _$_Shop.fromJson;
+  factory _Shop.fromJson(Map<String, dynamic> json) = _$ShopImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -301,5 +305,6 @@ abstract class _Shop implements Shop {
   List<Product> get products;
   @override
   @JsonKey(ignore: true)
-  _$$_ShopCopyWith<_$_Shop> get copyWith => throw _privateConstructorUsedError;
+  _$$ShopImplCopyWith<_$ShopImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

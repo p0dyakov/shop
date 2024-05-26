@@ -6,18 +6,17 @@ part of 'product.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ProductAdapter extends TypeAdapter<_$_Product> {
+class ProductImplAdapter extends TypeAdapter<_$ProductImpl> {
   @override
   final int typeId = 1;
 
   @override
-  _$_Product read(BinaryReader reader) {
+  _$ProductImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-
-    return _$_Product(
+    return _$ProductImpl(
       id: fields[0] as String,
       name: fields[1] as String,
       photoUrl: fields[3] as String,
@@ -26,7 +25,7 @@ class ProductAdapter extends TypeAdapter<_$_Product> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_Product obj) {
+  void write(BinaryWriter writer, _$ProductImpl obj) {
     writer
       ..writeByte(4)
       ..writeByte(0)
@@ -45,7 +44,7 @@ class ProductAdapter extends TypeAdapter<_$_Product> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ProductAdapter &&
+      other is ProductImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

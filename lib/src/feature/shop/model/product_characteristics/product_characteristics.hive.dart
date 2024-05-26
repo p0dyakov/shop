@@ -6,19 +6,18 @@ part of 'product_characteristics.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ProductCharacteristicAdapter
-    extends TypeAdapter<_$_ProductCharacteristic> {
+class ProductCharacteristicImplAdapter
+    extends TypeAdapter<_$ProductCharacteristicImpl> {
   @override
   final int typeId = 2;
 
   @override
-  _$_ProductCharacteristic read(BinaryReader reader) {
+  _$ProductCharacteristicImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-
-    return _$_ProductCharacteristic(
+    return _$ProductCharacteristicImpl(
       weight: fields[0] as int,
       price: fields[1] as int,
       manufactureCountry: fields[2] as String,
@@ -27,7 +26,7 @@ class ProductCharacteristicAdapter
   }
 
   @override
-  void write(BinaryWriter writer, _$_ProductCharacteristic obj) {
+  void write(BinaryWriter writer, _$ProductCharacteristicImpl obj) {
     writer
       ..writeByte(4)
       ..writeByte(0)
@@ -46,7 +45,7 @@ class ProductCharacteristicAdapter
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ProductCharacteristicAdapter &&
+      other is ProductCharacteristicImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

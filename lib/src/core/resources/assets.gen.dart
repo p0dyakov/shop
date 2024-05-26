@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 
@@ -13,7 +13,10 @@ class $AssetImageGen {
   const $AssetImageGen();
 
   /// File path: asset/image/.keep
-  String get keep => 'asset/image/.keep';
+  String get aKeep => 'asset/image/.keep';
+
+  /// List of all assets
+  List<String> get values => [aKeep];
 }
 
 class Assets {
@@ -21,12 +24,17 @@ class Assets {
 
   static const $AssetImageGen image = $AssetImageGen();
   static const AssetGenImage logo = AssetGenImage('asset/logo.png');
+
+  /// List of all assets
+  static List<AssetGenImage> get values => [logo];
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(this._assetName, {this.size = null});
 
   final String _assetName;
+
+  final Size? size;
 
   Image image({
     Key? key,
@@ -78,6 +86,17 @@ class AssetGenImage {
       filterQuality: filterQuality,
       cacheWidth: cacheWidth,
       cacheHeight: cacheHeight,
+    );
+  }
+
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
     );
   }
 

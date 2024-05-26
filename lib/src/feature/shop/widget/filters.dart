@@ -34,9 +34,8 @@ class FiltersWidget extends StatelessWidget {
                   stepSize: 1,
                   min: 0,
                   max: 1000,
-                  onChanged: (SfRangeValues values) =>
-                      onFiltersChanged(values, priceValues),
-                  onChangeEnd: (SfRangeValues values) =>
+                  onChanged: (values) => onFiltersChanged(values, priceValues),
+                  onChangeEnd: (values) =>
                       onFiltersChangeEnd(values, priceValues),
                   values: weightValues,
                 ),
@@ -54,9 +53,8 @@ class FiltersWidget extends StatelessWidget {
                   stepSize: 1,
                   min: 0,
                   max: 1000,
-                  onChanged: (SfRangeValues values) =>
-                      onFiltersChanged(weightValues, values),
-                  onChangeEnd: (SfRangeValues values) =>
+                  onChanged: (values) => onFiltersChanged(weightValues, values),
+                  onChangeEnd: (values) =>
                       onFiltersChangeEnd(weightValues, values),
                   values: priceValues,
                 ),

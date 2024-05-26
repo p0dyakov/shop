@@ -38,4 +38,34 @@ extension $EnvironmentMatcherExtension on Environment {
         return development;
     }
   }
+
+  T? whenOrNull<T>({
+    T Function()? production,
+    T Function()? staging,
+    T Function()? development,
+  }) {
+    switch (this) {
+      case Environment.production:
+        return production?.call();
+      case Environment.staging:
+        return staging?.call();
+      case Environment.development:
+        return development?.call();
+    }
+  }
+
+  T? whenConstOrNull<T>({
+    T? production,
+    T? staging,
+    T? development,
+  }) {
+    switch (this) {
+      case Environment.production:
+        return production;
+      case Environment.staging:
+        return staging;
+      case Environment.development:
+        return development;
+    }
+  }
 }

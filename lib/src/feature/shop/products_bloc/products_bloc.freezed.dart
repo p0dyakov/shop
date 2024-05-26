@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'products_bloc.dart';
 
@@ -12,7 +12,7 @@ part of 'products_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ProductsEvent {
@@ -111,11 +111,11 @@ class _$ProductsEventCopyWithImpl<$Res, $Val extends ProductsEvent>
 }
 
 /// @nodoc
-abstract class _$$_SearchProductCopyWith<$Res>
+abstract class _$$SearchProductImplCopyWith<$Res>
     implements $ProductsEventCopyWith<$Res> {
-  factory _$$_SearchProductCopyWith(
-          _$_SearchProduct value, $Res Function(_$_SearchProduct) then) =
-      __$$_SearchProductCopyWithImpl<$Res>;
+  factory _$$SearchProductImplCopyWith(
+          _$SearchProductImpl value, $Res Function(_$SearchProductImpl) then) =
+      __$$SearchProductImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -123,11 +123,11 @@ abstract class _$$_SearchProductCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SearchProductCopyWithImpl<$Res>
-    extends _$ProductsEventCopyWithImpl<$Res, _$_SearchProduct>
-    implements _$$_SearchProductCopyWith<$Res> {
-  __$$_SearchProductCopyWithImpl(
-      _$_SearchProduct _value, $Res Function(_$_SearchProduct) _then)
+class __$$SearchProductImplCopyWithImpl<$Res>
+    extends _$ProductsEventCopyWithImpl<$Res, _$SearchProductImpl>
+    implements _$$SearchProductImplCopyWith<$Res> {
+  __$$SearchProductImplCopyWithImpl(
+      _$SearchProductImpl _value, $Res Function(_$SearchProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -137,7 +137,7 @@ class __$$_SearchProductCopyWithImpl<$Res>
     Object? weightValues = null,
     Object? priceValues = null,
   }) {
-    return _then(_$_SearchProduct(
+    return _then(_$SearchProductImpl(
       query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -156,8 +156,8 @@ class __$$_SearchProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SearchProduct implements _SearchProduct {
-  const _$_SearchProduct(
+class _$SearchProductImpl implements _SearchProduct {
+  const _$SearchProductImpl(
       {required this.query,
       required this.weightValues,
       required this.priceValues});
@@ -175,10 +175,10 @@ class _$_SearchProduct implements _SearchProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchProduct &&
+            other is _$SearchProductImpl &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.weightValues, weightValues) ||
                 other.weightValues == weightValues) &&
@@ -193,8 +193,8 @@ class _$_SearchProduct implements _SearchProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SearchProductCopyWith<_$_SearchProduct> get copyWith =>
-      __$$_SearchProductCopyWithImpl<_$_SearchProduct>(this, _$identity);
+  _$$SearchProductImplCopyWith<_$SearchProductImpl> get copyWith =>
+      __$$SearchProductImplCopyWithImpl<_$SearchProductImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -273,7 +273,7 @@ abstract class _SearchProduct implements ProductsEvent {
   const factory _SearchProduct(
       {required final String query,
       required final SfRangeValues weightValues,
-      required final SfRangeValues priceValues}) = _$_SearchProduct;
+      required final SfRangeValues priceValues}) = _$SearchProductImpl;
 
   String get query;
   @override
@@ -282,27 +282,27 @@ abstract class _SearchProduct implements ProductsEvent {
   SfRangeValues get priceValues;
   @override
   @JsonKey(ignore: true)
-  _$$_SearchProductCopyWith<_$_SearchProduct> get copyWith =>
+  _$$SearchProductImplCopyWith<_$SearchProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ChangeValuesCopyWith<$Res>
+abstract class _$$ChangeValuesImplCopyWith<$Res>
     implements $ProductsEventCopyWith<$Res> {
-  factory _$$_ChangeValuesCopyWith(
-          _$_ChangeValues value, $Res Function(_$_ChangeValues) then) =
-      __$$_ChangeValuesCopyWithImpl<$Res>;
+  factory _$$ChangeValuesImplCopyWith(
+          _$ChangeValuesImpl value, $Res Function(_$ChangeValuesImpl) then) =
+      __$$ChangeValuesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({SfRangeValues weightValues, SfRangeValues priceValues});
 }
 
 /// @nodoc
-class __$$_ChangeValuesCopyWithImpl<$Res>
-    extends _$ProductsEventCopyWithImpl<$Res, _$_ChangeValues>
-    implements _$$_ChangeValuesCopyWith<$Res> {
-  __$$_ChangeValuesCopyWithImpl(
-      _$_ChangeValues _value, $Res Function(_$_ChangeValues) _then)
+class __$$ChangeValuesImplCopyWithImpl<$Res>
+    extends _$ProductsEventCopyWithImpl<$Res, _$ChangeValuesImpl>
+    implements _$$ChangeValuesImplCopyWith<$Res> {
+  __$$ChangeValuesImplCopyWithImpl(
+      _$ChangeValuesImpl _value, $Res Function(_$ChangeValuesImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -311,7 +311,7 @@ class __$$_ChangeValuesCopyWithImpl<$Res>
     Object? weightValues = null,
     Object? priceValues = null,
   }) {
-    return _then(_$_ChangeValues(
+    return _then(_$ChangeValuesImpl(
       weightValues: null == weightValues
           ? _value.weightValues
           : weightValues // ignore: cast_nullable_to_non_nullable
@@ -326,8 +326,8 @@ class __$$_ChangeValuesCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ChangeValues implements _ChangeValues {
-  const _$_ChangeValues(
+class _$ChangeValuesImpl implements _ChangeValues {
+  const _$ChangeValuesImpl(
       {required this.weightValues, required this.priceValues});
 
   @override
@@ -341,10 +341,10 @@ class _$_ChangeValues implements _ChangeValues {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChangeValues &&
+            other is _$ChangeValuesImpl &&
             (identical(other.weightValues, weightValues) ||
                 other.weightValues == weightValues) &&
             (identical(other.priceValues, priceValues) ||
@@ -357,8 +357,8 @@ class _$_ChangeValues implements _ChangeValues {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChangeValuesCopyWith<_$_ChangeValues> get copyWith =>
-      __$$_ChangeValuesCopyWithImpl<_$_ChangeValues>(this, _$identity);
+  _$$ChangeValuesImplCopyWith<_$ChangeValuesImpl> get copyWith =>
+      __$$ChangeValuesImplCopyWithImpl<_$ChangeValuesImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -436,7 +436,7 @@ class _$_ChangeValues implements _ChangeValues {
 abstract class _ChangeValues implements ProductsEvent {
   const factory _ChangeValues(
       {required final SfRangeValues weightValues,
-      required final SfRangeValues priceValues}) = _$_ChangeValues;
+      required final SfRangeValues priceValues}) = _$ChangeValuesImpl;
 
   @override
   SfRangeValues get weightValues;
@@ -444,7 +444,7 @@ abstract class _ChangeValues implements ProductsEvent {
   SfRangeValues get priceValues;
   @override
   @JsonKey(ignore: true)
-  _$$_ChangeValuesCopyWith<_$_ChangeValues> get copyWith =>
+  _$$ChangeValuesImplCopyWith<_$ChangeValuesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -546,11 +546,11 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res>
+abstract class _$$InitialImplCopyWith<$Res>
     implements $ProductsStateCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ProductsData data});
@@ -560,10 +560,11 @@ abstract class _$$_InitialCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -571,7 +572,7 @@ class __$$_InitialCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$_Initial(
+    return _then(_$InitialImpl(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -582,8 +583,8 @@ class __$$_InitialCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial({required this.data});
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl({required this.data});
 
   @override
   final ProductsData data;
@@ -594,10 +595,10 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Initial &&
+            other is _$InitialImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -607,8 +608,8 @@ class _$_Initial implements _Initial {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InitialCopyWith<_$_Initial> get copyWith =>
-      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
+      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -681,22 +682,22 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements ProductsState {
-  const factory _Initial({required final ProductsData data}) = _$_Initial;
+  const factory _Initial({required final ProductsData data}) = _$InitialImpl;
 
   @override
   ProductsData get data;
   @override
   @JsonKey(ignore: true)
-  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_FailureCopyWith<$Res>
+abstract class _$$FailureImplCopyWith<$Res>
     implements $ProductsStateCopyWith<$Res> {
-  factory _$$_FailureCopyWith(
-          _$_Failure value, $Res Function(_$_Failure) then) =
-      __$$_FailureCopyWithImpl<$Res>;
+  factory _$$FailureImplCopyWith(
+          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
+      __$$FailureImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ProductsData data, String error});
@@ -706,10 +707,11 @@ abstract class _$$_FailureCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FailureCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$_Failure>
-    implements _$$_FailureCopyWith<$Res> {
-  __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
+class __$$FailureImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$FailureImpl>
+    implements _$$FailureImplCopyWith<$Res> {
+  __$$FailureImplCopyWithImpl(
+      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -718,7 +720,7 @@ class __$$_FailureCopyWithImpl<$Res>
     Object? data = null,
     Object? error = null,
   }) {
-    return _then(_$_Failure(
+    return _then(_$FailureImpl(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -733,8 +735,8 @@ class __$$_FailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Failure implements _Failure {
-  const _$_Failure({required this.data, required this.error});
+class _$FailureImpl implements _Failure {
+  const _$FailureImpl({required this.data, required this.error});
 
   @override
   final ProductsData data;
@@ -747,10 +749,10 @@ class _$_Failure implements _Failure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Failure &&
+            other is _$FailureImpl &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.error, error) || other.error == error));
   }
@@ -761,8 +763,8 @@ class _$_Failure implements _Failure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FailureCopyWith<_$_Failure> get copyWith =>
-      __$$_FailureCopyWithImpl<_$_Failure>(this, _$identity);
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
+      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -837,23 +839,23 @@ class _$_Failure implements _Failure {
 abstract class _Failure implements ProductsState {
   const factory _Failure(
       {required final ProductsData data,
-      required final String error}) = _$_Failure;
+      required final String error}) = _$FailureImpl;
 
   @override
   ProductsData get data;
   String get error;
   @override
   @JsonKey(ignore: true)
-  _$$_FailureCopyWith<_$_Failure> get copyWith =>
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SearchSuccessCopyWith<$Res>
+abstract class _$$SearchSuccessImplCopyWith<$Res>
     implements $ProductsStateCopyWith<$Res> {
-  factory _$$_SearchSuccessCopyWith(
-          _$_SearchSuccess value, $Res Function(_$_SearchSuccess) then) =
-      __$$_SearchSuccessCopyWithImpl<$Res>;
+  factory _$$SearchSuccessImplCopyWith(
+          _$SearchSuccessImpl value, $Res Function(_$SearchSuccessImpl) then) =
+      __$$SearchSuccessImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Product> results, ProductsData data});
@@ -863,11 +865,11 @@ abstract class _$$_SearchSuccessCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SearchSuccessCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$_SearchSuccess>
-    implements _$$_SearchSuccessCopyWith<$Res> {
-  __$$_SearchSuccessCopyWithImpl(
-      _$_SearchSuccess _value, $Res Function(_$_SearchSuccess) _then)
+class __$$SearchSuccessImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$SearchSuccessImpl>
+    implements _$$SearchSuccessImplCopyWith<$Res> {
+  __$$SearchSuccessImplCopyWithImpl(
+      _$SearchSuccessImpl _value, $Res Function(_$SearchSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -876,7 +878,7 @@ class __$$_SearchSuccessCopyWithImpl<$Res>
     Object? results = null,
     Object? data = null,
   }) {
-    return _then(_$_SearchSuccess(
+    return _then(_$SearchSuccessImpl(
       results: null == results
           ? _value._results
           : results // ignore: cast_nullable_to_non_nullable
@@ -891,14 +893,15 @@ class __$$_SearchSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SearchSuccess implements _SearchSuccess {
-  const _$_SearchSuccess(
+class _$SearchSuccessImpl implements _SearchSuccess {
+  const _$SearchSuccessImpl(
       {required final List<Product> results, required this.data})
       : _results = results;
 
   final List<Product> _results;
   @override
   List<Product> get results {
+    if (_results is EqualUnmodifiableListView) return _results;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_results);
   }
@@ -912,10 +915,10 @@ class _$_SearchSuccess implements _SearchSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchSuccess &&
+            other is _$SearchSuccessImpl &&
             const DeepCollectionEquality().equals(other._results, _results) &&
             (identical(other.data, data) || other.data == data));
   }
@@ -927,8 +930,8 @@ class _$_SearchSuccess implements _SearchSuccess {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SearchSuccessCopyWith<_$_SearchSuccess> get copyWith =>
-      __$$_SearchSuccessCopyWithImpl<_$_SearchSuccess>(this, _$identity);
+  _$$SearchSuccessImplCopyWith<_$SearchSuccessImpl> get copyWith =>
+      __$$SearchSuccessImplCopyWithImpl<_$SearchSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1003,13 +1006,13 @@ class _$_SearchSuccess implements _SearchSuccess {
 abstract class _SearchSuccess implements ProductsState {
   const factory _SearchSuccess(
       {required final List<Product> results,
-      required final ProductsData data}) = _$_SearchSuccess;
+      required final ProductsData data}) = _$SearchSuccessImpl;
 
   List<Product> get results;
   @override
   ProductsData get data;
   @override
   @JsonKey(ignore: true)
-  _$$_SearchSuccessCopyWith<_$_SearchSuccess> get copyWith =>
+  _$$SearchSuccessImplCopyWith<_$SearchSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

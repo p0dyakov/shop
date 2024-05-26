@@ -14,8 +14,10 @@ abstract class InitializationData$ {
   static ErrorTrackingDisabler errorTrackingDisabler(
           InitializationData model) =>
       model.errorTrackingDisabler;
+
   static IEnvironmentStorage environmentStorage(InitializationData model) =>
       model.environmentStorage;
+
   static SharedPreferences sharedPreferences(InitializationData model) =>
       model.sharedPreferences;
 }
@@ -23,10 +25,10 @@ abstract class InitializationData$ {
 abstract class _IndexedInitializationStateMixin$ {
   _IndexedInitializationStateMixin$._();
 
-  // ignore: unused_element
   static InitializationProgress progress(
           _IndexedInitializationStateMixin model) =>
       model.progress;
+
   static int stepsCompleted(_IndexedInitializationStateMixin model) =>
       model.stepsCompleted;
 }
@@ -55,6 +57,36 @@ extension $InitializationStepMatcherExtension on InitializationStep {
     required T environment,
     required T errorTracking,
     required T sharedPreferences,
+  }) {
+    switch (this) {
+      case InitializationStep.environment:
+        return environment;
+      case InitializationStep.errorTracking:
+        return errorTracking;
+      case InitializationStep.sharedPreferences:
+        return sharedPreferences;
+    }
+  }
+
+  T? whenOrNull<T>({
+    T Function()? environment,
+    T Function()? errorTracking,
+    T Function()? sharedPreferences,
+  }) {
+    switch (this) {
+      case InitializationStep.environment:
+        return environment?.call();
+      case InitializationStep.errorTracking:
+        return errorTracking?.call();
+      case InitializationStep.sharedPreferences:
+        return sharedPreferences?.call();
+    }
+  }
+
+  T? whenConstOrNull<T>({
+    T? environment,
+    T? errorTracking,
+    T? sharedPreferences,
   }) {
     switch (this) {
       case InitializationStep.environment:

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'shop_data.dart';
 
@@ -12,7 +12,7 @@ part of 'shop_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ShopsData {
@@ -78,10 +78,11 @@ class _$ShopsDataCopyWithImpl<$Res, $Val extends ShopsData>
 }
 
 /// @nodoc
-abstract class _$$_ShopsDataCopyWith<$Res> implements $ShopsDataCopyWith<$Res> {
-  factory _$$_ShopsDataCopyWith(
-          _$_ShopsData value, $Res Function(_$_ShopsData) then) =
-      __$$_ShopsDataCopyWithImpl<$Res>;
+abstract class _$$ShopsDataImplCopyWith<$Res>
+    implements $ShopsDataCopyWith<$Res> {
+  factory _$$ShopsDataImplCopyWith(
+          _$ShopsDataImpl value, $Res Function(_$ShopsDataImpl) then) =
+      __$$ShopsDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -92,11 +93,11 @@ abstract class _$$_ShopsDataCopyWith<$Res> implements $ShopsDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ShopsDataCopyWithImpl<$Res>
-    extends _$ShopsDataCopyWithImpl<$Res, _$_ShopsData>
-    implements _$$_ShopsDataCopyWith<$Res> {
-  __$$_ShopsDataCopyWithImpl(
-      _$_ShopsData _value, $Res Function(_$_ShopsData) _then)
+class __$$ShopsDataImplCopyWithImpl<$Res>
+    extends _$ShopsDataCopyWithImpl<$Res, _$ShopsDataImpl>
+    implements _$$ShopsDataImplCopyWith<$Res> {
+  __$$ShopsDataImplCopyWithImpl(
+      _$ShopsDataImpl _value, $Res Function(_$ShopsDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -107,7 +108,7 @@ class __$$_ShopsDataCopyWithImpl<$Res>
     Object? weightValues = null,
     Object? priceValues = null,
   }) {
-    return _then(_$_ShopsData(
+    return _then(_$ShopsDataImpl(
       shops: null == shops
           ? _value._shops
           : shops // ignore: cast_nullable_to_non_nullable
@@ -130,8 +131,8 @@ class __$$_ShopsDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShopsData implements _ShopsData {
-  _$_ShopsData(
+class _$ShopsDataImpl implements _ShopsData {
+  _$ShopsDataImpl(
       {required final List<Shop> shops,
       required this.query,
       required this.weightValues,
@@ -141,6 +142,7 @@ class _$_ShopsData implements _ShopsData {
   final List<Shop> _shops;
   @override
   List<Shop> get shops {
+    if (_shops is EqualUnmodifiableListView) return _shops;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_shops);
   }
@@ -158,10 +160,10 @@ class _$_ShopsData implements _ShopsData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShopsData &&
+            other is _$ShopsDataImpl &&
             const DeepCollectionEquality().equals(other._shops, _shops) &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.weightValues, weightValues) ||
@@ -181,8 +183,8 @@ class _$_ShopsData implements _ShopsData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShopsDataCopyWith<_$_ShopsData> get copyWith =>
-      __$$_ShopsDataCopyWithImpl<_$_ShopsData>(this, _$identity);
+  _$$ShopsDataImplCopyWith<_$ShopsDataImpl> get copyWith =>
+      __$$ShopsDataImplCopyWithImpl<_$ShopsDataImpl>(this, _$identity);
 }
 
 abstract class _ShopsData implements ShopsData {
@@ -190,7 +192,7 @@ abstract class _ShopsData implements ShopsData {
       {required final List<Shop> shops,
       required final String query,
       required final SfRangeValues weightValues,
-      required final SfRangeValues priceValues}) = _$_ShopsData;
+      required final SfRangeValues priceValues}) = _$ShopsDataImpl;
 
   @override
   List<Shop> get shops;
@@ -202,6 +204,6 @@ abstract class _ShopsData implements ShopsData {
   SfRangeValues get priceValues;
   @override
   @JsonKey(ignore: true)
-  _$$_ShopsDataCopyWith<_$_ShopsData> get copyWith =>
+  _$$ShopsDataImplCopyWith<_$ShopsDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

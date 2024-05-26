@@ -6,17 +6,17 @@ part of 'product_characteristics.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ProductCharacteristic _$$_ProductCharacteristicFromJson(
+_$ProductCharacteristicImpl _$$ProductCharacteristicImplFromJson(
         Map<String, dynamic> json) =>
-    _$_ProductCharacteristic(
-      weight: json['weight'] as int,
-      price: json['price'] as int,
+    _$ProductCharacteristicImpl(
+      weight: (json['weight'] as num).toInt(),
+      price: (json['price'] as num).toInt(),
       manufactureCountry: json['manufactureCountry'] as String,
-      expirationDateInDays: json['expirationDateInDays'] as int,
+      expirationDateInDays: (json['expirationDateInDays'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$_ProductCharacteristicToJson(
-        _$_ProductCharacteristic instance) =>
+Map<String, dynamic> _$$ProductCharacteristicImplToJson(
+        _$ProductCharacteristicImpl instance) =>
     <String, dynamic>{
       'weight': instance.weight,
       'price': instance.price,

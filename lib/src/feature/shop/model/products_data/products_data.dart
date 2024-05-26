@@ -16,7 +16,7 @@ class ProductsData with _$ProductsData {
   factory ProductsData.initial(Shop shop) => ProductsData(
         query: '',
         shop: shop,
-        weightValues: const SfRangeValues(0, 1000),
-        priceValues: const SfRangeValues(0, 1000),
+        weightValues: const SfRangeValues(0.0, 1000.0),
+        priceValues: const SfRangeValues(0.0, 1000.0),
       );
 }

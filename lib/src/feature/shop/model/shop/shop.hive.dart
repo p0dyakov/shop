@@ -6,18 +6,17 @@ part of 'shop.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ShopAdapter extends TypeAdapter<_$_Shop> {
+class ShopImplAdapter extends TypeAdapter<_$ShopImpl> {
   @override
   final int typeId = 0;
 
   @override
-  _$_Shop read(BinaryReader reader) {
+  _$ShopImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-
-    return _$_Shop(
+    return _$ShopImpl(
       id: fields[0] as String,
       name: fields[1] as String,
       description: fields[2] as String,
@@ -29,7 +28,7 @@ class ShopAdapter extends TypeAdapter<_$_Shop> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_Shop obj) {
+  void write(BinaryWriter writer, _$ShopImpl obj) {
     writer
       ..writeByte(7)
       ..writeByte(0)
@@ -54,7 +53,7 @@ class ShopAdapter extends TypeAdapter<_$_Shop> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ShopAdapter &&
+      other is ShopImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'products_data.dart';
 
@@ -12,7 +12,7 @@ part of 'products_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ProductsData {
@@ -89,11 +89,11 @@ class _$ProductsDataCopyWithImpl<$Res, $Val extends ProductsData>
 }
 
 /// @nodoc
-abstract class _$$_ProductsDataCopyWith<$Res>
+abstract class _$$ProductsDataImplCopyWith<$Res>
     implements $ProductsDataCopyWith<$Res> {
-  factory _$$_ProductsDataCopyWith(
-          _$_ProductsData value, $Res Function(_$_ProductsData) then) =
-      __$$_ProductsDataCopyWithImpl<$Res>;
+  factory _$$ProductsDataImplCopyWith(
+          _$ProductsDataImpl value, $Res Function(_$ProductsDataImpl) then) =
+      __$$ProductsDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -107,11 +107,11 @@ abstract class _$$_ProductsDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ProductsDataCopyWithImpl<$Res>
-    extends _$ProductsDataCopyWithImpl<$Res, _$_ProductsData>
-    implements _$$_ProductsDataCopyWith<$Res> {
-  __$$_ProductsDataCopyWithImpl(
-      _$_ProductsData _value, $Res Function(_$_ProductsData) _then)
+class __$$ProductsDataImplCopyWithImpl<$Res>
+    extends _$ProductsDataCopyWithImpl<$Res, _$ProductsDataImpl>
+    implements _$$ProductsDataImplCopyWith<$Res> {
+  __$$ProductsDataImplCopyWithImpl(
+      _$ProductsDataImpl _value, $Res Function(_$ProductsDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -122,7 +122,7 @@ class __$$_ProductsDataCopyWithImpl<$Res>
     Object? weightValues = null,
     Object? priceValues = null,
   }) {
-    return _then(_$_ProductsData(
+    return _then(_$ProductsDataImpl(
       shop: null == shop
           ? _value.shop
           : shop // ignore: cast_nullable_to_non_nullable
@@ -145,8 +145,8 @@ class __$$_ProductsDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ProductsData implements _ProductsData {
-  _$_ProductsData(
+class _$ProductsDataImpl implements _ProductsData {
+  _$ProductsDataImpl(
       {required this.shop,
       required this.query,
       required this.weightValues,
@@ -167,10 +167,10 @@ class _$_ProductsData implements _ProductsData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProductsData &&
+            other is _$ProductsDataImpl &&
             (identical(other.shop, shop) || other.shop == shop) &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.weightValues, weightValues) ||
@@ -186,8 +186,8 @@ class _$_ProductsData implements _ProductsData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductsDataCopyWith<_$_ProductsData> get copyWith =>
-      __$$_ProductsDataCopyWithImpl<_$_ProductsData>(this, _$identity);
+  _$$ProductsDataImplCopyWith<_$ProductsDataImpl> get copyWith =>
+      __$$ProductsDataImplCopyWithImpl<_$ProductsDataImpl>(this, _$identity);
 }
 
 abstract class _ProductsData implements ProductsData {
@@ -195,7 +195,7 @@ abstract class _ProductsData implements ProductsData {
       {required final Shop shop,
       required final String query,
       required final SfRangeValues weightValues,
-      required final SfRangeValues priceValues}) = _$_ProductsData;
+      required final SfRangeValues priceValues}) = _$ProductsDataImpl;
 
   @override
   Shop get shop;
@@ -207,6 +207,6 @@ abstract class _ProductsData implements ProductsData {
   SfRangeValues get priceValues;
   @override
   @JsonKey(ignore: true)
-  _$$_ProductsDataCopyWith<_$_ProductsData> get copyWith =>
+  _$$ProductsDataImplCopyWith<_$ProductsDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

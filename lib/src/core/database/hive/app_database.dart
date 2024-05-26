@@ -6,9 +6,9 @@ import 'package:shop/src/feature/shop/model/shop/shop.dart';
 
 Future<void> registerAdapters() async {
   Hive
-    ..registerAdapter(ShopAdapter())
-    ..registerAdapter(ProductAdapter())
-    ..registerAdapter(ProductCharacteristicAdapter());
+    ..registerAdapter(ShopImplAdapter())
+    ..registerAdapter(ProductImplAdapter())
+    ..registerAdapter(ProductCharacteristicImplAdapter());
 }
 
 class AppDatabase {
@@ -16,7 +16,7 @@ class AppDatabase {
 
   final Map<String, int> _boxCounter = <String, int>{};
 
-  Future<Box<List>> openShopsBox() async =>
+  Future<Box<List<dynamic>>> openShopsBox() async =>
       _openBox(name: AppDatabaseKeys.shops, typeId: 0);
 
   Future<void> close() async {
