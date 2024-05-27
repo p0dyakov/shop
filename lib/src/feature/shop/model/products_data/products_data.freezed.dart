@@ -22,21 +22,28 @@ mixin _$ProductsData {
   SfRangeValues get priceValues => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProductsDataCopyWith<ProductsData> get copyWith => throw _privateConstructorUsedError;
+  $ProductsDataCopyWith<ProductsData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProductsDataCopyWith<$Res> {
-  factory $ProductsDataCopyWith(ProductsData value, $Res Function(ProductsData) then) =
+  factory $ProductsDataCopyWith(
+          ProductsData value, $Res Function(ProductsData) then) =
       _$ProductsDataCopyWithImpl<$Res, ProductsData>;
   @useResult
-  $Res call({Shop shop, String query, SfRangeValues weightValues, SfRangeValues priceValues});
+  $Res call(
+      {Shop shop,
+      String query,
+      SfRangeValues weightValues,
+      SfRangeValues priceValues});
 
   $ShopCopyWith<$Res> get shop;
 }
 
 /// @nodoc
-class _$ProductsDataCopyWithImpl<$Res, $Val extends ProductsData> implements $ProductsDataCopyWith<$Res> {
+class _$ProductsDataCopyWithImpl<$Res, $Val extends ProductsData>
+    implements $ProductsDataCopyWith<$Res> {
   _$ProductsDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,21 +89,29 @@ class _$ProductsDataCopyWithImpl<$Res, $Val extends ProductsData> implements $Pr
 }
 
 /// @nodoc
-abstract class _$$ProductsDataImplCopyWith<$Res> implements $ProductsDataCopyWith<$Res> {
-  factory _$$ProductsDataImplCopyWith(_$ProductsDataImpl value, $Res Function(_$ProductsDataImpl) then) =
+abstract class _$$ProductsDataImplCopyWith<$Res>
+    implements $ProductsDataCopyWith<$Res> {
+  factory _$$ProductsDataImplCopyWith(
+          _$ProductsDataImpl value, $Res Function(_$ProductsDataImpl) then) =
       __$$ProductsDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Shop shop, String query, SfRangeValues weightValues, SfRangeValues priceValues});
+  $Res call(
+      {Shop shop,
+      String query,
+      SfRangeValues weightValues,
+      SfRangeValues priceValues});
 
   @override
   $ShopCopyWith<$Res> get shop;
 }
 
 /// @nodoc
-class __$$ProductsDataImplCopyWithImpl<$Res> extends _$ProductsDataCopyWithImpl<$Res, _$ProductsDataImpl>
+class __$$ProductsDataImplCopyWithImpl<$Res>
+    extends _$ProductsDataCopyWithImpl<$Res, _$ProductsDataImpl>
     implements _$$ProductsDataImplCopyWith<$Res> {
-  __$$ProductsDataImplCopyWithImpl(_$ProductsDataImpl _value, $Res Function(_$ProductsDataImpl) _then)
+  __$$ProductsDataImplCopyWithImpl(
+      _$ProductsDataImpl _value, $Res Function(_$ProductsDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -131,7 +146,11 @@ class __$$ProductsDataImplCopyWithImpl<$Res> extends _$ProductsDataCopyWithImpl<
 /// @nodoc
 
 class _$ProductsDataImpl implements _ProductsData {
-  _$ProductsDataImpl({required this.shop, required this.query, required this.weightValues, required this.priceValues});
+  _$ProductsDataImpl(
+      {required this.shop,
+      required this.query,
+      required this.weightValues,
+      required this.priceValues});
 
   @override
   final Shop shop;
@@ -154,12 +173,15 @@ class _$ProductsDataImpl implements _ProductsData {
             other is _$ProductsDataImpl &&
             (identical(other.shop, shop) || other.shop == shop) &&
             (identical(other.query, query) || other.query == query) &&
-            (identical(other.weightValues, weightValues) || other.weightValues == weightValues) &&
-            (identical(other.priceValues, priceValues) || other.priceValues == priceValues));
+            (identical(other.weightValues, weightValues) ||
+                other.weightValues == weightValues) &&
+            (identical(other.priceValues, priceValues) ||
+                other.priceValues == priceValues));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, shop, query, weightValues, priceValues);
+  int get hashCode =>
+      Object.hash(runtimeType, shop, query, weightValues, priceValues);
 
   @JsonKey(ignore: true)
   @override
@@ -185,5 +207,6 @@ abstract class _ProductsData implements ProductsData {
   SfRangeValues get priceValues;
   @override
   @JsonKey(ignore: true)
-  _$$ProductsDataImplCopyWith<_$ProductsDataImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ProductsDataImplCopyWith<_$ProductsDataImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

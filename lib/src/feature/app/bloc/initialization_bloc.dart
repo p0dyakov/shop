@@ -40,7 +40,7 @@ class InitializationProgress with _$InitializationProgress {
 abstract class InitializationData {
   ErrorTrackingDisabler get errorTrackingDisabler;
   IEnvironmentStorage get environmentStorage;
-  DependenciesStorage get dependenciesStorage;
+  IDependenciesStorage get dependenciesStorage;
 }
 
 @selectable

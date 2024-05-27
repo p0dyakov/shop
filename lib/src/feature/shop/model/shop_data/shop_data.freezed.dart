@@ -22,18 +22,25 @@ mixin _$ShopsData {
   SfRangeValues get priceValues => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ShopsDataCopyWith<ShopsData> get copyWith => throw _privateConstructorUsedError;
+  $ShopsDataCopyWith<ShopsData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ShopsDataCopyWith<$Res> {
-  factory $ShopsDataCopyWith(ShopsData value, $Res Function(ShopsData) then) = _$ShopsDataCopyWithImpl<$Res, ShopsData>;
+  factory $ShopsDataCopyWith(ShopsData value, $Res Function(ShopsData) then) =
+      _$ShopsDataCopyWithImpl<$Res, ShopsData>;
   @useResult
-  $Res call({List<Shop> shops, String query, SfRangeValues weightValues, SfRangeValues priceValues});
+  $Res call(
+      {List<Shop> shops,
+      String query,
+      SfRangeValues weightValues,
+      SfRangeValues priceValues});
 }
 
 /// @nodoc
-class _$ShopsDataCopyWithImpl<$Res, $Val extends ShopsData> implements $ShopsDataCopyWith<$Res> {
+class _$ShopsDataCopyWithImpl<$Res, $Val extends ShopsData>
+    implements $ShopsDataCopyWith<$Res> {
   _$ShopsDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -71,18 +78,27 @@ class _$ShopsDataCopyWithImpl<$Res, $Val extends ShopsData> implements $ShopsDat
 }
 
 /// @nodoc
-abstract class _$$ShopsDataImplCopyWith<$Res> implements $ShopsDataCopyWith<$Res> {
-  factory _$$ShopsDataImplCopyWith(_$ShopsDataImpl value, $Res Function(_$ShopsDataImpl) then) =
+abstract class _$$ShopsDataImplCopyWith<$Res>
+    implements $ShopsDataCopyWith<$Res> {
+  factory _$$ShopsDataImplCopyWith(
+          _$ShopsDataImpl value, $Res Function(_$ShopsDataImpl) then) =
       __$$ShopsDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Shop> shops, String query, SfRangeValues weightValues, SfRangeValues priceValues});
+  $Res call(
+      {List<Shop> shops,
+      String query,
+      SfRangeValues weightValues,
+      SfRangeValues priceValues});
 }
 
 /// @nodoc
-class __$$ShopsDataImplCopyWithImpl<$Res> extends _$ShopsDataCopyWithImpl<$Res, _$ShopsDataImpl>
+class __$$ShopsDataImplCopyWithImpl<$Res>
+    extends _$ShopsDataCopyWithImpl<$Res, _$ShopsDataImpl>
     implements _$$ShopsDataImplCopyWith<$Res> {
-  __$$ShopsDataImplCopyWithImpl(_$ShopsDataImpl _value, $Res Function(_$ShopsDataImpl) _then) : super(_value, _then);
+  __$$ShopsDataImplCopyWithImpl(
+      _$ShopsDataImpl _value, $Res Function(_$ShopsDataImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -117,7 +133,10 @@ class __$$ShopsDataImplCopyWithImpl<$Res> extends _$ShopsDataCopyWithImpl<$Res, 
 
 class _$ShopsDataImpl implements _ShopsData {
   _$ShopsDataImpl(
-      {required final List<Shop> shops, required this.query, required this.weightValues, required this.priceValues})
+      {required final List<Shop> shops,
+      required this.query,
+      required this.weightValues,
+      required this.priceValues})
       : _shops = shops;
 
   final List<Shop> _shops;
@@ -147,13 +166,19 @@ class _$ShopsDataImpl implements _ShopsData {
             other is _$ShopsDataImpl &&
             const DeepCollectionEquality().equals(other._shops, _shops) &&
             (identical(other.query, query) || other.query == query) &&
-            (identical(other.weightValues, weightValues) || other.weightValues == weightValues) &&
-            (identical(other.priceValues, priceValues) || other.priceValues == priceValues));
+            (identical(other.weightValues, weightValues) ||
+                other.weightValues == weightValues) &&
+            (identical(other.priceValues, priceValues) ||
+                other.priceValues == priceValues));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_shops), query, weightValues, priceValues);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_shops),
+      query,
+      weightValues,
+      priceValues);
 
   @JsonKey(ignore: true)
   @override
@@ -179,5 +204,6 @@ abstract class _ShopsData implements ShopsData {
   SfRangeValues get priceValues;
   @override
   @JsonKey(ignore: true)
-  _$$ShopsDataImplCopyWith<_$ShopsDataImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ShopsDataImplCopyWith<_$ShopsDataImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

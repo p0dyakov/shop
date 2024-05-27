@@ -11,19 +11,26 @@ part of 'initialization_bloc.dart';
 abstract class InitializationData$ {
   InitializationData$._();
 
-  static ErrorTrackingDisabler errorTrackingDisabler(InitializationData model) => model.errorTrackingDisabler;
+  static ErrorTrackingDisabler errorTrackingDisabler(
+          InitializationData model) =>
+      model.errorTrackingDisabler;
 
-  static IEnvironmentStorage environmentStorage(InitializationData model) => model.environmentStorage;
+  static IEnvironmentStorage environmentStorage(InitializationData model) =>
+      model.environmentStorage;
 
-  static DependenciesStorage dependenciesStorage(InitializationData model) => model.dependenciesStorage;
+  static IDependenciesStorage dependenciesStorage(InitializationData model) =>
+      model.dependenciesStorage;
 }
 
 abstract class _IndexedInitializationStateMixin$ {
   _IndexedInitializationStateMixin$._();
 
-  static InitializationProgress progress(_IndexedInitializationStateMixin model) => model.progress;
+  static InitializationProgress progress(
+          _IndexedInitializationStateMixin model) =>
+      model.progress;
 
-  static int stepsCompleted(_IndexedInitializationStateMixin model) => model.stepsCompleted;
+  static int stepsCompleted(_IndexedInitializationStateMixin model) =>
+      model.stepsCompleted;
 }
 
 // **************************************************************************

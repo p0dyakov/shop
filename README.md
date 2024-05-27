@@ -1,4 +1,4 @@
-# Приложение магазина на Flutter
+## Приложение магазина продуктов на Flutter
 
 <p align="left" width="100%">
     <img src="https://user-images.githubusercontent.com/80569772/208469437-292222dd-0ea3-4706-89bf-d0989b28a063.png" width="30%"/>
@@ -8,23 +8,20 @@
 
 ---
 ## Документация 
-- [Adding Core Dependency]()
-- [Architecture]()
-- [Automation]()
-- [Best Practices]()
-- [Branch Design]()
-- [Code Generation]()
-- [Code Review]()
-- [Commit Design]()
-- [Creating New Features]()
-- [Files Structure]()
-- [Git Flow]()
-- [Layers]()
-- [Pull Request Design]()
-- [Tools]()
+- [Automation](https://github.com/p0dyakov/shop/blob/main/documentation/Automation.md)
+- [Best Practices](https://github.com/p0dyakov/shop/blob/main/documentation/Best-Practices.md)
+- [Branch Design](https://github.com/p0dyakov/shop/blob/main/documentation/Branch-Design.md)
+- [Code Generation](https://github.com/p0dyakov/shop/blob/main/documentation/Code-Generation.md)
+- [Code Review](https://github.com/p0dyakov/shop/blob/main/documentation/Code-Review.md)
+- [Commit Design](https://github.com/p0dyakov/shop/blob/main/documentation/Commit-Design.md)
+- [Files Structure](https://github.com/p0dyakov/shop/blob/main/documentation/Files-Structure.md)
+- [Git Flow](https://github.com/p0dyakov/shop/blob/main/documentation/Git-Flow.md)
+- [Layers](https://github.com/p0dyakov/shop/blob/main/documentation/Layers.md)
+- [Pull Request Design](https://github.com/p0dyakov/shop/blob/main/documentation/Pull-Request-Design.md)
 
-# Запуск приложения
-## Программы
+---
+## Запуск приложения
+### Программы
 Перед запуском проекта необходимо установить:
 - [Choco](https://chocolatey.org/install) (с помощью данной утилиты можно установить все остальные программы)
 - [Make](https://www.gnu.org/software/make/#download) (необходимо для работы автоматизации команд)
@@ -32,10 +29,8 @@
 - [FVM](https://fvm.app/) ([`choco install fvm --version 2.4.2-dev0 -y`](https://github.com/leoafarias/fvm/issues/557))
 - [Dart](https://dart.dev/get-dart) (`choco install dart-sdk`)
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) (`choco install git.install`)
-- [Flutter Gen](https://pub.dev/packages/flutter_gen) (`dart pub global activate flutter_gen`)
 
-
-## Commands
+### Команды
 После установки всех необходимых программ нужно выполнить следующие команды:
 
     git clone https://github.com/p0dyakov/shop.git
