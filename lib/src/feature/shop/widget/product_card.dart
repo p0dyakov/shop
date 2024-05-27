@@ -3,8 +3,8 @@ import 'package:shop/src/feature/shop/model/product/product.dart';
 
 class ProductCardWidget extends StatelessWidget {
   const ProductCardWidget({
-    Key? key,
     required this.product,
+    Key? key,
   }) : super(key: key);
 
   final Product product;
@@ -40,8 +40,7 @@ class ProductCardWidget extends StatelessWidget {
               ),
               const SizedBox(height: 5),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 decoration: BoxDecoration(
                   color: const Color(0xFFCECECE).withOpacity(0.50),
                   borderRadius: const BorderRadius.all(Radius.circular(20)),
@@ -55,7 +54,7 @@ class ProductCardWidget extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
         ],
       );
 }

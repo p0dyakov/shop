@@ -16,8 +16,7 @@ class AppLifecycleScope extends Scope {
   }) : super(child: child, key: key);
 
   @override
-  ScopeDelegate<AppLifecycleScope> createDelegate() =>
-      _AppLifecycleScopeDelegate();
+  ScopeDelegate<AppLifecycleScope> createDelegate() => _AppLifecycleScopeDelegate();
 }
 
 class _AppLifecycleScopeDelegate extends ScopeDelegate<AppLifecycleScope> {

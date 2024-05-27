@@ -14,9 +14,9 @@ class AppRouterBuilder extends StatefulWidget {
   final RouterWidgetBuilder builder;
 
   const AppRouterBuilder({
-    Key? key,
     required this.createRouter,
     required this.builder,
+    Key? key,
   }) : super(key: key);
 
   @override

@@ -33,8 +33,7 @@ abstract class ITypedPreferencesEntries {
   PreferencesEntry<List<String>> stringListEntry(String key);
 }
 
-abstract class ITypedPreferencesDao
-    implements ITypedPreferencesActions, ITypedPreferencesEntries {}
+abstract class ITypedPreferencesDao implements ITypedPreferencesActions, ITypedPreferencesEntries {}
 
 class _TypedSharedPreferencesDaoDelegate extends SharedPreferencesDao {
   _TypedSharedPreferencesDaoDelegate(
@@ -44,7 +43,7 @@ class _TypedSharedPreferencesDaoDelegate extends SharedPreferencesDao {
 }
 
 abstract class TypedPreferencesDao implements ITypedPreferencesDao {
-  late final Map<String, PreferencesEntry> _entries = {};
+  late final Map<String, PreferencesEntry<dynamic>> _entries = {};
   final ISharedPreferencesDao _delegate;
 
   TypedPreferencesDao(
@@ -67,26 +66,21 @@ abstract class TypedPreferencesDao implements ITypedPreferencesDao {
 
   @override
   PreferencesEntry<bool> boolEntry(String key) =>
-      _entries.putIfAbsent(key, () => _BoolEntry(key, _delegate))
-          as PreferencesEntry<bool>;
+      _entries.putIfAbsent(key, () => _BoolEntry(key, _delegate)) as PreferencesEntry<bool>;
 
   @override
   PreferencesEntry<int> intEntry(String key) =>
-      _entries.putIfAbsent(key, () => _IntEntry(key, _delegate))
-          as PreferencesEntry<int>;
+      _entries.putIfAbsent(key, () => _IntEntry(key, _delegate)) as PreferencesEntry<int>;
 
   @override
   PreferencesEntry<double> doubleEntry(String key) =>
-      _entries.putIfAbsent(key, () => _DoubleEntry(key, _delegate))
-          as PreferencesEntry<double>;
+      _entries.putIfAbsent(key, () => _DoubleEntry(key, _delegate)) as PreferencesEntry<double>;
 
   @override
   PreferencesEntry<String> stringEntry(String key) =>
-      _entries.putIfAbsent(key, () => _StringEntry(key, _delegate))
-          as PreferencesEntry<String>;
+      _entries.putIfAbsent(key, () => _StringEntry(key, _delegate)) as PreferencesEntry<String>;
 
   @override
   PreferencesEntry<List<String>> stringListEntry(String key) =>
-      _entries.putIfAbsent(key, () => _StringListEntry(key, _delegate))
-          as PreferencesEntry<List<String>>;
+      _entries.putIfAbsent(key, () => _StringListEntry(key, _delegate)) as PreferencesEntry<List<String>>;
 }

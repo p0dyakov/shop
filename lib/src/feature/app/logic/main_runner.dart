@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:shop/src/core/extension/extensions.dart';
+import 'package:shop/src/core/model/dependencies_storage.dart';
 import 'package:shop/src/core/model/environment_storage.dart';
 import 'package:shop/src/feature/app/bloc/app_bloc_observer.dart';
 import 'package:shop/src/feature/app/bloc/initialization_bloc.dart';
@@ -49,6 +50,9 @@ class _InitializationFactories implements InitializationFactories {
     IEnvironmentStorage environment,
   ) =>
       SentryTrackingManager(sentryDsn: environment.sentryDsn);
+
+  @override
+  IDependenciesStorage createDependenciesStorage() => DependenciesStorage();
 }
 
 mixin MainRunner {

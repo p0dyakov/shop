@@ -27,8 +27,7 @@ mixin _$Product {
   @HiveField(3)
   String get photoUrl => throw _privateConstructorUsedError;
   @HiveField(4)
-  ProductCharacteristic get characteristic =>
-      throw _privateConstructorUsedError;
+  ProductCharacteristic get characteristic => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,8 +36,7 @@ mixin _$Product {
 
 /// @nodoc
 abstract class $ProductCopyWith<$Res> {
-  factory $ProductCopyWith(Product value, $Res Function(Product) then) =
-      _$ProductCopyWithImpl<$Res, Product>;
+  factory $ProductCopyWith(Product value, $Res Function(Product) then) = _$ProductCopyWithImpl<$Res, Product>;
   @useResult
   $Res call(
       {@HiveField(0) String id,
@@ -50,8 +48,7 @@ abstract class $ProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProductCopyWithImpl<$Res, $Val extends Product>
-    implements $ProductCopyWith<$Res> {
+class _$ProductCopyWithImpl<$Res, $Val extends Product> implements $ProductCopyWith<$Res> {
   _$ProductCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -98,8 +95,7 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
 
 /// @nodoc
 abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
-  factory _$$ProductImplCopyWith(
-          _$ProductImpl value, $Res Function(_$ProductImpl) then) =
+  factory _$$ProductImplCopyWith(_$ProductImpl value, $Res Function(_$ProductImpl) then) =
       __$$ProductImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -114,12 +110,9 @@ abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ProductImplCopyWithImpl<$Res>
-    extends _$ProductCopyWithImpl<$Res, _$ProductImpl>
+class __$$ProductImplCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res, _$ProductImpl>
     implements _$$ProductImplCopyWith<$Res> {
-  __$$ProductImplCopyWithImpl(
-      _$ProductImpl _value, $Res Function(_$ProductImpl) _then)
-      : super(_value, _then);
+  __$$ProductImplCopyWithImpl(_$ProductImpl _value, $Res Function(_$ProductImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -160,8 +153,7 @@ class _$ProductImpl implements _Product {
       @HiveField(3) required this.photoUrl,
       @HiveField(4) required this.characteristic});
 
-  factory _$ProductImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProductImplFromJson(json);
+  factory _$ProductImpl.fromJson(Map<String, dynamic> json) => _$$ProductImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -188,22 +180,18 @@ class _$ProductImpl implements _Product {
             other is _$ProductImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.photoUrl, photoUrl) ||
-                other.photoUrl == photoUrl) &&
-            (identical(other.characteristic, characteristic) ||
-                other.characteristic == characteristic));
+            (identical(other.photoUrl, photoUrl) || other.photoUrl == photoUrl) &&
+            (identical(other.characteristic, characteristic) || other.characteristic == characteristic));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, photoUrl, characteristic);
+  int get hashCode => Object.hash(runtimeType, id, name, photoUrl, characteristic);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
-      __$$ProductImplCopyWithImpl<_$ProductImpl>(this, _$identity);
+  _$$ProductImplCopyWith<_$ProductImpl> get copyWith => __$$ProductImplCopyWithImpl<_$ProductImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -215,11 +203,10 @@ class _$ProductImpl implements _Product {
 
 abstract class _Product implements Product {
   factory _Product(
-          {@HiveField(0) required final String id,
-          @HiveField(1) required final String name,
-          @HiveField(3) required final String photoUrl,
-          @HiveField(4) required final ProductCharacteristic characteristic}) =
-      _$ProductImpl;
+      {@HiveField(0) required final String id,
+      @HiveField(1) required final String name,
+      @HiveField(3) required final String photoUrl,
+      @HiveField(4) required final ProductCharacteristic characteristic}) = _$ProductImpl;
 
   factory _Product.fromJson(Map<String, dynamic> json) = _$ProductImpl.fromJson;
 
@@ -237,6 +224,5 @@ abstract class _Product implements Product {
   ProductCharacteristic get characteristic;
   @override
   @JsonKey(ignore: true)
-  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ProductImplCopyWith<_$ProductImpl> get copyWith => throw _privateConstructorUsedError;
 }

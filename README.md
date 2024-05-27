@@ -1,17 +1,52 @@
-# Shop
-
-## Screenshots
+# Приложение магазина на Flutter
 
 <p align="left" width="100%">
-    <img src="https://user-images.githubusercontent.com/80569772/208469437-292222dd-0ea3-4706-89bf-d0989b28a063.png" width="32%"/>
-    <img src="https://user-images.githubusercontent.com/80569772/208469492-57b27a8b-28b5-425d-a01c-329240e8c5df.png" width="32%"/>
-    <img src="https://user-images.githubusercontent.com/80569772/208469513-bafd991a-6155-414a-b6e9-9d1cf4bff890.png" width="32%"/>
+    <img src="https://user-images.githubusercontent.com/80569772/208469437-292222dd-0ea3-4706-89bf-d0989b28a063.png" width="30%"/>
+    <img src="https://user-images.githubusercontent.com/80569772/208469492-57b27a8b-28b5-425d-a01c-329240e8c5df.png" width="30%"/>
+    <img src="https://user-images.githubusercontent.com/80569772/208469513-bafd991a-6155-414a-b6e9-9d1cf4bff890.png" width="30%"/>
 </p>
 
-## Stack
+---
+## Документация 
+- [Adding Core Dependency]()
+- [Architecture]()
+- [Automation]()
+- [Best Practices]()
+- [Branch Design]()
+- [Code Generation]()
+- [Code Review]()
+- [Commit Design]()
+- [Creating New Features]()
+- [Files Structure]()
+- [Git Flow]()
+- [Layers]()
+- [Pull Request Design]()
+- [Tools]()
 
-- flutter
-- dart
-- stream_bloc
-- freezed
-- auto_route
+# Запуск приложения
+## Программы
+Перед запуском проекта необходимо установить:
+- [Choco](https://chocolatey.org/install) (с помощью данной утилиты можно установить все остальные программы)
+- [Make](https://www.gnu.org/software/make/#download) (необходимо для работы автоматизации команд)
+- [Flutter](https://docs.flutter.dev/get-started/install) (`choco install flutter`)
+- [FVM](https://fvm.app/) ([`choco install fvm --version 2.4.2-dev0 -y`](https://github.com/leoafarias/fvm/issues/557))
+- [Dart](https://dart.dev/get-dart) (`choco install dart-sdk`)
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) (`choco install git.install`)
+- [Flutter Gen](https://pub.dev/packages/flutter_gen) (`dart pub global activate flutter_gen`)
+
+
+## Commands
+После установки всех необходимых программ нужно выполнить следующие команды:
+
+    git clone https://github.com/p0dyakov/shop.git
+    cd shop
+    make init
+
+или
+
+    git clone https://github.com/p0dyakov/shop.git
+    cd shop
+    flutter pub get
+    flutter pub run build_runner build --delete-conflicting-outputs
+    flutter gen-l10n
+    

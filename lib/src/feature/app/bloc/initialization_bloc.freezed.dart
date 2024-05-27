@@ -17,20 +17,16 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$InitializationProgress {
   InitializationStep get currentStep => throw _privateConstructorUsedError;
-  IEnvironmentStorage? get environmentStorage =>
-      throw _privateConstructorUsedError;
-  ErrorTrackingDisabler? get errorTrackingDisabler =>
-      throw _privateConstructorUsedError;
+  IEnvironmentStorage? get environmentStorage => throw _privateConstructorUsedError;
+  ErrorTrackingDisabler? get errorTrackingDisabler => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $InitializationProgressCopyWith<InitializationProgress> get copyWith =>
-      throw _privateConstructorUsedError;
+  $InitializationProgressCopyWith<InitializationProgress> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InitializationProgressCopyWith<$Res> {
-  factory $InitializationProgressCopyWith(InitializationProgress value,
-          $Res Function(InitializationProgress) then) =
+  factory $InitializationProgressCopyWith(InitializationProgress value, $Res Function(InitializationProgress) then) =
       _$InitializationProgressCopyWithImpl<$Res, InitializationProgress>;
   @useResult
   $Res call(
@@ -40,8 +36,7 @@ abstract class $InitializationProgressCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$InitializationProgressCopyWithImpl<$Res,
-        $Val extends InitializationProgress>
+class _$InitializationProgressCopyWithImpl<$Res, $Val extends InitializationProgress>
     implements $InitializationProgressCopyWith<$Res> {
   _$InitializationProgressCopyWithImpl(this._value, this._then);
 
@@ -75,11 +70,9 @@ class _$InitializationProgressCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$InitializationProgressImplCopyWith<$Res>
-    implements $InitializationProgressCopyWith<$Res> {
+abstract class _$$InitializationProgressImplCopyWith<$Res> implements $InitializationProgressCopyWith<$Res> {
   factory _$$InitializationProgressImplCopyWith(
-          _$InitializationProgressImpl value,
-          $Res Function(_$InitializationProgressImpl) then) =
+          _$InitializationProgressImpl value, $Res Function(_$InitializationProgressImpl) then) =
       __$$InitializationProgressImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -91,12 +84,10 @@ abstract class _$$InitializationProgressImplCopyWith<$Res>
 
 /// @nodoc
 class __$$InitializationProgressImplCopyWithImpl<$Res>
-    extends _$InitializationProgressCopyWithImpl<$Res,
-        _$InitializationProgressImpl>
+    extends _$InitializationProgressCopyWithImpl<$Res, _$InitializationProgressImpl>
     implements _$$InitializationProgressImplCopyWith<$Res> {
   __$$InitializationProgressImplCopyWithImpl(
-      _$InitializationProgressImpl _value,
-      $Res Function(_$InitializationProgressImpl) _then)
+      _$InitializationProgressImpl _value, $Res Function(_$InitializationProgressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -126,10 +117,7 @@ class __$$InitializationProgressImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitializationProgressImpl extends _InitializationProgress {
-  const _$InitializationProgressImpl(
-      {required this.currentStep,
-      this.environmentStorage,
-      this.errorTrackingDisabler})
+  const _$InitializationProgressImpl({required this.currentStep, this.environmentStorage, this.errorTrackingDisabler})
       : super._();
 
   @override
@@ -149,8 +137,7 @@ class _$InitializationProgressImpl extends _InitializationProgress {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitializationProgressImpl &&
-            (identical(other.currentStep, currentStep) ||
-                other.currentStep == currentStep) &&
+            (identical(other.currentStep, currentStep) || other.currentStep == currentStep) &&
             (identical(other.environmentStorage, environmentStorage) ||
                 other.environmentStorage == environmentStorage) &&
             (identical(other.errorTrackingDisabler, errorTrackingDisabler) ||
@@ -158,23 +145,20 @@ class _$InitializationProgressImpl extends _InitializationProgress {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, currentStep, environmentStorage, errorTrackingDisabler);
+  int get hashCode => Object.hash(runtimeType, currentStep, environmentStorage, errorTrackingDisabler);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitializationProgressImplCopyWith<_$InitializationProgressImpl>
-      get copyWith => __$$InitializationProgressImplCopyWithImpl<
-          _$InitializationProgressImpl>(this, _$identity);
+  _$$InitializationProgressImplCopyWith<_$InitializationProgressImpl> get copyWith =>
+      __$$InitializationProgressImplCopyWithImpl<_$InitializationProgressImpl>(this, _$identity);
 }
 
 abstract class _InitializationProgress extends InitializationProgress {
   const factory _InitializationProgress(
-          {required final InitializationStep currentStep,
-          final IEnvironmentStorage? environmentStorage,
-          final ErrorTrackingDisabler? errorTrackingDisabler}) =
-      _$InitializationProgressImpl;
+      {required final InitializationStep currentStep,
+      final IEnvironmentStorage? environmentStorage,
+      final ErrorTrackingDisabler? errorTrackingDisabler}) = _$InitializationProgressImpl;
   const _InitializationProgress._() : super._();
 
   @override
@@ -185,8 +169,8 @@ abstract class _InitializationProgress extends InitializationProgress {
   ErrorTrackingDisabler? get errorTrackingDisabler;
   @override
   @JsonKey(ignore: true)
-  _$$InitializationProgressImplCopyWith<_$InitializationProgressImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$InitializationProgressImplCopyWith<_$InitializationProgressImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -195,49 +179,36 @@ mixin _$InitializationState {
   TResult when<TResult extends Object?>({
     required TResult Function() notInitialized,
     required TResult Function(InitializationProgress progress) initializing,
-    required TResult Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)
+    required TResult Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)
         initialized,
-    required TResult Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)
-        error,
+    required TResult Function(InitializationProgress progress, Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? notInitialized,
     TResult? Function(InitializationProgress progress)? initializing,
-    TResult? Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)?
+    TResult? Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)?
         initialized,
-    TResult? Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)?
-        error,
+    TResult? Function(InitializationProgress progress, Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notInitialized,
     TResult Function(InitializationProgress progress)? initializing,
-    TResult Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)?
+    TResult Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)?
         initialized,
-    TResult Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)?
-        error,
+    TResult Function(InitializationProgress progress, Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitializationNotInitialized value)
-        notInitialized,
+    required TResult Function(InitializationNotInitialized value) notInitialized,
     required TResult Function(InitializationInitializing value) initializing,
     required TResult Function(InitializationInitialized value) initialized,
     required TResult Function(InitializationError value) error,
@@ -264,8 +235,7 @@ mixin _$InitializationState {
 
 /// @nodoc
 abstract class $InitializationStateCopyWith<$Res> {
-  factory $InitializationStateCopyWith(
-          InitializationState value, $Res Function(InitializationState) then) =
+  factory $InitializationStateCopyWith(InitializationState value, $Res Function(InitializationState) then) =
       _$InitializationStateCopyWithImpl<$Res, InitializationState>;
 }
 
@@ -283,19 +253,16 @@ class _$InitializationStateCopyWithImpl<$Res, $Val extends InitializationState>
 /// @nodoc
 abstract class _$$InitializationNotInitializedImplCopyWith<$Res> {
   factory _$$InitializationNotInitializedImplCopyWith(
-          _$InitializationNotInitializedImpl value,
-          $Res Function(_$InitializationNotInitializedImpl) then) =
+          _$InitializationNotInitializedImpl value, $Res Function(_$InitializationNotInitializedImpl) then) =
       __$$InitializationNotInitializedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$InitializationNotInitializedImplCopyWithImpl<$Res>
-    extends _$InitializationStateCopyWithImpl<$Res,
-        _$InitializationNotInitializedImpl>
+    extends _$InitializationStateCopyWithImpl<$Res, _$InitializationNotInitializedImpl>
     implements _$$InitializationNotInitializedImplCopyWith<$Res> {
   __$$InitializationNotInitializedImplCopyWithImpl(
-      _$InitializationNotInitializedImpl _value,
-      $Res Function(_$InitializationNotInitializedImpl) _then)
+      _$InitializationNotInitializedImpl _value, $Res Function(_$InitializationNotInitializedImpl) _then)
       : super(_value, _then);
 }
 
@@ -311,9 +278,7 @@ class _$InitializationNotInitializedImpl extends InitializationNotInitialized {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InitializationNotInitializedImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$InitializationNotInitializedImpl);
   }
 
   @override
@@ -324,14 +289,10 @@ class _$InitializationNotInitializedImpl extends InitializationNotInitialized {
   TResult when<TResult extends Object?>({
     required TResult Function() notInitialized,
     required TResult Function(InitializationProgress progress) initializing,
-    required TResult Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)
+    required TResult Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)
         initialized,
-    required TResult Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)
-        error,
+    required TResult Function(InitializationProgress progress, Object error, StackTrace stackTrace) error,
   }) {
     return notInitialized();
   }
@@ -341,14 +302,10 @@ class _$InitializationNotInitializedImpl extends InitializationNotInitialized {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? notInitialized,
     TResult? Function(InitializationProgress progress)? initializing,
-    TResult? Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)?
+    TResult? Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)?
         initialized,
-    TResult? Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)?
-        error,
+    TResult? Function(InitializationProgress progress, Object error, StackTrace stackTrace)? error,
   }) {
     return notInitialized?.call();
   }
@@ -358,14 +315,10 @@ class _$InitializationNotInitializedImpl extends InitializationNotInitialized {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notInitialized,
     TResult Function(InitializationProgress progress)? initializing,
-    TResult Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)?
+    TResult Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)?
         initialized,
-    TResult Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)?
-        error,
+    TResult Function(InitializationProgress progress, Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if (notInitialized != null) {
@@ -377,8 +330,7 @@ class _$InitializationNotInitializedImpl extends InitializationNotInitialized {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitializationNotInitialized value)
-        notInitialized,
+    required TResult Function(InitializationNotInitialized value) notInitialized,
     required TResult Function(InitializationInitializing value) initializing,
     required TResult Function(InitializationInitialized value) initialized,
     required TResult Function(InitializationError value) error,
@@ -414,16 +366,14 @@ class _$InitializationNotInitializedImpl extends InitializationNotInitialized {
 }
 
 abstract class InitializationNotInitialized extends InitializationState {
-  const factory InitializationNotInitialized() =
-      _$InitializationNotInitializedImpl;
+  const factory InitializationNotInitialized() = _$InitializationNotInitializedImpl;
   const InitializationNotInitialized._() : super._();
 }
 
 /// @nodoc
 abstract class _$$InitializationInitializingImplCopyWith<$Res> {
   factory _$$InitializationInitializingImplCopyWith(
-          _$InitializationInitializingImpl value,
-          $Res Function(_$InitializationInitializingImpl) then) =
+          _$InitializationInitializingImpl value, $Res Function(_$InitializationInitializingImpl) then) =
       __$$InitializationInitializingImplCopyWithImpl<$Res>;
   @useResult
   $Res call({InitializationProgress progress});
@@ -433,12 +383,10 @@ abstract class _$$InitializationInitializingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitializationInitializingImplCopyWithImpl<$Res>
-    extends _$InitializationStateCopyWithImpl<$Res,
-        _$InitializationInitializingImpl>
+    extends _$InitializationStateCopyWithImpl<$Res, _$InitializationInitializingImpl>
     implements _$$InitializationInitializingImplCopyWith<$Res> {
   __$$InitializationInitializingImplCopyWithImpl(
-      _$InitializationInitializingImpl _value,
-      $Res Function(_$InitializationInitializingImpl) _then)
+      _$InitializationInitializingImpl _value, $Res Function(_$InitializationInitializingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -465,8 +413,7 @@ class __$$InitializationInitializingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitializationInitializingImpl extends InitializationInitializing
-    with _IndexedInitializationStateMixin {
+class _$InitializationInitializingImpl extends InitializationInitializing with _IndexedInitializationStateMixin {
   const _$InitializationInitializingImpl({required this.progress}) : super._();
 
   @override
@@ -482,8 +429,7 @@ class _$InitializationInitializingImpl extends InitializationInitializing
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitializationInitializingImpl &&
-            (identical(other.progress, progress) ||
-                other.progress == progress));
+            (identical(other.progress, progress) || other.progress == progress));
   }
 
   @override
@@ -492,23 +438,18 @@ class _$InitializationInitializingImpl extends InitializationInitializing
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitializationInitializingImplCopyWith<_$InitializationInitializingImpl>
-      get copyWith => __$$InitializationInitializingImplCopyWithImpl<
-          _$InitializationInitializingImpl>(this, _$identity);
+  _$$InitializationInitializingImplCopyWith<_$InitializationInitializingImpl> get copyWith =>
+      __$$InitializationInitializingImplCopyWithImpl<_$InitializationInitializingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notInitialized,
     required TResult Function(InitializationProgress progress) initializing,
-    required TResult Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)
+    required TResult Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)
         initialized,
-    required TResult Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)
-        error,
+    required TResult Function(InitializationProgress progress, Object error, StackTrace stackTrace) error,
   }) {
     return initializing(progress);
   }
@@ -518,14 +459,10 @@ class _$InitializationInitializingImpl extends InitializationInitializing
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? notInitialized,
     TResult? Function(InitializationProgress progress)? initializing,
-    TResult? Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)?
+    TResult? Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)?
         initialized,
-    TResult? Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)?
-        error,
+    TResult? Function(InitializationProgress progress, Object error, StackTrace stackTrace)? error,
   }) {
     return initializing?.call(progress);
   }
@@ -535,14 +472,10 @@ class _$InitializationInitializingImpl extends InitializationInitializing
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notInitialized,
     TResult Function(InitializationProgress progress)? initializing,
-    TResult Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)?
+    TResult Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)?
         initialized,
-    TResult Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)?
-        error,
+    TResult Function(InitializationProgress progress, Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if (initializing != null) {
@@ -554,8 +487,7 @@ class _$InitializationInitializingImpl extends InitializationInitializing
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitializationNotInitialized value)
-        notInitialized,
+    required TResult Function(InitializationNotInitialized value) notInitialized,
     required TResult Function(InitializationInitializing value) initializing,
     required TResult Function(InitializationInitialized value) initialized,
     required TResult Function(InitializationError value) error,
@@ -590,40 +522,35 @@ class _$InitializationInitializingImpl extends InitializationInitializing
   }
 }
 
-abstract class InitializationInitializing extends InitializationState
-    implements _IndexedInitializationStateMixin {
-  const factory InitializationInitializing(
-          {required final InitializationProgress progress}) =
+abstract class InitializationInitializing extends InitializationState implements _IndexedInitializationStateMixin {
+  const factory InitializationInitializing({required final InitializationProgress progress}) =
       _$InitializationInitializingImpl;
   const InitializationInitializing._() : super._();
 
   InitializationProgress get progress;
   @JsonKey(ignore: true)
-  _$$InitializationInitializingImplCopyWith<_$InitializationInitializingImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$InitializationInitializingImplCopyWith<_$InitializationInitializingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$InitializationInitializedImplCopyWith<$Res> {
   factory _$$InitializationInitializedImplCopyWith(
-          _$InitializationInitializedImpl value,
-          $Res Function(_$InitializationInitializedImpl) then) =
+          _$InitializationInitializedImpl value, $Res Function(_$InitializationInitializedImpl) then) =
       __$$InitializationInitializedImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {IEnvironmentStorage environmentStorage,
       ErrorTrackingDisabler errorTrackingDisabler,
-      SharedPreferences sharedPreferences});
+      IDependenciesStorage dependenciesStorage});
 }
 
 /// @nodoc
 class __$$InitializationInitializedImplCopyWithImpl<$Res>
-    extends _$InitializationStateCopyWithImpl<$Res,
-        _$InitializationInitializedImpl>
+    extends _$InitializationStateCopyWithImpl<$Res, _$InitializationInitializedImpl>
     implements _$$InitializationInitializedImplCopyWith<$Res> {
   __$$InitializationInitializedImplCopyWithImpl(
-      _$InitializationInitializedImpl _value,
-      $Res Function(_$InitializationInitializedImpl) _then)
+      _$InitializationInitializedImpl _value, $Res Function(_$InitializationInitializedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -631,7 +558,7 @@ class __$$InitializationInitializedImplCopyWithImpl<$Res>
   $Res call({
     Object? environmentStorage = null,
     Object? errorTrackingDisabler = null,
-    Object? sharedPreferences = null,
+    Object? dependenciesStorage = null,
   }) {
     return _then(_$InitializationInitializedImpl(
       environmentStorage: null == environmentStorage
@@ -642,10 +569,10 @@ class __$$InitializationInitializedImplCopyWithImpl<$Res>
           ? _value.errorTrackingDisabler
           : errorTrackingDisabler // ignore: cast_nullable_to_non_nullable
               as ErrorTrackingDisabler,
-      sharedPreferences: null == sharedPreferences
-          ? _value.sharedPreferences
-          : sharedPreferences // ignore: cast_nullable_to_non_nullable
-              as SharedPreferences,
+      dependenciesStorage: null == dependenciesStorage
+          ? _value.dependenciesStorage
+          : dependenciesStorage // ignore: cast_nullable_to_non_nullable
+              as IDependenciesStorage,
     ));
   }
 }
@@ -654,9 +581,7 @@ class __$$InitializationInitializedImplCopyWithImpl<$Res>
 
 class _$InitializationInitializedImpl extends InitializationInitialized {
   const _$InitializationInitializedImpl(
-      {required this.environmentStorage,
-      required this.errorTrackingDisabler,
-      required this.sharedPreferences})
+      {required this.environmentStorage, required this.errorTrackingDisabler, required this.dependenciesStorage})
       : super._();
 
   @override
@@ -664,11 +589,11 @@ class _$InitializationInitializedImpl extends InitializationInitialized {
   @override
   final ErrorTrackingDisabler errorTrackingDisabler;
   @override
-  final SharedPreferences sharedPreferences;
+  final IDependenciesStorage dependenciesStorage;
 
   @override
   String toString() {
-    return 'InitializationState.initialized(environmentStorage: $environmentStorage, errorTrackingDisabler: $errorTrackingDisabler, sharedPreferences: $sharedPreferences)';
+    return 'InitializationState.initialized(environmentStorage: $environmentStorage, errorTrackingDisabler: $errorTrackingDisabler, dependenciesStorage: $dependenciesStorage)';
   }
 
   @override
@@ -680,37 +605,30 @@ class _$InitializationInitializedImpl extends InitializationInitialized {
                 other.environmentStorage == environmentStorage) &&
             (identical(other.errorTrackingDisabler, errorTrackingDisabler) ||
                 other.errorTrackingDisabler == errorTrackingDisabler) &&
-            (identical(other.sharedPreferences, sharedPreferences) ||
-                other.sharedPreferences == sharedPreferences));
+            (identical(other.dependenciesStorage, dependenciesStorage) ||
+                other.dependenciesStorage == dependenciesStorage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, environmentStorage,
-      errorTrackingDisabler, sharedPreferences);
+  int get hashCode => Object.hash(runtimeType, environmentStorage, errorTrackingDisabler, dependenciesStorage);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitializationInitializedImplCopyWith<_$InitializationInitializedImpl>
-      get copyWith => __$$InitializationInitializedImplCopyWithImpl<
-          _$InitializationInitializedImpl>(this, _$identity);
+  _$$InitializationInitializedImplCopyWith<_$InitializationInitializedImpl> get copyWith =>
+      __$$InitializationInitializedImplCopyWithImpl<_$InitializationInitializedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notInitialized,
     required TResult Function(InitializationProgress progress) initializing,
-    required TResult Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)
+    required TResult Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)
         initialized,
-    required TResult Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)
-        error,
+    required TResult Function(InitializationProgress progress, Object error, StackTrace stackTrace) error,
   }) {
-    return initialized(
-        environmentStorage, errorTrackingDisabler, sharedPreferences);
+    return initialized(environmentStorage, errorTrackingDisabler, dependenciesStorage);
   }
 
   @override
@@ -718,17 +636,12 @@ class _$InitializationInitializedImpl extends InitializationInitialized {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? notInitialized,
     TResult? Function(InitializationProgress progress)? initializing,
-    TResult? Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)?
+    TResult? Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)?
         initialized,
-    TResult? Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)?
-        error,
+    TResult? Function(InitializationProgress progress, Object error, StackTrace stackTrace)? error,
   }) {
-    return initialized?.call(
-        environmentStorage, errorTrackingDisabler, sharedPreferences);
+    return initialized?.call(environmentStorage, errorTrackingDisabler, dependenciesStorage);
   }
 
   @override
@@ -736,19 +649,14 @@ class _$InitializationInitializedImpl extends InitializationInitialized {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notInitialized,
     TResult Function(InitializationProgress progress)? initializing,
-    TResult Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)?
+    TResult Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)?
         initialized,
-    TResult Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)?
-        error,
+    TResult Function(InitializationProgress progress, Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(
-          environmentStorage, errorTrackingDisabler, sharedPreferences);
+      return initialized(environmentStorage, errorTrackingDisabler, dependenciesStorage);
     }
     return orElse();
   }
@@ -756,8 +664,7 @@ class _$InitializationInitializedImpl extends InitializationInitialized {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitializationNotInitialized value)
-        notInitialized,
+    required TResult Function(InitializationNotInitialized value) notInitialized,
     required TResult Function(InitializationInitializing value) initializing,
     required TResult Function(InitializationInitialized value) initialized,
     required TResult Function(InitializationError value) error,
@@ -792,31 +699,28 @@ class _$InitializationInitializedImpl extends InitializationInitialized {
   }
 }
 
-abstract class InitializationInitialized extends InitializationState
-    implements InitializationData {
+abstract class InitializationInitialized extends InitializationState implements InitializationData {
   const factory InitializationInitialized(
-          {required final IEnvironmentStorage environmentStorage,
-          required final ErrorTrackingDisabler errorTrackingDisabler,
-          required final SharedPreferences sharedPreferences}) =
-      _$InitializationInitializedImpl;
+      {required final IEnvironmentStorage environmentStorage,
+      required final ErrorTrackingDisabler errorTrackingDisabler,
+      required final IDependenciesStorage dependenciesStorage}) = _$InitializationInitializedImpl;
   const InitializationInitialized._() : super._();
 
   IEnvironmentStorage get environmentStorage;
   ErrorTrackingDisabler get errorTrackingDisabler;
-  SharedPreferences get sharedPreferences;
+  IDependenciesStorage get dependenciesStorage;
   @JsonKey(ignore: true)
-  _$$InitializationInitializedImplCopyWith<_$InitializationInitializedImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$InitializationInitializedImplCopyWith<_$InitializationInitializedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$InitializationErrorImplCopyWith<$Res> {
-  factory _$$InitializationErrorImplCopyWith(_$InitializationErrorImpl value,
-          $Res Function(_$InitializationErrorImpl) then) =
+  factory _$$InitializationErrorImplCopyWith(
+          _$InitializationErrorImpl value, $Res Function(_$InitializationErrorImpl) then) =
       __$$InitializationErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {InitializationProgress progress, Object error, StackTrace stackTrace});
+  $Res call({InitializationProgress progress, Object error, StackTrace stackTrace});
 
   $InitializationProgressCopyWith<$Res> get progress;
 }
@@ -825,8 +729,8 @@ abstract class _$$InitializationErrorImplCopyWith<$Res> {
 class __$$InitializationErrorImplCopyWithImpl<$Res>
     extends _$InitializationStateCopyWithImpl<$Res, _$InitializationErrorImpl>
     implements _$$InitializationErrorImplCopyWith<$Res> {
-  __$$InitializationErrorImplCopyWithImpl(_$InitializationErrorImpl _value,
-      $Res Function(_$InitializationErrorImpl) _then)
+  __$$InitializationErrorImplCopyWithImpl(
+      _$InitializationErrorImpl _value, $Res Function(_$InitializationErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -860,11 +764,8 @@ class __$$InitializationErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitializationErrorImpl extends InitializationError
-    with _IndexedInitializationStateMixin {
-  const _$InitializationErrorImpl(
-      {required this.progress, required this.error, required this.stackTrace})
-      : super._();
+class _$InitializationErrorImpl extends InitializationError with _IndexedInitializationStateMixin {
+  const _$InitializationErrorImpl({required this.progress, required this.error, required this.stackTrace}) : super._();
 
   @override
   final InitializationProgress progress;
@@ -883,37 +784,29 @@ class _$InitializationErrorImpl extends InitializationError
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitializationErrorImpl &&
-            (identical(other.progress, progress) ||
-                other.progress == progress) &&
+            (identical(other.progress, progress) || other.progress == progress) &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, progress,
-      const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, progress, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InitializationErrorImplCopyWith<_$InitializationErrorImpl> get copyWith =>
-      __$$InitializationErrorImplCopyWithImpl<_$InitializationErrorImpl>(
-          this, _$identity);
+      __$$InitializationErrorImplCopyWithImpl<_$InitializationErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notInitialized,
     required TResult Function(InitializationProgress progress) initializing,
-    required TResult Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)
+    required TResult Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)
         initialized,
-    required TResult Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)
-        error,
+    required TResult Function(InitializationProgress progress, Object error, StackTrace stackTrace) error,
   }) {
     return error(progress, this.error, stackTrace);
   }
@@ -923,14 +816,10 @@ class _$InitializationErrorImpl extends InitializationError
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? notInitialized,
     TResult? Function(InitializationProgress progress)? initializing,
-    TResult? Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)?
+    TResult? Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)?
         initialized,
-    TResult? Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)?
-        error,
+    TResult? Function(InitializationProgress progress, Object error, StackTrace stackTrace)? error,
   }) {
     return error?.call(progress, this.error, stackTrace);
   }
@@ -940,14 +829,10 @@ class _$InitializationErrorImpl extends InitializationError
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notInitialized,
     TResult Function(InitializationProgress progress)? initializing,
-    TResult Function(
-            IEnvironmentStorage environmentStorage,
-            ErrorTrackingDisabler errorTrackingDisabler,
-            SharedPreferences sharedPreferences)?
+    TResult Function(IEnvironmentStorage environmentStorage, ErrorTrackingDisabler errorTrackingDisabler,
+            IDependenciesStorage dependenciesStorage)?
         initialized,
-    TResult Function(InitializationProgress progress, Object error,
-            StackTrace stackTrace)?
-        error,
+    TResult Function(InitializationProgress progress, Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -959,8 +844,7 @@ class _$InitializationErrorImpl extends InitializationError
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitializationNotInitialized value)
-        notInitialized,
+    required TResult Function(InitializationNotInitialized value) notInitialized,
     required TResult Function(InitializationInitializing value) initializing,
     required TResult Function(InitializationInitialized value) initialized,
     required TResult Function(InitializationError value) error,
@@ -995,8 +879,7 @@ class _$InitializationErrorImpl extends InitializationError
   }
 }
 
-abstract class InitializationError extends InitializationState
-    implements _IndexedInitializationStateMixin {
+abstract class InitializationError extends InitializationState implements _IndexedInitializationStateMixin {
   const factory InitializationError(
       {required final InitializationProgress progress,
       required final Object error,
@@ -1007,8 +890,7 @@ abstract class InitializationError extends InitializationState
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$InitializationErrorImplCopyWith<_$InitializationErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InitializationErrorImplCopyWith<_$InitializationErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1048,14 +930,12 @@ mixin _$InitializationEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $InitializationEventCopyWith<InitializationEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  $InitializationEventCopyWith<InitializationEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InitializationEventCopyWith<$Res> {
-  factory $InitializationEventCopyWith(
-          InitializationEvent value, $Res Function(InitializationEvent) then) =
+  factory $InitializationEventCopyWith(InitializationEvent value, $Res Function(InitializationEvent) then) =
       _$InitializationEventCopyWithImpl<$Res, InitializationEvent>;
   @useResult
   $Res call({bool shouldSendSentry});
@@ -1086,10 +966,8 @@ class _$InitializationEventCopyWithImpl<$Res, $Val extends InitializationEvent>
 }
 
 /// @nodoc
-abstract class _$$InitializeImplCopyWith<$Res>
-    implements $InitializationEventCopyWith<$Res> {
-  factory _$$InitializeImplCopyWith(
-          _$InitializeImpl value, $Res Function(_$InitializeImpl) then) =
+abstract class _$$InitializeImplCopyWith<$Res> implements $InitializationEventCopyWith<$Res> {
+  factory _$$InitializeImplCopyWith(_$InitializeImpl value, $Res Function(_$InitializeImpl) then) =
       __$$InitializeImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1097,12 +975,9 @@ abstract class _$$InitializeImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InitializeImplCopyWithImpl<$Res>
-    extends _$InitializationEventCopyWithImpl<$Res, _$InitializeImpl>
+class __$$InitializeImplCopyWithImpl<$Res> extends _$InitializationEventCopyWithImpl<$Res, _$InitializeImpl>
     implements _$$InitializeImplCopyWith<$Res> {
-  __$$InitializeImplCopyWithImpl(
-      _$InitializeImpl _value, $Res Function(_$InitializeImpl) _then)
-      : super(_value, _then);
+  __$$InitializeImplCopyWithImpl(_$InitializeImpl _value, $Res Function(_$InitializeImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1136,8 +1011,7 @@ class _$InitializeImpl implements _Initialize {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitializeImpl &&
-            (identical(other.shouldSendSentry, shouldSendSentry) ||
-                other.shouldSendSentry == shouldSendSentry));
+            (identical(other.shouldSendSentry, shouldSendSentry) || other.shouldSendSentry == shouldSendSentry));
   }
 
   @override
@@ -1207,13 +1081,11 @@ class _$InitializeImpl implements _Initialize {
 }
 
 abstract class _Initialize implements InitializationEvent {
-  const factory _Initialize({required final bool shouldSendSentry}) =
-      _$InitializeImpl;
+  const factory _Initialize({required final bool shouldSendSentry}) = _$InitializeImpl;
 
   @override
   bool get shouldSendSentry;
   @override
   @JsonKey(ignore: true)
-  _$$InitializeImplCopyWith<_$InitializeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InitializeImplCopyWith<_$InitializeImpl> get copyWith => throw _privateConstructorUsedError;
 }

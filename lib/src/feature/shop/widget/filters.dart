@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
-typedef FiltersChanges = Function(
+typedef FiltersChanges = void Function(
   SfRangeValues weightValues,
   SfRangeValues priceValues,
 );
 
 class FiltersWidget extends StatelessWidget {
   const FiltersWidget({
-    Key? key,
     required this.weightValues,
     required this.priceValues,
     required this.onFiltersChanged,
     required this.onFiltersChangeEnd,
+    Key? key,
   }) : super(key: key);
 
   final SfRangeValues weightValues;
@@ -35,8 +35,7 @@ class FiltersWidget extends StatelessWidget {
                   min: 0,
                   max: 1000,
                   onChanged: (values) => onFiltersChanged(values, priceValues),
-                  onChangeEnd: (values) =>
-                      onFiltersChangeEnd(values, priceValues),
+                  onChangeEnd: (values) => onFiltersChangeEnd(values, priceValues),
                   values: weightValues,
                 ),
               ),
@@ -54,8 +53,7 @@ class FiltersWidget extends StatelessWidget {
                   min: 0,
                   max: 1000,
                   onChanged: (values) => onFiltersChanged(weightValues, values),
-                  onChangeEnd: (values) =>
-                      onFiltersChangeEnd(weightValues, values),
+                  onChangeEnd: (values) => onFiltersChangeEnd(weightValues, values),
                   values: priceValues,
                 ),
               ),

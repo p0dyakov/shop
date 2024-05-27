@@ -1,5 +1,3 @@
-.VSCodeCounter
-
 # Miscellaneous
 *.class
 *.log
@@ -11,12 +9,14 @@
 .history
 .svn/
 .gradle/
+migrate_working_dir/
 
 # IntelliJ related
 *.iml
 *.ipr
 *.iws
 .idea/
+.env
 
 # VS Code related
 .vscode/
@@ -33,8 +33,14 @@
 /build/
 pubspec.lock
 
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+/android/app/keystore
+/android/key.properties
+
 # Web related
-lib/generated_plugin_registrant.dart
 
 # Symbolication related
 app.*.symbols
@@ -43,14 +49,18 @@ app.*.symbols
 app.*.map.json
 
 # Code generation
-# **/*.g.dart
-# **/*.gr.dart
-# **/*.gen.dart
-# **/*.hive.dart
-# **/*.freezed.dart
-# **/*.select.dart
+**/*.g.dart
+**/*.gr.dart
+**/*.gen.dart
+**/*.freezed.dart
+**/*.select.dart
+**/*.swagger.dart
+**/*.chopper.dart
+**/*.hive.dart
+**/*.mocks.dart
+lib/src/core/gen/swagger/output/**
+lib/src/core/gen/l10n/**
+coverage/**
 
 # Flutter Version Manager related
 .fvm/flutter_sdk
-
-coverage/

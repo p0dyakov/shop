@@ -18,6 +18,5 @@ class Product with _$Product {
     @HiveField(4) required ProductCharacteristic characteristic,
   }) = _Product;
 
-  factory Product.fromJson(Map<String, Object?> json) =>
-      _$ProductFromJson(json);
+  factory Product.fromJson(Map<String, Object?> json) => _$ProductFromJson(json);
 }

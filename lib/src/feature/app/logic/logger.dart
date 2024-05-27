@@ -3,8 +3,7 @@ import 'package:l/l.dart';
 import 'package:stack_trace/stack_trace.dart';
 
 extension on DateTime {
-  String get formatted =>
-      [hour, minute, second].map(Logger._timeFormat).join(':');
+  String get formatted => [hour, minute, second].map(Logger._timeFormat).join(':');
 }
 
 extension on LogLevel {
@@ -25,8 +24,7 @@ mixin Logger {
     messageFormatting: _formatLoggerMessage,
   );
 
-  static String _timeFormat(int input) =>
-      input.toString().padLeft(_timeLength, '0');
+  static String _timeFormat(int input) => input.toString().padLeft(_timeLength, '0');
 
   static String _formatLoggerMessage(
     Object message,

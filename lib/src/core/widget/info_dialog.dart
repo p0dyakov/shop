@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class InfoDialogWidget extends StatelessWidget {
   const InfoDialogWidget({
-    Key? key,
     required this.title,
     required this.content,
+    Key? key,
   }) : super(key: key);
 
   final String title;

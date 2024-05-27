@@ -44,7 +44,5 @@ class ProductImplAdapter extends TypeAdapter<_$ProductImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ProductImplAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
+      other is ProductImplAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
 }

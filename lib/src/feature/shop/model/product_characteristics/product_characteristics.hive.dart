@@ -6,8 +6,7 @@ part of 'product_characteristics.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ProductCharacteristicImplAdapter
-    extends TypeAdapter<_$ProductCharacteristicImpl> {
+class ProductCharacteristicImplAdapter extends TypeAdapter<_$ProductCharacteristicImpl> {
   @override
   final int typeId = 2;
 
@@ -45,7 +44,5 @@ class ProductCharacteristicImplAdapter
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ProductCharacteristicImplAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
+      other is ProductCharacteristicImplAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
 }

@@ -14,8 +14,7 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ProductCharacteristic _$ProductCharacteristicFromJson(
-    Map<String, dynamic> json) {
+ProductCharacteristic _$ProductCharacteristicFromJson(Map<String, dynamic> json) {
   return _ProductCharacteristic.fromJson(json);
 }
 
@@ -32,14 +31,12 @@ mixin _$ProductCharacteristic {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ProductCharacteristicCopyWith<ProductCharacteristic> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ProductCharacteristicCopyWith<ProductCharacteristic> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProductCharacteristicCopyWith<$Res> {
-  factory $ProductCharacteristicCopyWith(ProductCharacteristic value,
-          $Res Function(ProductCharacteristic) then) =
+  factory $ProductCharacteristicCopyWith(ProductCharacteristic value, $Res Function(ProductCharacteristic) then) =
       _$ProductCharacteristicCopyWithImpl<$Res, ProductCharacteristic>;
   @useResult
   $Res call(
@@ -50,8 +47,7 @@ abstract class $ProductCharacteristicCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProductCharacteristicCopyWithImpl<$Res,
-        $Val extends ProductCharacteristic>
+class _$ProductCharacteristicCopyWithImpl<$Res, $Val extends ProductCharacteristic>
     implements $ProductCharacteristicCopyWith<$Res> {
   _$ProductCharacteristicCopyWithImpl(this._value, this._then);
 
@@ -90,11 +86,9 @@ class _$ProductCharacteristicCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ProductCharacteristicImplCopyWith<$Res>
-    implements $ProductCharacteristicCopyWith<$Res> {
+abstract class _$$ProductCharacteristicImplCopyWith<$Res> implements $ProductCharacteristicCopyWith<$Res> {
   factory _$$ProductCharacteristicImplCopyWith(
-          _$ProductCharacteristicImpl value,
-          $Res Function(_$ProductCharacteristicImpl) then) =
+          _$ProductCharacteristicImpl value, $Res Function(_$ProductCharacteristicImpl) then) =
       __$$ProductCharacteristicImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -107,11 +101,10 @@ abstract class _$$ProductCharacteristicImplCopyWith<$Res>
 
 /// @nodoc
 class __$$ProductCharacteristicImplCopyWithImpl<$Res>
-    extends _$ProductCharacteristicCopyWithImpl<$Res,
-        _$ProductCharacteristicImpl>
+    extends _$ProductCharacteristicCopyWithImpl<$Res, _$ProductCharacteristicImpl>
     implements _$$ProductCharacteristicImplCopyWith<$Res> {
-  __$$ProductCharacteristicImplCopyWithImpl(_$ProductCharacteristicImpl _value,
-      $Res Function(_$ProductCharacteristicImpl) _then)
+  __$$ProductCharacteristicImplCopyWithImpl(
+      _$ProductCharacteristicImpl _value, $Res Function(_$ProductCharacteristicImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -153,8 +146,7 @@ class _$ProductCharacteristicImpl implements _ProductCharacteristic {
       @HiveField(2) required this.manufactureCountry,
       @HiveField(3) required this.expirationDateInDays});
 
-  factory _$ProductCharacteristicImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProductCharacteristicImplFromJson(json);
+  factory _$ProductCharacteristicImpl.fromJson(Map<String, dynamic> json) => _$$ProductCharacteristicImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -189,15 +181,13 @@ class _$ProductCharacteristicImpl implements _ProductCharacteristic {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, weight, price, manufactureCountry, expirationDateInDays);
+  int get hashCode => Object.hash(runtimeType, weight, price, manufactureCountry, expirationDateInDays);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProductCharacteristicImplCopyWith<_$ProductCharacteristicImpl>
-      get copyWith => __$$ProductCharacteristicImplCopyWithImpl<
-          _$ProductCharacteristicImpl>(this, _$identity);
+  _$$ProductCharacteristicImplCopyWith<_$ProductCharacteristicImpl> get copyWith =>
+      __$$ProductCharacteristicImplCopyWithImpl<_$ProductCharacteristicImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -209,14 +199,12 @@ class _$ProductCharacteristicImpl implements _ProductCharacteristic {
 
 abstract class _ProductCharacteristic implements ProductCharacteristic {
   factory _ProductCharacteristic(
-          {@HiveField(0) required final int weight,
-          @HiveField(1) required final int price,
-          @HiveField(2) required final String manufactureCountry,
-          @HiveField(3) required final int expirationDateInDays}) =
-      _$ProductCharacteristicImpl;
+      {@HiveField(0) required final int weight,
+      @HiveField(1) required final int price,
+      @HiveField(2) required final String manufactureCountry,
+      @HiveField(3) required final int expirationDateInDays}) = _$ProductCharacteristicImpl;
 
-  factory _ProductCharacteristic.fromJson(Map<String, dynamic> json) =
-      _$ProductCharacteristicImpl.fromJson;
+  factory _ProductCharacteristic.fromJson(Map<String, dynamic> json) = _$ProductCharacteristicImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -232,6 +220,5 @@ abstract class _ProductCharacteristic implements ProductCharacteristic {
   int get expirationDateInDays;
   @override
   @JsonKey(ignore: true)
-  _$$ProductCharacteristicImplCopyWith<_$ProductCharacteristicImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$ProductCharacteristicImplCopyWith<_$ProductCharacteristicImpl> get copyWith => throw _privateConstructorUsedError;
 }

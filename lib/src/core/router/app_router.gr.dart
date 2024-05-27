@@ -31,8 +31,8 @@ class _$AppRouter extends RootStackRouter {
       return CustomPage<void>(
         routeData: routeData,
         child: ShopProductsPage(
-          key: args.key,
           shop: args.shop,
+          key: args.key,
         ),
         transitionsBuilder: TransitionsBuilders.slideLeft,
         opaque: true,
@@ -76,14 +76,14 @@ class ShopsRoute extends PageRouteInfo<void> {
 /// [ShopProductsPage]
 class ShopProductsRoute extends PageRouteInfo<ShopProductsRouteArgs> {
   ShopProductsRoute({
-    Key? key,
     required Shop shop,
+    Key? key,
   }) : super(
           ShopProductsRoute.name,
           path: '/shop_products',
           args: ShopProductsRouteArgs(
-            key: key,
             shop: shop,
+            key: key,
           ),
         );
 
@@ -92,16 +92,16 @@ class ShopProductsRoute extends PageRouteInfo<ShopProductsRouteArgs> {
 
 class ShopProductsRouteArgs {
   const ShopProductsRouteArgs({
-    this.key,
     required this.shop,
+    this.key,
   });
-
-  final Key? key;
 
   final Shop shop;
 
+  final Key? key;
+
   @override
   String toString() {
-    return 'ShopProductsRouteArgs{key: $key, shop: $shop}';
+    return 'ShopProductsRouteArgs{shop: $shop, key: $key}';
   }
 }

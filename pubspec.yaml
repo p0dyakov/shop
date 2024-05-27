@@ -44,7 +44,7 @@ dependencies:
   select_annotation: ^0.2.0
 
   # Internationalization
-  intl: ^0.18.1
+  intl: ^0.19.0
   flutter_localizations:
     sdk: flutter 
 
@@ -103,7 +103,12 @@ flutter_icons:
   adaptive_icon_foreground: "asset/logo.png"
 
 flutter_gen:
-  output: lib/src/core/resources
+  output: lib/src/core/gen/
+  line_length: 120
+  null_safety: true
+  assets:
+    outputs:
+      package_parameter_enabled: false
   
 flutter:
   uses-material-design: true

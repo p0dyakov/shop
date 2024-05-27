@@ -19,8 +19,7 @@ abstract class BaseSharedPreferencesDao implements ISharedPreferencesDao {
 }
 
 mixin _LoggerMixin on BaseSharedPreferencesDao {
-  late final String _logOrigin =
-      kDebugMode ? '$runtimeType($_name)' : 'SharedPreferencesDao($_name)';
+  late final String _logOrigin = kDebugMode ? '$runtimeType($_name)' : 'SharedPreferencesDao($_name)';
 
   void _log(void Function(StringBuffer b) buildLog) {
     final buffer = StringBuffer(_logOrigin)..write(' | ');
@@ -124,17 +123,14 @@ mixin _KeyImplementationMixin on BaseSharedPreferencesDao {
 
 mixin _ActionsImplementationMixin on _LoggerMixin {
   @override
-  Future<bool> clear() =>
-      _performAsyncLogging('clear', _sharedPreferences.clear);
+  Future<bool> clear() => _performAsyncLogging('clear', _sharedPreferences.clear);
 
   @override
   @Deprecated('Deprecated for iOS')
-  Future<bool> commit() =>
-      _performAsyncLogging('commit', _sharedPreferences.clear);
+  Future<bool> commit() => _performAsyncLogging('commit', _sharedPreferences.clear);
 
   @override
-  Future<void> reload() =>
-      _performAsyncLogging('reload', _sharedPreferences.reload);
+  Future<void> reload() => _performAsyncLogging('reload', _sharedPreferences.reload);
 
   @override
   bool containsKey(String key) {
@@ -169,19 +165,16 @@ mixin _GettersImplementationMixin on _LoggerMixin {
   bool? getBool(String key) => _getLogging(key, _sharedPreferences.getBool);
 
   @override
-  double? getDouble(String key) =>
-      _getLogging(key, _sharedPreferences.getDouble);
+  double? getDouble(String key) => _getLogging(key, _sharedPreferences.getDouble);
 
   @override
   int? getInt(String key) => _getLogging(key, _sharedPreferences.getInt);
 
   @override
-  String? getString(String key) =>
-      _getLogging(key, _sharedPreferences.getString);
+  String? getString(String key) => _getLogging(key, _sharedPreferences.getString);
 
   @override
-  List<String>? getStringList(String key) =>
-      _getLogging(key, _sharedPreferences.getStringList);
+  List<String>? getStringList(String key) => _getLogging(key, _sharedPreferences.getStringList);
 
   @override
   Set<String> getKeys() {
@@ -205,20 +198,16 @@ mixin _GettersImplementationMixin on _LoggerMixin {
 
 mixin _MutationsImplementationMixin on _LoggerMixin {
   @override
-  Future<bool> setBool(String key, bool value) =>
-      _setLogging(key, value, _sharedPreferences.setBool);
+  Future<bool> setBool(String key, bool value) => _setLogging(key, value, _sharedPreferences.setBool);
 
   @override
-  Future<bool> setDouble(String key, double value) =>
-      _setLogging(key, value, _sharedPreferences.setDouble);
+  Future<bool> setDouble(String key, double value) => _setLogging(key, value, _sharedPreferences.setDouble);
 
   @override
-  Future<bool> setInt(String key, int value) =>
-      _setLogging(key, value, _sharedPreferences.setInt);
+  Future<bool> setInt(String key, int value) => _setLogging(key, value, _sharedPreferences.setInt);
 
   @override
-  Future<bool> setString(String key, String value) =>
-      _setLogging(key, value, _sharedPreferences.setString);
+  Future<bool> setString(String key, String value) => _setLogging(key, value, _sharedPreferences.setString);
 
   @override
   Future<bool> setStringList(String key, List<String> value) =>

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class DeliveryInfoWidget extends StatelessWidget {
   const DeliveryInfoWidget({
-    Key? key,
     required this.deliveryTime,
     required this.deliveryPrice,
+    Key? key,
     this.color = Colors.black,
   }) : super(key: key);
 

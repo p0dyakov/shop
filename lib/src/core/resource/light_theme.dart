@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/core/resources/theme/sizes.dart';
+import 'package:shop/src/core/resource/sizes.dart';
 
 final appLightTheme = ThemeData(
-  backgroundColor: const Color.fromARGB(255, 249, 249, 249),
   fontFamily: 'Inter',
   scaffoldBackgroundColor: const Color.fromARGB(255, 249, 249, 249),
   primaryColor: Colors.black,
@@ -18,9 +17,9 @@ final appLightTheme = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
-      elevation: MaterialStateProperty.all(0),
-      backgroundColor: MaterialStateProperty.all(Colors.black),
-      textStyle: MaterialStateProperty.all(
+      elevation: WidgetStateProperty.all(0),
+      backgroundColor: WidgetStateProperty.all(Colors.black),
+      textStyle: WidgetStateProperty.all(
         const TextStyle(
           fontSize: 18,
           color: Color.fromARGB(255, 255, 255, 255),

@@ -51,22 +51,19 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SettingsEventCopyWith<SettingsEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SettingsEventCopyWith<SettingsEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SettingsEventCopyWith<$Res> {
-  factory $SettingsEventCopyWith(
-          SettingsEvent value, $Res Function(SettingsEvent) then) =
+  factory $SettingsEventCopyWith(SettingsEvent value, $Res Function(SettingsEvent) then) =
       _$SettingsEventCopyWithImpl<$Res, SettingsEvent>;
   @useResult
   $Res call({AppTheme theme});
 }
 
 /// @nodoc
-class _$SettingsEventCopyWithImpl<$Res, $Val extends SettingsEvent>
-    implements $SettingsEventCopyWith<$Res> {
+class _$SettingsEventCopyWithImpl<$Res, $Val extends SettingsEvent> implements $SettingsEventCopyWith<$Res> {
   _$SettingsEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -89,10 +86,8 @@ class _$SettingsEventCopyWithImpl<$Res, $Val extends SettingsEvent>
 }
 
 /// @nodoc
-abstract class _$$SetThemeEventImplCopyWith<$Res>
-    implements $SettingsEventCopyWith<$Res> {
-  factory _$$SetThemeEventImplCopyWith(
-          _$SetThemeEventImpl value, $Res Function(_$SetThemeEventImpl) then) =
+abstract class _$$SetThemeEventImplCopyWith<$Res> implements $SettingsEventCopyWith<$Res> {
+  factory _$$SetThemeEventImplCopyWith(_$SetThemeEventImpl value, $Res Function(_$SetThemeEventImpl) then) =
       __$$SetThemeEventImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -100,11 +95,9 @@ abstract class _$$SetThemeEventImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SetThemeEventImplCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res, _$SetThemeEventImpl>
+class __$$SetThemeEventImplCopyWithImpl<$Res> extends _$SettingsEventCopyWithImpl<$Res, _$SetThemeEventImpl>
     implements _$$SetThemeEventImplCopyWith<$Res> {
-  __$$SetThemeEventImplCopyWithImpl(
-      _$SetThemeEventImpl _value, $Res Function(_$SetThemeEventImpl) _then)
+  __$$SetThemeEventImplCopyWithImpl(_$SetThemeEventImpl _value, $Res Function(_$SetThemeEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -209,15 +202,13 @@ class _$SetThemeEventImpl implements SetThemeEvent {
 }
 
 abstract class SetThemeEvent implements SettingsEvent {
-  const factory SetThemeEvent({required final AppTheme theme}) =
-      _$SetThemeEventImpl;
+  const factory SetThemeEvent({required final AppTheme theme}) = _$SetThemeEventImpl;
 
   @override
   AppTheme get theme;
   @override
   @JsonKey(ignore: true)
-  _$$SetThemeEventImplCopyWith<_$SetThemeEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SetThemeEventImplCopyWith<_$SetThemeEventImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -275,14 +266,12 @@ mixin _$SettingsState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SettingsStateCopyWith<SettingsState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SettingsStateCopyWith<SettingsState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SettingsStateCopyWith<$Res> {
-  factory $SettingsStateCopyWith(
-          SettingsState value, $Res Function(SettingsState) then) =
+  factory $SettingsStateCopyWith(SettingsState value, $Res Function(SettingsState) then) =
       _$SettingsStateCopyWithImpl<$Res, SettingsState>;
   @useResult
   $Res call({SettingsData data});
@@ -291,8 +280,7 @@ abstract class $SettingsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
-    implements $SettingsStateCopyWith<$Res> {
+class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState> implements $SettingsStateCopyWith<$Res> {
   _$SettingsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -323,10 +311,9 @@ class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
 }
 
 /// @nodoc
-abstract class _$$SettingsInitialStateImplCopyWith<$Res>
-    implements $SettingsStateCopyWith<$Res> {
-  factory _$$SettingsInitialStateImplCopyWith(_$SettingsInitialStateImpl value,
-          $Res Function(_$SettingsInitialStateImpl) then) =
+abstract class _$$SettingsInitialStateImplCopyWith<$Res> implements $SettingsStateCopyWith<$Res> {
+  factory _$$SettingsInitialStateImplCopyWith(
+          _$SettingsInitialStateImpl value, $Res Function(_$SettingsInitialStateImpl) then) =
       __$$SettingsInitialStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -340,8 +327,8 @@ abstract class _$$SettingsInitialStateImplCopyWith<$Res>
 class __$$SettingsInitialStateImplCopyWithImpl<$Res>
     extends _$SettingsStateCopyWithImpl<$Res, _$SettingsInitialStateImpl>
     implements _$$SettingsInitialStateImplCopyWith<$Res> {
-  __$$SettingsInitialStateImplCopyWithImpl(_$SettingsInitialStateImpl _value,
-      $Res Function(_$SettingsInitialStateImpl) _then)
+  __$$SettingsInitialStateImplCopyWithImpl(
+      _$SettingsInitialStateImpl _value, $Res Function(_$SettingsInitialStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -385,10 +372,8 @@ class _$SettingsInitialStateImpl implements SettingsInitialState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SettingsInitialStateImplCopyWith<_$SettingsInitialStateImpl>
-      get copyWith =>
-          __$$SettingsInitialStateImplCopyWithImpl<_$SettingsInitialStateImpl>(
-              this, _$identity);
+  _$$SettingsInitialStateImplCopyWith<_$SettingsInitialStateImpl> get copyWith =>
+      __$$SettingsInitialStateImplCopyWithImpl<_$SettingsInitialStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -466,22 +451,19 @@ class _$SettingsInitialStateImpl implements SettingsInitialState {
 }
 
 abstract class SettingsInitialState implements SettingsState {
-  const factory SettingsInitialState({required final SettingsData data}) =
-      _$SettingsInitialStateImpl;
+  const factory SettingsInitialState({required final SettingsData data}) = _$SettingsInitialStateImpl;
 
   @override
   SettingsData get data;
   @override
   @JsonKey(ignore: true)
-  _$$SettingsInitialStateImplCopyWith<_$SettingsInitialStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SettingsInitialStateImplCopyWith<_$SettingsInitialStateImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SettingsLoadingStateImplCopyWith<$Res>
-    implements $SettingsStateCopyWith<$Res> {
-  factory _$$SettingsLoadingStateImplCopyWith(_$SettingsLoadingStateImpl value,
-          $Res Function(_$SettingsLoadingStateImpl) then) =
+abstract class _$$SettingsLoadingStateImplCopyWith<$Res> implements $SettingsStateCopyWith<$Res> {
+  factory _$$SettingsLoadingStateImplCopyWith(
+          _$SettingsLoadingStateImpl value, $Res Function(_$SettingsLoadingStateImpl) then) =
       __$$SettingsLoadingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -495,8 +477,8 @@ abstract class _$$SettingsLoadingStateImplCopyWith<$Res>
 class __$$SettingsLoadingStateImplCopyWithImpl<$Res>
     extends _$SettingsStateCopyWithImpl<$Res, _$SettingsLoadingStateImpl>
     implements _$$SettingsLoadingStateImplCopyWith<$Res> {
-  __$$SettingsLoadingStateImplCopyWithImpl(_$SettingsLoadingStateImpl _value,
-      $Res Function(_$SettingsLoadingStateImpl) _then)
+  __$$SettingsLoadingStateImplCopyWithImpl(
+      _$SettingsLoadingStateImpl _value, $Res Function(_$SettingsLoadingStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -540,10 +522,8 @@ class _$SettingsLoadingStateImpl implements SettingsLoadingState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SettingsLoadingStateImplCopyWith<_$SettingsLoadingStateImpl>
-      get copyWith =>
-          __$$SettingsLoadingStateImplCopyWithImpl<_$SettingsLoadingStateImpl>(
-              this, _$identity);
+  _$$SettingsLoadingStateImplCopyWith<_$SettingsLoadingStateImpl> get copyWith =>
+      __$$SettingsLoadingStateImplCopyWithImpl<_$SettingsLoadingStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -621,23 +601,19 @@ class _$SettingsLoadingStateImpl implements SettingsLoadingState {
 }
 
 abstract class SettingsLoadingState implements SettingsState {
-  const factory SettingsLoadingState({required final SettingsData data}) =
-      _$SettingsLoadingStateImpl;
+  const factory SettingsLoadingState({required final SettingsData data}) = _$SettingsLoadingStateImpl;
 
   @override
   SettingsData get data;
   @override
   @JsonKey(ignore: true)
-  _$$SettingsLoadingStateImplCopyWith<_$SettingsLoadingStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SettingsLoadingStateImplCopyWith<_$SettingsLoadingStateImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SettingsLoadSuccessStateImplCopyWith<$Res>
-    implements $SettingsStateCopyWith<$Res> {
+abstract class _$$SettingsLoadSuccessStateImplCopyWith<$Res> implements $SettingsStateCopyWith<$Res> {
   factory _$$SettingsLoadSuccessStateImplCopyWith(
-          _$SettingsLoadSuccessStateImpl value,
-          $Res Function(_$SettingsLoadSuccessStateImpl) then) =
+          _$SettingsLoadSuccessStateImpl value, $Res Function(_$SettingsLoadSuccessStateImpl) then) =
       __$$SettingsLoadSuccessStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -652,8 +628,7 @@ class __$$SettingsLoadSuccessStateImplCopyWithImpl<$Res>
     extends _$SettingsStateCopyWithImpl<$Res, _$SettingsLoadSuccessStateImpl>
     implements _$$SettingsLoadSuccessStateImplCopyWith<$Res> {
   __$$SettingsLoadSuccessStateImplCopyWithImpl(
-      _$SettingsLoadSuccessStateImpl _value,
-      $Res Function(_$SettingsLoadSuccessStateImpl) _then)
+      _$SettingsLoadSuccessStateImpl _value, $Res Function(_$SettingsLoadSuccessStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -697,9 +672,8 @@ class _$SettingsLoadSuccessStateImpl implements SettingsLoadSuccessState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SettingsLoadSuccessStateImplCopyWith<_$SettingsLoadSuccessStateImpl>
-      get copyWith => __$$SettingsLoadSuccessStateImplCopyWithImpl<
-          _$SettingsLoadSuccessStateImpl>(this, _$identity);
+  _$$SettingsLoadSuccessStateImplCopyWith<_$SettingsLoadSuccessStateImpl> get copyWith =>
+      __$$SettingsLoadSuccessStateImplCopyWithImpl<_$SettingsLoadSuccessStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -777,23 +751,20 @@ class _$SettingsLoadSuccessStateImpl implements SettingsLoadSuccessState {
 }
 
 abstract class SettingsLoadSuccessState implements SettingsState {
-  const factory SettingsLoadSuccessState({required final SettingsData data}) =
-      _$SettingsLoadSuccessStateImpl;
+  const factory SettingsLoadSuccessState({required final SettingsData data}) = _$SettingsLoadSuccessStateImpl;
 
   @override
   SettingsData get data;
   @override
   @JsonKey(ignore: true)
-  _$$SettingsLoadSuccessStateImplCopyWith<_$SettingsLoadSuccessStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SettingsLoadSuccessStateImplCopyWith<_$SettingsLoadSuccessStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SettingsLoadFailureStateImplCopyWith<$Res>
-    implements $SettingsStateCopyWith<$Res> {
+abstract class _$$SettingsLoadFailureStateImplCopyWith<$Res> implements $SettingsStateCopyWith<$Res> {
   factory _$$SettingsLoadFailureStateImplCopyWith(
-          _$SettingsLoadFailureStateImpl value,
-          $Res Function(_$SettingsLoadFailureStateImpl) then) =
+          _$SettingsLoadFailureStateImpl value, $Res Function(_$SettingsLoadFailureStateImpl) then) =
       __$$SettingsLoadFailureStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -808,8 +779,7 @@ class __$$SettingsLoadFailureStateImplCopyWithImpl<$Res>
     extends _$SettingsStateCopyWithImpl<$Res, _$SettingsLoadFailureStateImpl>
     implements _$$SettingsLoadFailureStateImplCopyWith<$Res> {
   __$$SettingsLoadFailureStateImplCopyWithImpl(
-      _$SettingsLoadFailureStateImpl _value,
-      $Res Function(_$SettingsLoadFailureStateImpl) _then)
+      _$SettingsLoadFailureStateImpl _value, $Res Function(_$SettingsLoadFailureStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -834,8 +804,7 @@ class __$$SettingsLoadFailureStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SettingsLoadFailureStateImpl implements SettingsLoadFailureState {
-  const _$SettingsLoadFailureStateImpl(
-      {required this.data, required this.error});
+  const _$SettingsLoadFailureStateImpl({required this.data, required this.error});
 
   @override
   final SettingsData data;
@@ -862,9 +831,8 @@ class _$SettingsLoadFailureStateImpl implements SettingsLoadFailureState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SettingsLoadFailureStateImplCopyWith<_$SettingsLoadFailureStateImpl>
-      get copyWith => __$$SettingsLoadFailureStateImplCopyWithImpl<
-          _$SettingsLoadFailureStateImpl>(this, _$identity);
+  _$$SettingsLoadFailureStateImplCopyWith<_$SettingsLoadFailureStateImpl> get copyWith =>
+      __$$SettingsLoadFailureStateImplCopyWithImpl<_$SettingsLoadFailureStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -942,15 +910,14 @@ class _$SettingsLoadFailureStateImpl implements SettingsLoadFailureState {
 }
 
 abstract class SettingsLoadFailureState implements SettingsState {
-  const factory SettingsLoadFailureState(
-      {required final SettingsData data,
-      required final String error}) = _$SettingsLoadFailureStateImpl;
+  const factory SettingsLoadFailureState({required final SettingsData data, required final String error}) =
+      _$SettingsLoadFailureStateImpl;
 
   @override
   SettingsData get data;
   String get error;
   @override
   @JsonKey(ignore: true)
-  _$$SettingsLoadFailureStateImplCopyWith<_$SettingsLoadFailureStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SettingsLoadFailureStateImplCopyWith<_$SettingsLoadFailureStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

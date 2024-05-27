@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop/src/core/resources/theme/sizes.dart';
+import 'package:shop/src/core/resource/sizes.dart';
 import 'package:shop/src/core/widget/search.dart';
 import 'package:shop/src/feature/shop/model/shop/shop.dart';
 import 'package:shop/src/feature/shop/products_bloc/products_bloc.dart';
@@ -10,18 +10,17 @@ import 'package:shop/src/feature/shop/widget/products_builder.dart';
 import 'package:shop/src/feature/shop/widget/scope/products_scope.dart';
 import 'package:shop/src/feature/shop/widget/shop_card.dart';
 import 'package:shop/src/feature/shop/widget/title.dart';
-import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 class ShopProductsPage extends StatelessWidget {
   const ShopProductsPage({
-    Key? key,
     required this.shop,
+    Key? key,
   }) : super(key: key);
 
   final Shop shop;
 
   @override
-  Widget build(BuildContext context) =>ProductsScope(
+  Widget build(BuildContext context) => ProductsScope(
         shop: shop,
         child: BlocBuilder<ProductsBloc, ProductsState>(
           builder: (context, state) => Scaffold(
@@ -40,8 +39,7 @@ class ShopProductsPage extends StatelessWidget {
                   const SizedBox(height: 20),
                   SearchWidget(
                     hint: 'Search for a product in ${shop.name}',
-                    onChanged: (String query) =>
-                        BlocProvider.of<ProductsBloc>(context).add(
+                    onChanged: (query) => BlocProvider.of<ProductsBloc>(context).add(
                       ProductsEvent.searchProduct(
                         query: query,
                         weightValues: state.data.weightValues,
@@ -68,8 +66,8 @@ class ShopProductsPage extends StatelessWidget {
                           weightValues: state.data.weightValues,
                           priceValues: state.data.priceValues,
                           onFiltersChanged: (
-                            SfRangeValues weightValues,
-                            SfRangeValues priceValues,
+                            weightValues,
+                            priceValues,
                           ) =>
                               BlocProvider.of<ProductsBloc>(context).add(
                             ProductsEvent.changeValues(
@@ -78,8 +76,8 @@ class ShopProductsPage extends StatelessWidget {
                             ),
                           ),
                           onFiltersChangeEnd: (
-                            SfRangeValues weightValues,
-                            SfRangeValues priceValues,
+                            weightValues,
+                            priceValues,
                           ) =>
                               BlocProvider.of<ProductsBloc>(context).add(
                             ProductsEvent.searchProduct(

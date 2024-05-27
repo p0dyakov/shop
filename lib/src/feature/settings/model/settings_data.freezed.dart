@@ -19,22 +19,19 @@ mixin _$SettingsData {
   AppTheme get theme => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SettingsDataCopyWith<SettingsData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SettingsDataCopyWith<SettingsData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SettingsDataCopyWith<$Res> {
-  factory $SettingsDataCopyWith(
-          SettingsData value, $Res Function(SettingsData) then) =
+  factory $SettingsDataCopyWith(SettingsData value, $Res Function(SettingsData) then) =
       _$SettingsDataCopyWithImpl<$Res, SettingsData>;
   @useResult
   $Res call({AppTheme theme});
 }
 
 /// @nodoc
-class _$SettingsDataCopyWithImpl<$Res, $Val extends SettingsData>
-    implements $SettingsDataCopyWith<$Res> {
+class _$SettingsDataCopyWithImpl<$Res, $Val extends SettingsData> implements $SettingsDataCopyWith<$Res> {
   _$SettingsDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -57,10 +54,8 @@ class _$SettingsDataCopyWithImpl<$Res, $Val extends SettingsData>
 }
 
 /// @nodoc
-abstract class _$$SettingsDataImplCopyWith<$Res>
-    implements $SettingsDataCopyWith<$Res> {
-  factory _$$SettingsDataImplCopyWith(
-          _$SettingsDataImpl value, $Res Function(_$SettingsDataImpl) then) =
+abstract class _$$SettingsDataImplCopyWith<$Res> implements $SettingsDataCopyWith<$Res> {
+  factory _$$SettingsDataImplCopyWith(_$SettingsDataImpl value, $Res Function(_$SettingsDataImpl) then) =
       __$$SettingsDataImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -68,11 +63,9 @@ abstract class _$$SettingsDataImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SettingsDataImplCopyWithImpl<$Res>
-    extends _$SettingsDataCopyWithImpl<$Res, _$SettingsDataImpl>
+class __$$SettingsDataImplCopyWithImpl<$Res> extends _$SettingsDataCopyWithImpl<$Res, _$SettingsDataImpl>
     implements _$$SettingsDataImplCopyWith<$Res> {
-  __$$SettingsDataImplCopyWithImpl(
-      _$SettingsDataImpl _value, $Res Function(_$SettingsDataImpl) _then)
+  __$$SettingsDataImplCopyWithImpl(_$SettingsDataImpl _value, $Res Function(_$SettingsDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -127,6 +120,5 @@ abstract class _SettingsData implements SettingsData {
   AppTheme get theme;
   @override
   @JsonKey(ignore: true)
-  _$$SettingsDataImplCopyWith<_$SettingsDataImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SettingsDataImplCopyWith<_$SettingsDataImpl> get copyWith => throw _privateConstructorUsedError;
 }

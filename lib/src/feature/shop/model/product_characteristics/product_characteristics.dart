@@ -3,7 +3,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 
-
 part 'product_characteristics.freezed.dart';
 part 'product_characteristics.g.dart';
 part 'product_characteristics.hive.dart';
@@ -18,6 +17,5 @@ class ProductCharacteristic with _$ProductCharacteristic {
     @HiveField(3) required int expirationDateInDays,
   }) = _ProductCharacteristic;
 
-  factory ProductCharacteristic.fromJson(Map<String, Object?> json) =>
-      _$ProductCharacteristicFromJson(json);
+  factory ProductCharacteristic.fromJson(Map<String, Object?> json) => _$ProductCharacteristicFromJson(json);
 }

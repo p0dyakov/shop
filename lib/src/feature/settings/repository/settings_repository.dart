@@ -11,8 +11,7 @@ class SettingsRepository implements ISettingsRepository {
     required ISettingsDao settingsDao,
   }) : _settingsDao = settingsDao;
 
-  AppTheme? get _theme =>
-      AppTheme.values.byName.nullable(_settingsDao.themeMode.value);
+  AppTheme? get _theme => AppTheme.values.byName.nullable(_settingsDao.themeMode.value);
 
   @override
   SettingsData currentData() => SettingsData(
@@ -20,6 +19,5 @@ class SettingsRepository implements ISettingsRepository {
       );
 
   @override
-  Future<void> setTheme(AppTheme value) =>
-      _settingsDao.themeMode.setValue(value.name);
+  Future<void> setTheme(AppTheme value) => _settingsDao.themeMode.setValue(value.name);
 }

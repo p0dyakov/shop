@@ -6,8 +6,8 @@ import 'package:shop/src/feature/shop/widget/shop_card.dart';
 
 class ShopsBuilder extends StatelessWidget {
   const ShopsBuilder({
-    Key? key,
     required this.shops,
+    Key? key,
   }) : super(key: key);
 
   final List<Shop> shops;

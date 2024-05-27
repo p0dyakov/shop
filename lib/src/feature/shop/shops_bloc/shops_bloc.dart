@@ -65,9 +65,7 @@ class ShopsBloc extends StreamBloc<ShopsEvent, ShopsState> {
   ) =>
       _performMutation(
         () async {
-          if (query.isEmpty &&
-              weightValues.isInitial &&
-              priceValues.isInitial) {
+          if (query.isEmpty && weightValues.isInitial && priceValues.isInitial) {
             return _LoadSuccess(data: _data);
           }
 

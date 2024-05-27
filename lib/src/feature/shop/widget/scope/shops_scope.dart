@@ -15,8 +15,7 @@ class ShopsScope extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  static const BlocScope<ShopsEvent, ShopsState, ShopsBloc> _scope =
-      BlocScope();
+  static const BlocScope<ShopsEvent, ShopsState, ShopsBloc> _scope = BlocScope();
 
   static ScopeData<List<Shop>> get shopsOf => _scope.select(_shops);
 

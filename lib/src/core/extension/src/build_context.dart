@@ -1,10 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages
-import 'package:flutter_gen/gen_l10n/app_localizations.g.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shop/src/core/database/hive/app_database.dart';
+import 'package:shop/src/core/gen/app_localizations.g.dart';
 import 'package:shop/src/core/model/dependencies_storage.dart';
 import 'package:shop/src/core/model/environment_storage.dart';
 import 'package:shop/src/core/model/repository_storage.dart';
@@ -18,8 +17,7 @@ extension BuildContextX on BuildContext {
   IDependenciesStorage get dependencies => DependenciesScope.of(this);
   IRepositoryStorage get repository => RepositoryScope.of(this);
 
-  // ignore: avoid-non-null-assertion
-  AppLocalizations get localized => AppLocalizations.of(this)!;
+  AppLocalizations get localized => AppLocalizations.of(this);
   Dio get dio => dependencies.dio;
   SharedPreferences get sharedPreferences => dependencies.sharedPreferences;
   AppDatabase get database => dependencies.database;

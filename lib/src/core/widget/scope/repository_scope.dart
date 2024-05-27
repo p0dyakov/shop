@@ -14,8 +14,7 @@ class RepositoryScope extends Scope {
     Key? key,
   }) : super(child: child, key: key);
 
-  static IRepositoryStorage of(BuildContext context) =>
-      _delegateOf(context).storage;
+  static IRepositoryStorage of(BuildContext context) => _delegateOf(context).storage;
 
   @override
   ScopeDelegate<RepositoryScope> createDelegate() => _RepositoryScopeDelegate();

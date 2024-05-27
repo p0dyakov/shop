@@ -22,11 +22,9 @@ class SettingsScope extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  static const BlocScope<SettingsEvent, SettingsState, SettingsBloc> _scope =
-      BlocScope();
+  static const BlocScope<SettingsEvent, SettingsState, SettingsBloc> _scope = BlocScope();
 
-  static ScopeData<ThemeMode> get themeModeOf =>
-      _themeToThemeMode.dot(_theme).pipe(_scope.select);
+  static ScopeData<ThemeMode> get themeModeOf => _themeToThemeMode.dot(_theme).pipe(_scope.select);
 
   static ScopeData<AppTheme> get appThemeOf => _scope.select(_theme);
 

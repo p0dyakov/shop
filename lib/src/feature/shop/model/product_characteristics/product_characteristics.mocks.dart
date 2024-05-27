@@ -4,8 +4,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:shop/src/feature/shop/model/product_characteristics/product_characteristics.dart'
-    as _i2;
+import 'package:shop/src/feature/shop/model/product_characteristics/product_characteristics.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -32,8 +31,7 @@ class _Fake$ProductCharacteristicCopyWith_0<$Res> extends _i1.SmartFake
 /// A class which mocks [ProductCharacteristic].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockProductCharacteristic extends _i1.Mock
-    implements _i2.ProductCharacteristic {
+class MockProductCharacteristic extends _i1.Mock implements _i2.ProductCharacteristic {
   @override
   int get weight => (super.noSuchMethod(
         Invocation.getter(#weight),
@@ -59,16 +57,13 @@ class MockProductCharacteristic extends _i1.Mock
         returnValueForMissingStub: 0,
       ) as int);
   @override
-  _i2.$ProductCharacteristicCopyWith<_i2.ProductCharacteristic> get copyWith =>
-      (super.noSuchMethod(
+  _i2.$ProductCharacteristicCopyWith<_i2.ProductCharacteristic> get copyWith => (super.noSuchMethod(
         Invocation.getter(#copyWith),
-        returnValue:
-            _Fake$ProductCharacteristicCopyWith_0<_i2.ProductCharacteristic>(
+        returnValue: _Fake$ProductCharacteristicCopyWith_0<_i2.ProductCharacteristic>(
           this,
           Invocation.getter(#copyWith),
         ),
-        returnValueForMissingStub:
-            _Fake$ProductCharacteristicCopyWith_0<_i2.ProductCharacteristic>(
+        returnValueForMissingStub: _Fake$ProductCharacteristicCopyWith_0<_i2.ProductCharacteristic>(
           this,
           Invocation.getter(#copyWith),
         ),

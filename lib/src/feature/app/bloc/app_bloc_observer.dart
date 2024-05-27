@@ -57,7 +57,7 @@ class AppBlocObserver extends StreamBlocObserver {
   }
 
   @override
-  void onTransition(BlocEventSink<Object?> bloc, Transition transition) {
+  void onTransition(BlocEventSink<Object?> bloc, Transition<dynamic, dynamic> transition) {
     super.onTransition(bloc, transition);
 
     final Object? event = transition.event;

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pure/pure.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shop/src/core/model/dependencies_storage.dart';
 import 'package:shop/src/core/model/repository_storage.dart';
 import 'package:shop/src/core/widget/scope/dependencies_scope.dart';
 import 'package:shop/src/core/widget/scope/environment_scope.dart';
@@ -15,12 +13,9 @@ class ShopApp extends StatelessWidget {
   final InitializationData initializationData;
 
   const ShopApp({
-    Key? key,
     required this.initializationData,
+    Key? key,
   }) : super(key: key);
-
-  SharedPreferences get _sharedPreferences =>
-      initializationData.sharedPreferences;
 
   @override
   Widget build(BuildContext context) => EnvironmentScope(
@@ -28,13 +23,11 @@ class ShopApp extends StatelessWidget {
         child: AppLifecycleScope(
           errorTrackingDisabler: initializationData.errorTrackingDisabler,
           child: DependenciesScope(
-            create: (context) => DependenciesStorage(
-              sharedPreferences: _sharedPreferences,
-            ),
+            create: (context) => initializationData.dependenciesStorage,
             child: RepositoryScope(
               create: (context) => RepositoryStorage(
-                appDatabase: DependenciesScope.of(context).database,
-                sharedPreferences: _sharedPreferences,
+                appDatabase: initializationData.dependenciesStorage.database,
+                sharedPreferences: initializationData.dependenciesStorage.sharedPreferences,
               ),
               child: const SettingsScope(
                 child: AppConfiguration(),

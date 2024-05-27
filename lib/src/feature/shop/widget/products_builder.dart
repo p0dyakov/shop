@@ -4,8 +4,8 @@ import 'package:shop/src/feature/shop/widget/product_card.dart';
 
 class ProductsBuilder extends StatelessWidget {
   const ProductsBuilder({
-    Key? key,
     required this.products,
+    Key? key,
   }) : super(key: key);
 
   final List<Product> products;

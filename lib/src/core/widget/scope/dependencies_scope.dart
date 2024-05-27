@@ -20,8 +20,7 @@ class DependenciesScope extends Scope {
       _delegateOf(context).storage;
 
   @override
-  ScopeDelegate<DependenciesScope> createDelegate() =>
-      _DependenciesScopeDelegate();
+  ScopeDelegate<DependenciesScope> createDelegate() => _DependenciesScopeDelegate();
 }
 
 class _DependenciesScopeDelegate extends ScopeDelegate<DependenciesScope> {

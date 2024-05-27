@@ -18,8 +18,7 @@ import 'package:shop/src/feature/shop/model/shop/shop.dart' as _i2;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _Fake$ShopCopyWith_0<$Res> extends _i1.SmartFake
-    implements _i2.$ShopCopyWith<$Res> {
+class _Fake$ShopCopyWith_0<$Res> extends _i1.SmartFake implements _i2.$ShopCopyWith<$Res> {
   _Fake$ShopCopyWith_0(
     Object parent,
     Invocation parentInvocation,

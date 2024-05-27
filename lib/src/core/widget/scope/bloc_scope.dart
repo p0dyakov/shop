@@ -17,8 +17,7 @@ typedef UnaryScopeMethod<A extends Object?> = void Function(
 );
 
 @immutable
-class BlocScope<E extends Object?, S extends Object?,
-    B extends StreamBloc<E, S>> {
+class BlocScope<E extends Object?, S extends Object?, B extends StreamBloc<E, S>> {
   final bool _listenByDefault;
 
   @literal
@@ -33,12 +32,12 @@ class BlocScope<E extends Object?, S extends Object?,
   ScopeData<D> data<D extends Object?>(
     D Function(BuildContext context, S state) data,
   ) =>
+      // ignore: avoid_types_on_closure_parameters
       (context, {bool? listen}) => (listen ?? _listenByDefault)
           ? context.select<B, D>(data.curry(context).dot(_state))
           : data(context, _bloc(context).state);
 
-  ScopeData<D> select<D extends Object?>(D Function(S state) selector) =>
-      data(selector.constant.uncurry);
+  ScopeData<D> select<D extends Object?>(D Function(S state) selector) => data(selector.constant.uncurry);
 
   NullaryScopeMethod nullary(
     E? Function(BuildContext context) createEvent,

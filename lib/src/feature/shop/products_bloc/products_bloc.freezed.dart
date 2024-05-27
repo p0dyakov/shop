@@ -20,30 +20,20 @@ mixin _$ProductsEvent {
   SfRangeValues get priceValues => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String query, SfRangeValues weightValues, SfRangeValues priceValues)
-        searchProduct,
-    required TResult Function(
-            SfRangeValues weightValues, SfRangeValues priceValues)
-        changeValues,
+    required TResult Function(String query, SfRangeValues weightValues, SfRangeValues priceValues) searchProduct,
+    required TResult Function(SfRangeValues weightValues, SfRangeValues priceValues) changeValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String query, SfRangeValues weightValues,
-            SfRangeValues priceValues)?
-        searchProduct,
-    TResult? Function(SfRangeValues weightValues, SfRangeValues priceValues)?
-        changeValues,
+    TResult? Function(String query, SfRangeValues weightValues, SfRangeValues priceValues)? searchProduct,
+    TResult? Function(SfRangeValues weightValues, SfRangeValues priceValues)? changeValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String query, SfRangeValues weightValues,
-            SfRangeValues priceValues)?
-        searchProduct,
-    TResult Function(SfRangeValues weightValues, SfRangeValues priceValues)?
-        changeValues,
+    TResult Function(String query, SfRangeValues weightValues, SfRangeValues priceValues)? searchProduct,
+    TResult Function(SfRangeValues weightValues, SfRangeValues priceValues)? changeValues,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,22 +58,19 @@ mixin _$ProductsEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProductsEventCopyWith<ProductsEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ProductsEventCopyWith<ProductsEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProductsEventCopyWith<$Res> {
-  factory $ProductsEventCopyWith(
-          ProductsEvent value, $Res Function(ProductsEvent) then) =
+  factory $ProductsEventCopyWith(ProductsEvent value, $Res Function(ProductsEvent) then) =
       _$ProductsEventCopyWithImpl<$Res, ProductsEvent>;
   @useResult
   $Res call({SfRangeValues weightValues, SfRangeValues priceValues});
 }
 
 /// @nodoc
-class _$ProductsEventCopyWithImpl<$Res, $Val extends ProductsEvent>
-    implements $ProductsEventCopyWith<$Res> {
+class _$ProductsEventCopyWithImpl<$Res, $Val extends ProductsEvent> implements $ProductsEventCopyWith<$Res> {
   _$ProductsEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -111,23 +98,18 @@ class _$ProductsEventCopyWithImpl<$Res, $Val extends ProductsEvent>
 }
 
 /// @nodoc
-abstract class _$$SearchProductImplCopyWith<$Res>
-    implements $ProductsEventCopyWith<$Res> {
-  factory _$$SearchProductImplCopyWith(
-          _$SearchProductImpl value, $Res Function(_$SearchProductImpl) then) =
+abstract class _$$SearchProductImplCopyWith<$Res> implements $ProductsEventCopyWith<$Res> {
+  factory _$$SearchProductImplCopyWith(_$SearchProductImpl value, $Res Function(_$SearchProductImpl) then) =
       __$$SearchProductImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String query, SfRangeValues weightValues, SfRangeValues priceValues});
+  $Res call({String query, SfRangeValues weightValues, SfRangeValues priceValues});
 }
 
 /// @nodoc
-class __$$SearchProductImplCopyWithImpl<$Res>
-    extends _$ProductsEventCopyWithImpl<$Res, _$SearchProductImpl>
+class __$$SearchProductImplCopyWithImpl<$Res> extends _$ProductsEventCopyWithImpl<$Res, _$SearchProductImpl>
     implements _$$SearchProductImplCopyWith<$Res> {
-  __$$SearchProductImplCopyWithImpl(
-      _$SearchProductImpl _value, $Res Function(_$SearchProductImpl) _then)
+  __$$SearchProductImplCopyWithImpl(_$SearchProductImpl _value, $Res Function(_$SearchProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -157,10 +139,7 @@ class __$$SearchProductImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SearchProductImpl implements _SearchProduct {
-  const _$SearchProductImpl(
-      {required this.query,
-      required this.weightValues,
-      required this.priceValues});
+  const _$SearchProductImpl({required this.query, required this.weightValues, required this.priceValues});
 
   @override
   final String query;
@@ -180,15 +159,12 @@ class _$SearchProductImpl implements _SearchProduct {
         (other.runtimeType == runtimeType &&
             other is _$SearchProductImpl &&
             (identical(other.query, query) || other.query == query) &&
-            (identical(other.weightValues, weightValues) ||
-                other.weightValues == weightValues) &&
-            (identical(other.priceValues, priceValues) ||
-                other.priceValues == priceValues));
+            (identical(other.weightValues, weightValues) || other.weightValues == weightValues) &&
+            (identical(other.priceValues, priceValues) || other.priceValues == priceValues));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, query, weightValues, priceValues);
+  int get hashCode => Object.hash(runtimeType, query, weightValues, priceValues);
 
   @JsonKey(ignore: true)
   @override
@@ -199,12 +175,8 @@ class _$SearchProductImpl implements _SearchProduct {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String query, SfRangeValues weightValues, SfRangeValues priceValues)
-        searchProduct,
-    required TResult Function(
-            SfRangeValues weightValues, SfRangeValues priceValues)
-        changeValues,
+    required TResult Function(String query, SfRangeValues weightValues, SfRangeValues priceValues) searchProduct,
+    required TResult Function(SfRangeValues weightValues, SfRangeValues priceValues) changeValues,
   }) {
     return searchProduct(query, weightValues, priceValues);
   }
@@ -212,11 +184,8 @@ class _$SearchProductImpl implements _SearchProduct {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String query, SfRangeValues weightValues,
-            SfRangeValues priceValues)?
-        searchProduct,
-    TResult? Function(SfRangeValues weightValues, SfRangeValues priceValues)?
-        changeValues,
+    TResult? Function(String query, SfRangeValues weightValues, SfRangeValues priceValues)? searchProduct,
+    TResult? Function(SfRangeValues weightValues, SfRangeValues priceValues)? changeValues,
   }) {
     return searchProduct?.call(query, weightValues, priceValues);
   }
@@ -224,11 +193,8 @@ class _$SearchProductImpl implements _SearchProduct {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String query, SfRangeValues weightValues,
-            SfRangeValues priceValues)?
-        searchProduct,
-    TResult Function(SfRangeValues weightValues, SfRangeValues priceValues)?
-        changeValues,
+    TResult Function(String query, SfRangeValues weightValues, SfRangeValues priceValues)? searchProduct,
+    TResult Function(SfRangeValues weightValues, SfRangeValues priceValues)? changeValues,
     required TResult orElse(),
   }) {
     if (searchProduct != null) {
@@ -282,15 +248,12 @@ abstract class _SearchProduct implements ProductsEvent {
   SfRangeValues get priceValues;
   @override
   @JsonKey(ignore: true)
-  _$$SearchProductImplCopyWith<_$SearchProductImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SearchProductImplCopyWith<_$SearchProductImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangeValuesImplCopyWith<$Res>
-    implements $ProductsEventCopyWith<$Res> {
-  factory _$$ChangeValuesImplCopyWith(
-          _$ChangeValuesImpl value, $Res Function(_$ChangeValuesImpl) then) =
+abstract class _$$ChangeValuesImplCopyWith<$Res> implements $ProductsEventCopyWith<$Res> {
+  factory _$$ChangeValuesImplCopyWith(_$ChangeValuesImpl value, $Res Function(_$ChangeValuesImpl) then) =
       __$$ChangeValuesImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -298,11 +261,9 @@ abstract class _$$ChangeValuesImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ChangeValuesImplCopyWithImpl<$Res>
-    extends _$ProductsEventCopyWithImpl<$Res, _$ChangeValuesImpl>
+class __$$ChangeValuesImplCopyWithImpl<$Res> extends _$ProductsEventCopyWithImpl<$Res, _$ChangeValuesImpl>
     implements _$$ChangeValuesImplCopyWith<$Res> {
-  __$$ChangeValuesImplCopyWithImpl(
-      _$ChangeValuesImpl _value, $Res Function(_$ChangeValuesImpl) _then)
+  __$$ChangeValuesImplCopyWithImpl(_$ChangeValuesImpl _value, $Res Function(_$ChangeValuesImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -327,8 +288,7 @@ class __$$ChangeValuesImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChangeValuesImpl implements _ChangeValues {
-  const _$ChangeValuesImpl(
-      {required this.weightValues, required this.priceValues});
+  const _$ChangeValuesImpl({required this.weightValues, required this.priceValues});
 
   @override
   final SfRangeValues weightValues;
@@ -345,10 +305,8 @@ class _$ChangeValuesImpl implements _ChangeValues {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChangeValuesImpl &&
-            (identical(other.weightValues, weightValues) ||
-                other.weightValues == weightValues) &&
-            (identical(other.priceValues, priceValues) ||
-                other.priceValues == priceValues));
+            (identical(other.weightValues, weightValues) || other.weightValues == weightValues) &&
+            (identical(other.priceValues, priceValues) || other.priceValues == priceValues));
   }
 
   @override
@@ -363,12 +321,8 @@ class _$ChangeValuesImpl implements _ChangeValues {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String query, SfRangeValues weightValues, SfRangeValues priceValues)
-        searchProduct,
-    required TResult Function(
-            SfRangeValues weightValues, SfRangeValues priceValues)
-        changeValues,
+    required TResult Function(String query, SfRangeValues weightValues, SfRangeValues priceValues) searchProduct,
+    required TResult Function(SfRangeValues weightValues, SfRangeValues priceValues) changeValues,
   }) {
     return changeValues(weightValues, priceValues);
   }
@@ -376,11 +330,8 @@ class _$ChangeValuesImpl implements _ChangeValues {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String query, SfRangeValues weightValues,
-            SfRangeValues priceValues)?
-        searchProduct,
-    TResult? Function(SfRangeValues weightValues, SfRangeValues priceValues)?
-        changeValues,
+    TResult? Function(String query, SfRangeValues weightValues, SfRangeValues priceValues)? searchProduct,
+    TResult? Function(SfRangeValues weightValues, SfRangeValues priceValues)? changeValues,
   }) {
     return changeValues?.call(weightValues, priceValues);
   }
@@ -388,11 +339,8 @@ class _$ChangeValuesImpl implements _ChangeValues {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String query, SfRangeValues weightValues,
-            SfRangeValues priceValues)?
-        searchProduct,
-    TResult Function(SfRangeValues weightValues, SfRangeValues priceValues)?
-        changeValues,
+    TResult Function(String query, SfRangeValues weightValues, SfRangeValues priceValues)? searchProduct,
+    TResult Function(SfRangeValues weightValues, SfRangeValues priceValues)? changeValues,
     required TResult orElse(),
   }) {
     if (changeValues != null) {
@@ -434,9 +382,8 @@ class _$ChangeValuesImpl implements _ChangeValues {
 }
 
 abstract class _ChangeValues implements ProductsEvent {
-  const factory _ChangeValues(
-      {required final SfRangeValues weightValues,
-      required final SfRangeValues priceValues}) = _$ChangeValuesImpl;
+  const factory _ChangeValues({required final SfRangeValues weightValues, required final SfRangeValues priceValues}) =
+      _$ChangeValuesImpl;
 
   @override
   SfRangeValues get weightValues;
@@ -444,8 +391,7 @@ abstract class _ChangeValues implements ProductsEvent {
   SfRangeValues get priceValues;
   @override
   @JsonKey(ignore: true)
-  _$$ChangeValuesImplCopyWith<_$ChangeValuesImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ChangeValuesImplCopyWith<_$ChangeValuesImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -455,8 +401,7 @@ mixin _$ProductsState {
   TResult when<TResult extends Object?>({
     required TResult Function(ProductsData data) initial,
     required TResult Function(ProductsData data, String error) failure,
-    required TResult Function(List<Product> results, ProductsData data)
-        searchSuccess,
+    required TResult Function(List<Product> results, ProductsData data) searchSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -498,14 +443,12 @@ mixin _$ProductsState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProductsStateCopyWith<ProductsState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ProductsStateCopyWith<ProductsState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProductsStateCopyWith<$Res> {
-  factory $ProductsStateCopyWith(
-          ProductsState value, $Res Function(ProductsState) then) =
+  factory $ProductsStateCopyWith(ProductsState value, $Res Function(ProductsState) then) =
       _$ProductsStateCopyWithImpl<$Res, ProductsState>;
   @useResult
   $Res call({ProductsData data});
@@ -514,8 +457,7 @@ abstract class $ProductsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
-    implements $ProductsStateCopyWith<$Res> {
+class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState> implements $ProductsStateCopyWith<$Res> {
   _$ProductsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -546,10 +488,8 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res>
-    implements $ProductsStateCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+abstract class _$$InitialImplCopyWith<$Res> implements $ProductsStateCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(_$InitialImpl value, $Res Function(_$InitialImpl) then) =
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -560,12 +500,9 @@ abstract class _$$InitialImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$InitialImpl>
+class __$$InitialImplCopyWithImpl<$Res> extends _$ProductsStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
+  __$$InitialImplCopyWithImpl(_$InitialImpl _value, $Res Function(_$InitialImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -608,16 +545,14 @@ class _$InitialImpl implements _Initial {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
-      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith => __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ProductsData data) initial,
     required TResult Function(ProductsData data, String error) failure,
-    required TResult Function(List<Product> results, ProductsData data)
-        searchSuccess,
+    required TResult Function(List<Product> results, ProductsData data) searchSuccess,
   }) {
     return initial(data);
   }
@@ -688,15 +623,12 @@ abstract class _Initial implements ProductsState {
   ProductsData get data;
   @override
   @JsonKey(ignore: true)
-  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FailureImplCopyWith<$Res>
-    implements $ProductsStateCopyWith<$Res> {
-  factory _$$FailureImplCopyWith(
-          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
+abstract class _$$FailureImplCopyWith<$Res> implements $ProductsStateCopyWith<$Res> {
+  factory _$$FailureImplCopyWith(_$FailureImpl value, $Res Function(_$FailureImpl) then) =
       __$$FailureImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -707,12 +639,9 @@ abstract class _$$FailureImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FailureImplCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$FailureImpl>
+class __$$FailureImplCopyWithImpl<$Res> extends _$ProductsStateCopyWithImpl<$Res, _$FailureImpl>
     implements _$$FailureImplCopyWith<$Res> {
-  __$$FailureImplCopyWithImpl(
-      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
-      : super(_value, _then);
+  __$$FailureImplCopyWithImpl(_$FailureImpl _value, $Res Function(_$FailureImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -763,16 +692,14 @@ class _$FailureImpl implements _Failure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith => __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ProductsData data) initial,
     required TResult Function(ProductsData data, String error) failure,
-    required TResult Function(List<Product> results, ProductsData data)
-        searchSuccess,
+    required TResult Function(List<Product> results, ProductsData data) searchSuccess,
   }) {
     return failure(data, error);
   }
@@ -837,24 +764,19 @@ class _$FailureImpl implements _Failure {
 }
 
 abstract class _Failure implements ProductsState {
-  const factory _Failure(
-      {required final ProductsData data,
-      required final String error}) = _$FailureImpl;
+  const factory _Failure({required final ProductsData data, required final String error}) = _$FailureImpl;
 
   @override
   ProductsData get data;
   String get error;
   @override
   @JsonKey(ignore: true)
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SearchSuccessImplCopyWith<$Res>
-    implements $ProductsStateCopyWith<$Res> {
-  factory _$$SearchSuccessImplCopyWith(
-          _$SearchSuccessImpl value, $Res Function(_$SearchSuccessImpl) then) =
+abstract class _$$SearchSuccessImplCopyWith<$Res> implements $ProductsStateCopyWith<$Res> {
+  factory _$$SearchSuccessImplCopyWith(_$SearchSuccessImpl value, $Res Function(_$SearchSuccessImpl) then) =
       __$$SearchSuccessImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -865,11 +787,9 @@ abstract class _$$SearchSuccessImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SearchSuccessImplCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$SearchSuccessImpl>
+class __$$SearchSuccessImplCopyWithImpl<$Res> extends _$ProductsStateCopyWithImpl<$Res, _$SearchSuccessImpl>
     implements _$$SearchSuccessImplCopyWith<$Res> {
-  __$$SearchSuccessImplCopyWithImpl(
-      _$SearchSuccessImpl _value, $Res Function(_$SearchSuccessImpl) _then)
+  __$$SearchSuccessImplCopyWithImpl(_$SearchSuccessImpl _value, $Res Function(_$SearchSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -894,9 +814,7 @@ class __$$SearchSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SearchSuccessImpl implements _SearchSuccess {
-  const _$SearchSuccessImpl(
-      {required final List<Product> results, required this.data})
-      : _results = results;
+  const _$SearchSuccessImpl({required final List<Product> results, required this.data}) : _results = results;
 
   final List<Product> _results;
   @override
@@ -924,8 +842,7 @@ class _$SearchSuccessImpl implements _SearchSuccess {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_results), data);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_results), data);
 
   @JsonKey(ignore: true)
   @override
@@ -938,8 +855,7 @@ class _$SearchSuccessImpl implements _SearchSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function(ProductsData data) initial,
     required TResult Function(ProductsData data, String error) failure,
-    required TResult Function(List<Product> results, ProductsData data)
-        searchSuccess,
+    required TResult Function(List<Product> results, ProductsData data) searchSuccess,
   }) {
     return searchSuccess(results, data);
   }
@@ -1004,15 +920,13 @@ class _$SearchSuccessImpl implements _SearchSuccess {
 }
 
 abstract class _SearchSuccess implements ProductsState {
-  const factory _SearchSuccess(
-      {required final List<Product> results,
-      required final ProductsData data}) = _$SearchSuccessImpl;
+  const factory _SearchSuccess({required final List<Product> results, required final ProductsData data}) =
+      _$SearchSuccessImpl;
 
   List<Product> get results;
   @override
   ProductsData get data;
   @override
   @JsonKey(ignore: true)
-  _$$SearchSuccessImplCopyWith<_$SearchSuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SearchSuccessImplCopyWith<_$SearchSuccessImpl> get copyWith => throw _privateConstructorUsedError;
 }

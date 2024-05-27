@@ -5,8 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:shop/src/feature/shop/model/product/product.dart' as _i3;
-import 'package:shop/src/feature/shop/model/product_characteristics/product_characteristics.dart'
-    as _i2;
+import 'package:shop/src/feature/shop/model/product_characteristics/product_characteristics.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -19,8 +18,7 @@ import 'package:shop/src/feature/shop/model/product_characteristics/product_char
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeProductCharacteristic_0 extends _i1.SmartFake
-    implements _i2.ProductCharacteristic {
+class _FakeProductCharacteristic_0 extends _i1.SmartFake implements _i2.ProductCharacteristic {
   _FakeProductCharacteristic_0(
     Object parent,
     Invocation parentInvocation,
@@ -30,8 +28,7 @@ class _FakeProductCharacteristic_0 extends _i1.SmartFake
         );
 }
 
-class _Fake$ProductCopyWith_1<$Res> extends _i1.SmartFake
-    implements _i3.$ProductCopyWith<$Res> {
+class _Fake$ProductCopyWith_1<$Res> extends _i1.SmartFake implements _i3.$ProductCopyWith<$Res> {
   _Fake$ProductCopyWith_1(
     Object parent,
     Invocation parentInvocation,

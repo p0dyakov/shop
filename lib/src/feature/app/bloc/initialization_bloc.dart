@@ -1,12 +1,10 @@
 import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:pure/pure.dart';
 import 'package:select_annotation/select_annotation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shop/src/core/database/hive/app_database.dart';
 import 'package:shop/src/core/extension/extensions.dart';
+import 'package:shop/src/core/model/dependencies_storage.dart';
 import 'package:shop/src/core/model/environment_storage.dart';
 import 'package:shop/src/feature/app/logic/error_tracking_manager.dart';
 import 'package:stream_bloc/stream_bloc.dart';
@@ -18,7 +16,7 @@ part 'initialization_bloc.select.dart';
 enum InitializationStep {
   environment,
   errorTracking,
-  sharedPreferences,
+  dependencies,
 }
 
 @freezed
@@ -42,7 +40,7 @@ class InitializationProgress with _$InitializationProgress {
 abstract class InitializationData {
   ErrorTrackingDisabler get errorTrackingDisabler;
   IEnvironmentStorage get environmentStorage;
-  SharedPreferences get sharedPreferences;
+  DependenciesStorage get dependenciesStorage;
 }
 
 @selectable
@@ -56,8 +54,7 @@ mixin _IndexedInitializationStateMixin {
 class InitializationState with _$InitializationState {
   const InitializationState._();
 
-  const factory InitializationState.notInitialized() =
-      InitializationNotInitialized;
+  const factory InitializationState.notInitialized() = InitializationNotInitialized;
 
   @With<_IndexedInitializationStateMixin>()
   const factory InitializationState.initializing({
@@ -68,7 +65,7 @@ class InitializationState with _$InitializationState {
   const factory InitializationState.initialized({
     required IEnvironmentStorage environmentStorage,
     required ErrorTrackingDisabler errorTrackingDisabler,
-    required SharedPreferences sharedPreferences,
+    required IDependenciesStorage dependenciesStorage,
   }) = InitializationInitialized;
 
   @With<_IndexedInitializationStateMixin>()
@@ -96,13 +93,14 @@ class InitializationEvent with _$InitializationEvent {
 abstract class InitializationFactories {
   IEnvironmentStorage createEnvironmentStorage();
 
+  IDependenciesStorage createDependenciesStorage();
+
   ErrorTrackingManager createErrorTrackingManager(
     IEnvironmentStorage environmentStorage,
   );
 }
 
-class InitializationBloc
-    extends StreamBloc<InitializationEvent, InitializationState> {
+class InitializationBloc extends StreamBloc<InitializationEvent, InitializationState> {
   final InitializationFactories _factories;
 
   InitializationBloc({
@@ -111,8 +109,7 @@ class InitializationBloc
         super(const InitializationState.notInitialized());
 
   InitializationProgress get _currentProgress =>
-      state.maybeCast<_IndexedInitializationStateMixin>()?.progress ??
-      InitializationProgress.initial();
+      state.maybeCast<_IndexedInitializationStateMixin>()?.progress ?? InitializationProgress.initial();
 
   Stream<InitializationState> _initialize(
     bool shouldSendSentry,
@@ -136,19 +133,18 @@ class InitializationBloc
       await errorTrackingManager.enableReporting(shouldSend: shouldSendSentry);
       yield InitializationState.initializing(
         progress: _currentProgress.copyWith(
-          currentStep: InitializationStep.sharedPreferences,
+          currentStep: InitializationStep.dependencies,
           errorTrackingDisabler: errorTrackingManager,
         ),
       );
 
-      await Hive.initFlutter();
-      await registerAdapters();
+      final dependenciesStorage = _factories.createDependenciesStorage();
+      await dependenciesStorage.init();
 
-      final sharedPreferences = await SharedPreferences.getInstance();
       yield InitializationState.initialized(
         environmentStorage: environmentStorage,
         errorTrackingDisabler: errorTrackingManager,
-        sharedPreferences: sharedPreferences,
+        dependenciesStorage: dependenciesStorage,
       );
     } on Object catch (e, s) {
       yield InitializationState.error(
@@ -162,8 +158,7 @@ class InitializationBloc
   }
 
   @override
-  Stream<InitializationState> mapEventToStates(InitializationEvent event) =>
-      event.when(
+  Stream<InitializationState> mapEventToStates(InitializationEvent event) => event.when(
         initialize: _initialize,
       );
 }

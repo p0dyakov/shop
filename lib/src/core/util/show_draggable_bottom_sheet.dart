@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/core/resources/theme/sizes.dart';
+import 'package:shop/src/core/resource/sizes.dart';
 
 Future<void> showDraggableBottomSheet({
   required Widget child,
@@ -40,7 +40,7 @@ Future<void> showDraggableBottomSheet({
                 ),
               ),
               const SizedBox(height: 24),
-              child
+              child,
             ],
           ),
         ),

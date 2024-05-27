@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/core/resources/theme/sizes.dart';
+import 'package:shop/src/core/resource/sizes.dart';
 
 class CenterText extends StatelessWidget {
   const CenterText({
-    Key? key,
     required this.text,
+    Key? key,
     this.color = Colors.black,
   }) : super(key: key);
 

@@ -13,13 +13,10 @@ _$ShopImpl _$$ShopImplFromJson(Map<String, dynamic> json) => _$ShopImpl(
       deliveryTimeInMinutes: (json['deliveryTimeInMinutes'] as num).toInt(),
       deliveryPrice: (json['deliveryPrice'] as num).toInt(),
       photoUrl: json['photoUrl'] as String,
-      products: (json['products'] as List<dynamic>)
-          .map((e) => Product.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      products: (json['products'] as List<dynamic>).map((e) => Product.fromJson(e as Map<String, dynamic>)).toList(),
     );
 
-Map<String, dynamic> _$$ShopImplToJson(_$ShopImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$ShopImplToJson(_$ShopImpl instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,

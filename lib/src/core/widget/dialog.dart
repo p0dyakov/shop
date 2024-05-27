@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class DialogWidget extends StatelessWidget {
   const DialogWidget({
-    Key? key,
     required this.onAccept,
     required this.title,
     required this.content,
     required this.acceptText,
+    Key? key,
   }) : super(key: key);
 
   final VoidCallback onAccept;
@@ -23,14 +23,14 @@ class DialogWidget extends StatelessWidget {
           ElevatedButton(
             onPressed: () => AutoRouter.of(context).pop(context),
             style: ButtonStyle(
-              padding: MaterialStateProperty.all(
+              padding: WidgetStateProperty.all(
                 const EdgeInsets.symmetric(
                   vertical: 8,
                   horizontal: 15,
                 ),
               ),
-              backgroundColor: MaterialStateProperty.all(Colors.white),
-              elevation: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(Colors.white),
+              elevation: WidgetStateProperty.all(
                 0,
               ),
             ),
@@ -46,8 +46,8 @@ class DialogWidget extends StatelessWidget {
           ElevatedButton(
             onPressed: onAccept,
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.white),
-              elevation: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(Colors.white),
+              elevation: WidgetStateProperty.all(
                 0,
               ),
             ),

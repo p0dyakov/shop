@@ -8,18 +8,17 @@ abstract class IDependenciesStorage {
   SharedPreferences get sharedPreferences;
 
   void close();
+  Future<void> init();
 }
 
 class DependenciesStorage implements IDependenciesStorage {
-  final SharedPreferences _sharedPreferences;
-
-  DependenciesStorage({
-    required SharedPreferences sharedPreferences,
-  }) : _sharedPreferences = sharedPreferences;
+  DependenciesStorage();
 
   Dio? _dio;
 
   AppDatabase? _database;
+
+  late SharedPreferences _sharedPreferences;
 
   @override
   Dio get dio => _dio ??= Dio();
@@ -34,5 +33,11 @@ class DependenciesStorage implements IDependenciesStorage {
   Future<void> close() async {
     _dio?.close();
     await _database?.close();
+  }
+
+  @override
+  Future<void> init() async {
+    _sharedPreferences = await SharedPreferences.getInstance();
+    await database.init();
   }
 }

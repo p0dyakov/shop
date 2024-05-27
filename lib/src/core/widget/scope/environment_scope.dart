@@ -14,12 +14,10 @@ class EnvironmentScope extends Scope {
     Key? key,
   }) : super(child: child, key: key);
 
-  static IEnvironmentStorage of(BuildContext context) =>
-      _delegateOf(context).storage;
+  static IEnvironmentStorage of(BuildContext context) => _delegateOf(context).storage;
 
   @override
-  ScopeDelegate<EnvironmentScope> createDelegate() =>
-      _EnvironmentScopeDelegate();
+  ScopeDelegate<EnvironmentScope> createDelegate() => _EnvironmentScopeDelegate();
 }
 
 class _EnvironmentScopeDelegate extends ScopeDelegate<EnvironmentScope> {

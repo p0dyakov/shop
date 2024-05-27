@@ -12,12 +12,11 @@ class ProductsScope extends StatelessWidget {
 
   const ProductsScope({
     required this.child,
-    Key? key,
     required this.shop,
+    Key? key,
   }) : super(key: key);
 
-  static const BlocScope<ProductsEvent, ProductsState, ProductsBloc> _scope =
-      BlocScope();
+  static const BlocScope<ProductsEvent, ProductsState, ProductsBloc> _scope = BlocScope();
 
   static ScopeData<Shop> get shopOf => _scope.select(_shop);
 

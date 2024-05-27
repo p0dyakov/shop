@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/core/resources/theme/sizes.dart';
+import 'package:shop/src/core/resource/sizes.dart';
 import 'package:shop/src/feature/shop/model/shop/shop.dart';
 import 'package:shop/src/feature/shop/widget/delivery_info.dart';
 
 class ShopCardWidget extends StatelessWidget {
   const ShopCardWidget({
-    Key? key,
     required this.shop,
     required this.onTap,
+    Key? key,
     this.descriptionMaxLines = 1,
     this.backgroundColor = Colors.white,
     this.showDeliveryInfo = true,
@@ -67,7 +67,7 @@ class ShopCardWidget extends StatelessWidget {
                         deliveryPrice: shop.deliveryPrice,
                         deliveryTime: shop.deliveryTimeInMinutes,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

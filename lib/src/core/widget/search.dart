@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/core/resources/theme/sizes.dart';
+import 'package:shop/src/core/resource/sizes.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({
+    required this.onChanged,
     Key? key,
     this.hint = 'Search',
     this.disabled = false,
-    required this.onChanged,
   }) : super(key: key);
 
   final bool disabled;
   final String hint;
-  final Function(String query) onChanged;
+  final void Function(String query) onChanged;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -49,8 +49,7 @@ class SearchWidget extends StatelessWidget {
                         ),
                         decoration: InputDecoration(
                           hintText: hint,
-                          hintStyle:
-                              const TextStyle(color: Colors.grey, fontSize: 16),
+                          hintStyle: const TextStyle(color: Colors.grey, fontSize: 16),
                           contentPadding: const EdgeInsets.only(bottom: 15),
                           border: InputBorder.none,
                         ),
