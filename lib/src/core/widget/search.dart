@@ -49,8 +49,11 @@ class SearchWidget extends StatelessWidget {
                         ),
                         decoration: InputDecoration(
                           hintText: hint,
-                          hintStyle: const TextStyle(color: Colors.grey, fontSize: 16),
-                          contentPadding: const EdgeInsets.only(bottom: 15),
+                          hintStyle: const TextStyle(
+                            color: Colors.grey,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
                           border: InputBorder.none,
                         ),
                       ),
